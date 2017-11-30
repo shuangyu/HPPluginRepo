@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFF6627F1FCFDB97007D30DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */; };
+		FFF662811FCFDB97007D30DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF662801FCFDB97007D30DD /* ViewController.swift */; };
+		FFF662841FCFDB97007D30DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF662821FCFDB97007D30DD /* Main.storyboard */; };
+		FFF662871FCFDB97007D30DD /* HPToolKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFF662851FCFDB97007D30DD /* HPToolKit.xcdatamodeld */; };
+		FFF662891FCFDB97007D30DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF662881FCFDB97007D30DD /* Assets.xcassets */; };
+		FFF6628C1FCFDB97007D30DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF6628A1FCFDB97007D30DD /* LaunchScreen.storyboard */; };
+		FFF662971FCFDB97007D30DD /* HPToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF662961FCFDB97007D30DD /* HPToolKitTests.swift */; };
+		FFF662A21FCFDB97007D30DD /* HPToolKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF662A11FCFDB97007D30DD /* HPToolKitUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFF662931FCFDB97007D30DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFF662731FCFDB96007D30DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFF6627A1FCFDB96007D30DD;
+			remoteInfo = HPToolKit;
+		};
+		FFF6629E1FCFDB97007D30DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFF662731FCFDB96007D30DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFF6627A1FCFDB96007D30DD;
+			remoteInfo = HPToolKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFF6627B1FCFDB96007D30DD /* HPToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFF662801FCFDB97007D30DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFF662831FCFDB97007D30DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFF662861FCFDB97007D30DD /* HPToolKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HPToolKit.xcdatamodel; sourceTree = "<group>"; };
+		FFF662881FCFDB97007D30DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFF6628B1FCFDB97007D30DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFF6628D1FCFDB97007D30DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF662921FCFDB97007D30DD /* HPToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF662961FCFDB97007D30DD /* HPToolKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPToolKitTests.swift; sourceTree = "<group>"; };
+		FFF662981FCFDB97007D30DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF6629D1FCFDB97007D30DD /* HPToolKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPToolKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF662A11FCFDB97007D30DD /* HPToolKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPToolKitUITests.swift; sourceTree = "<group>"; };
+		FFF662A31FCFDB97007D30DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFF662781FCFDB96007D30DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF6628F1FCFDB97007D30DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF6629A1FCFDB97007D30DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFF662721FCFDB96007D30DD = {
+			isa = PBXGroup;
+			children = (
+				FFF6627D1FCFDB97007D30DD /* HPToolKit */,
+				FFF662951FCFDB97007D30DD /* HPToolKitTests */,
+				FFF662A01FCFDB97007D30DD /* HPToolKitUITests */,
+				FFF6627C1FCFDB96007D30DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFF6627C1FCFDB96007D30DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFF6627B1FCFDB96007D30DD /* HPToolKit.app */,
+				FFF662921FCFDB97007D30DD /* HPToolKitTests.xctest */,
+				FFF6629D1FCFDB97007D30DD /* HPToolKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFF6627D1FCFDB97007D30DD /* HPToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */,
+				FFF662801FCFDB97007D30DD /* ViewController.swift */,
+				FFF662821FCFDB97007D30DD /* Main.storyboard */,
+				FFF662881FCFDB97007D30DD /* Assets.xcassets */,
+				FFF6628A1FCFDB97007D30DD /* LaunchScreen.storyboard */,
+				FFF6628D1FCFDB97007D30DD /* Info.plist */,
+				FFF662851FCFDB97007D30DD /* HPToolKit.xcdatamodeld */,
+			);
+			path = HPToolKit;
+			sourceTree = "<group>";
+		};
+		FFF662951FCFDB97007D30DD /* HPToolKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFF662961FCFDB97007D30DD /* HPToolKitTests.swift */,
+				FFF662981FCFDB97007D30DD /* Info.plist */,
+			);
+			path = HPToolKitTests;
+			sourceTree = "<group>";
+		};
+		FFF662A01FCFDB97007D30DD /* HPToolKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFF662A11FCFDB97007D30DD /* HPToolKitUITests.swift */,
+				FFF662A31FCFDB97007D30DD /* Info.plist */,
+			);
+			path = HPToolKitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFF6627A1FCFDB96007D30DD /* HPToolKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFF662A61FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKit" */;
+			buildPhases = (
+				FFF662771FCFDB96007D30DD /* Sources */,
+				FFF662781FCFDB96007D30DD /* Frameworks */,
+				FFF662791FCFDB96007D30DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPToolKit;
+			productName = HPToolKit;
+			productReference = FFF6627B1FCFDB96007D30DD /* HPToolKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFF662911FCFDB97007D30DD /* HPToolKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFF662A91FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKitTests" */;
+			buildPhases = (
+				FFF6628E1FCFDB97007D30DD /* Sources */,
+				FFF6628F1FCFDB97007D30DD /* Frameworks */,
+				FFF662901FCFDB97007D30DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFF662941FCFDB97007D30DD /* PBXTargetDependency */,
+			);
+			name = HPToolKitTests;
+			productName = HPToolKitTests;
+			productReference = FFF662921FCFDB97007D30DD /* HPToolKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFF6629C1FCFDB97007D30DD /* HPToolKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFF662AC1FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKitUITests" */;
+			buildPhases = (
+				FFF662991FCFDB97007D30DD /* Sources */,
+				FFF6629A1FCFDB97007D30DD /* Frameworks */,
+				FFF6629B1FCFDB97007D30DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFF6629F1FCFDB97007D30DD /* PBXTargetDependency */,
+			);
+			name = HPToolKitUITests;
+			productName = HPToolKitUITests;
+			productReference = FFF6629D1FCFDB97007D30DD /* HPToolKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFF662731FCFDB96007D30DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Hu, Peng";
+				TargetAttributes = {
+					FFF6627A1FCFDB96007D30DD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					FFF662911FCFDB97007D30DD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFF6627A1FCFDB96007D30DD;
+					};
+					FFF6629C1FCFDB97007D30DD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFF6627A1FCFDB96007D30DD;
+					};
+				};
+			};
+			buildConfigurationList = FFF662761FCFDB96007D30DD /* Build configuration list for PBXProject "HPToolKit" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFF662721FCFDB96007D30DD;
+			productRefGroup = FFF6627C1FCFDB96007D30DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFF6627A1FCFDB96007D30DD /* HPToolKit */,
+				FFF662911FCFDB97007D30DD /* HPToolKitTests */,
+				FFF6629C1FCFDB97007D30DD /* HPToolKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFF662791FCFDB96007D30DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF6628C1FCFDB97007D30DD /* LaunchScreen.storyboard in Resources */,
+				FFF662891FCFDB97007D30DD /* Assets.xcassets in Resources */,
+				FFF662841FCFDB97007D30DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF662901FCFDB97007D30DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF6629B1FCFDB97007D30DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFF662771FCFDB96007D30DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF662871FCFDB97007D30DD /* HPToolKit.xcdatamodeld in Sources */,
+				FFF662811FCFDB97007D30DD /* ViewController.swift in Sources */,
+				FFF6627F1FCFDB97007D30DD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF6628E1FCFDB97007D30DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF662971FCFDB97007D30DD /* HPToolKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFF662991FCFDB97007D30DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF662A21FCFDB97007D30DD /* HPToolKitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFF662941FCFDB97007D30DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFF6627A1FCFDB96007D30DD /* HPToolKit */;
+			targetProxy = FFF662931FCFDB97007D30DD /* PBXContainerItemProxy */;
+		};
+		FFF6629F1FCFDB97007D30DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFF6627A1FCFDB96007D30DD /* HPToolKit */;
+			targetProxy = FFF6629E1FCFDB97007D30DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFF662821FCFDB97007D30DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFF662831FCFDB97007D30DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFF6628A1FCFDB97007D30DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFF6628B1FCFDB97007D30DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFF662A41FCFDB97007D30DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFF662A51FCFDB97007D30DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFF662A71FCFDB97007D30DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFF662A81FCFDB97007D30DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFF662AA1FCFDB97007D30DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HPToolKit.app/HPToolKit";
+			};
+			name = Debug;
+		};
+		FFF662AB1FCFDB97007D30DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HPToolKit.app/HPToolKit";
+			};
+			name = Release;
+		};
+		FFF662AD1FCFDB97007D30DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HPToolKit;
+			};
+			name = Debug;
+		};
+		FFF662AE1FCFDB97007D30DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZXHY2B6NF;
+				INFOPLIST_FILE = HPToolKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Personal.HPToolKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HPToolKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFF662761FCFDB96007D30DD /* Build configuration list for PBXProject "HPToolKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF662A41FCFDB97007D30DD /* Debug */,
+				FFF662A51FCFDB97007D30DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFF662A61FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF662A71FCFDB97007D30DD /* Debug */,
+				FFF662A81FCFDB97007D30DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFF662A91FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF662AA1FCFDB97007D30DD /* Debug */,
+				FFF662AB1FCFDB97007D30DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFF662AC1FCFDB97007D30DD /* Build configuration list for PBXNativeTarget "HPToolKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF662AD1FCFDB97007D30DD /* Debug */,
+				FFF662AE1FCFDB97007D30DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFF662851FCFDB97007D30DD /* HPToolKit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFF662861FCFDB97007D30DD /* HPToolKit.xcdatamodel */,
+			);
+			currentVersion = FFF662861FCFDB97007D30DD /* HPToolKit.xcdatamodel */;
+			path = HPToolKit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FFF662731FCFDB96007D30DD /* Project object */;
+}
