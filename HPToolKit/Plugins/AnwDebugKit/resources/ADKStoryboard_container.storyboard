@@ -98,7 +98,7 @@
                                                     <color key="textColor" red="0.21532085540000001" green="0.2179939598" blue="0.23915934559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeP-9Z-dBH">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeP-9Z-dBH">
                                                     <rect key="frame" x="73.5" y="17" width="288.5" height="31"/>
                                                     <color key="tintColor" red="0.36395266650000002" green="0.65944522620000001" blue="0.34946000579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>

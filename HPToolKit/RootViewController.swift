@@ -10,8 +10,9 @@ import UIKit
 
 class RootViewController: UITableViewController {
 
-    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo"];
-    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage"];
+//    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo"]
+    private let dataSource = ["Debug Kit Demo"];
+    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

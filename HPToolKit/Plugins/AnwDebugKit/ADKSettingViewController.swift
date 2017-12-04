@@ -88,10 +88,10 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
             let placeHolder =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! String
             textField.text = placeHolder
         case .switchValue:
-            let isOn =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeRetainedValue() as! NSNumber
+            let isOn =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! NSNumber
             switchControl.isOn = isOn.boolValue
         case .sliderValue:
-            let value =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeRetainedValue() as! NSNumber
+            let value =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! NSNumber
             sliderControl.value = value.floatValue
         case .async:
             cellItem.processing ? indicatorView.startAnimating() : indicatorView.stopAnimating()

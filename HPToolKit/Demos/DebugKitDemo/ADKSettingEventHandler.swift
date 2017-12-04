@@ -55,13 +55,11 @@ class ADKSettingEventHandler: NSObject {
     }
     
     public func sliderValueChanged(_ newValue: NSNumber) {
-        let float = newValue.floatValue
-        let str = String(format:"%.1f", float)
-        cachedFloat = Float.init(str)!
+        cachedFloat = newValue.floatValue
     }
     
     public func sliderCellDefaultValue() -> NSNumber {
-        return NSNumber.init(value: 0.3)
+        return NSNumber.init(value: cachedFloat)
     }
     
     // async cell action will run async thread
