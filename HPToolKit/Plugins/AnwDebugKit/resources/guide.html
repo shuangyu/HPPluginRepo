@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <style type="text/css">
+    	table, th, td {
+    		border: 1px solid black;
+    		/*text-align: center;*/
+    		padding: 2px;
+    	}
+    	p {
+    		font-size: 16px;
+    	}
+    	.title {
+    		font-size: 20px;
+    		font-weight: bold;
+    	}
+    </style>
+</head>
+<body>
+
+	<p class="title">Rrerequisite</p>
+	<hr/>
+	<p class="content">
+		<li>1.This plugin only support storyboard</li>
+		<li>2.This plugin's initial viewcontroller must be a navigation controller</li>
+		<li>3.This plugin's root viewcontroller must be ADKRootViewController</li>
+	</p>
+
+	<p class="title">How to apply self-defined theme or config to this plugin</p>
+	<hr/>
+	<p class="content">First implement the ADKTheme or ADKConfig protocol, then set it to ADKContext singleton before using this plugin</p>
+
+	<p class="title">Descriptions of ADKTheme's parameters</p>
+	<hr/>
+	<p>Default theme is <i>ADKDefaultTheme</i></p>
+	<table>
+		<tr>
+			<th>Var.</th><th>Description</th>
+		</tr>
+		<tr>
+			<td>description</td><td>-</td>
+		</tr>
+		<tr>
+			<td>mainColor</td><td>background color of floating button and all viewcontrollers' navigation bar initialized by applying method <i>applyADKNavigationBar</i> of UIViewController extension </td>
+		</tr>
+		<tr>
+			<td>fontColor</td><td>text color of all texts on build-in viewcontroller's navigation bar</td>
+		</tr>
+		<tr>
+			<td>floatingButtonSize</td><td>-</td>
+		</tr>
+		<tr>
+			<td>floatingButtonText</td><td>-</td>
+		</tr>
+		<tr>
+			<td>floationButtonTextColor</td><td>-</td>
+		</tr>
+		<tr>
+			<td>floationButtonFontSize</td><td>-</td>
+		</tr>
+	</table>
+
+	<p class="title">Descriptions of ADKConfig's parameters</p>
+	<hr/>
+	<p>Default config is <i>ADKDefaultConfig</i></p>
+	<table>
+		<tr>
+			<th>Var.</th><th>Description</th>
+		</tr>
+		<tr>
+			<td>storyboardName_phone</td><td>storyboard file name of iPhone,leave empty if current device is iPad</td>
+		</tr>
+		<tr>
+			<td>storyboardName_pad</td><td>storyboard file name of iPad,leave empty if current device is iPhone</td>
+		</tr>
+		<tr>
+			<td>rootPageConfigFileName</td><td>config file name of plugin's root viewcontroller</td>
+		</tr>
+		<tr>
+			<td>settingPageConfigFileName</td><td>config file name of plugin's setting viewcontroller</td>
+		</tr>
+		<tr>
+			<td>storyboardName</td><td>storyboard name of current platform</td>
+		</tr>
+		<tr>
+			<td>storyboard</td><td>storyboard instance of current platform</td>
+		</tr>
+		<tr>
+			<td>rootPageCellReuseID</td><td>-</td>
+		</tr>
+		<tr>
+			<td>defaultItems</td><td>default build-in items, like <i>guideItem</i> and <i>settingItem</i></td>
+		</tr>
+	</table>
+
+	<p class="title">Description of root config file </p>
+	<hr/>
+	<p>Demo file : ADKRootConfig.plist</p>
+
+	<p></p>
+	<table>
+		<tr>
+			<th>Field</th><th>Required</th><th>Type</th><th>Comment</th>
+		</tr>
+		<tr>
+			<td>title</td><td>true</td><td>String</td><td>cell item title</td>
+		</tr>
+		<tr>
+			<td>segueID</td><td>false</td><td>String</td><td>segue identifier of cell click action in the plugin storyboard</td>
+		</tr>
+		<tr>
+			<td>controllerName</td><td>false</td><td>String</td><td>full classname of the viewcontroller you want to push without storyboard, like <i>AnwDebugKitDemo.ADKTest2ViewController</i></td>
+		</tr>
+		<tr>
+			<td>controllerID</td><td>false</td><td>String</td><td>controller id in the external storyboard</td>
+		</tr>
+		<tr>
+			<td>controllerContainer</td><td>false</td><td>String</td><td>name of the external storyboard which holds the viewcontroller you want to push </td>
+		</tr>
+	</table>
+
+	<p class="title">Description of setting config file </p>
+	<hr/>
+	<p>Demo file : ADKSettingConfig.plist</p>
+	<p></p>
+	<table>
+		<tr>
+			<th>Field</th><th>Required</th><th>Type</th><th>Comment</th>
+		</tr>
+		<tr>
+			<td>title</td><td>true</td><td>String</td><td>cell item title</td>
+		</tr>
+		<tr>
+			<td>type</td><td>true</td><td>String</td>
+			<td>one cell type of below:<br>
+				ADKCellTypeDetail<br>
+				ADKCellTypeInput<br>
+				ADKCellTypeSwitch<br>
+				ADKCellTypePlain<br>
+				ADKCellTypeAsync
+			</td>
+		</tr>
+		<tr>
+			<td>action</td><td>false</td><td>String</td><td>string name of the selector which will response to the cell action</td>
+		</tr>
+		<tr>
+			<td>defaultValue</td><td>false</td><td>String</td><td>string name of the selector which will response to the cell default value action</td>
+		</tr>
+	</table>
+	<p class="title">How to register a event handler of setting viewcontroller</p>
+	<hr/>
+	<p>First implement a class which contains all the selectors defined in setting config file, refer to demo class <i>ADKSettingEventHandler</i> , then register it using <i>ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler.init())</i></p>
+
+	<p class="title">Selector name of a selector</p>
+	<hr/>
+	
+	<table>
+		<tr><th>selector</th><th>selector name</th></tr>
+		<tr><td>func testSelector1() -> Any</td><td>testSelector1</td></tr>
+		<tr><td>func testSelector2(_ param: Any) -> Any</td><td>testSelector2:</td></tr>
+		<tr><td>func testSelector3(with param: Any) -> Any</td><td>testSelector3With:</td></tr>
+		<tr><td>func testSelector4(with param1: Any, and param2: Any) -> Any</td><td>testSelector4With:and:</td></tr>
+	</table>
+
+</body>
+</html>

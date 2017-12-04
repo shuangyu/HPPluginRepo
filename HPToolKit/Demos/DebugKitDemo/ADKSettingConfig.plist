@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Detail Cell Demo</string>
+		<key>action</key>
+		<string>openDetailPage</string>
+		<key>type</key>
+		<string>ADKCellTypeDetail</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Input Cell Demo</string>
+		<key>action</key>
+		<string>inputValueChanged:</string>
+		<key>type</key>
+		<string>ADKCellTypeInput</string>
+		<key>defaultValue</key>
+		<string>inputCellDefaultValue</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Switch Cell Demo</string>
+		<key>action</key>
+		<string>switchValueChanged:</string>
+		<key>type</key>
+		<string>ADKCellTypeSwitch</string>
+		<key>defaultValue</key>
+		<string>switchCellDefaultValue</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Slider Cell Demo</string>
+		<key>action</key>
+		<string>sliderValueChanged:</string>
+		<key>type</key>
+		<string>ADKCellTypeSlider</string>
+		<key>defaultValue</key>
+		<string>sliderCellDefaultValue</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Plain Cell Demo(like version number)</string>
+		<key>type</key>
+		<string>ADKCellTypePlain</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Async Cell Demo(like clean cache action)</string>
+		<key>action</key>
+		<string>asyncProcess</string>
+		<key>type</key>
+		<string>ADKCellTypeAsync</string>
+	</dict>
+</array>
+</plist>

@@ -7,8 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFF216D81FCFDD6400504088 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216D71FCFDD6400504088 /* RootViewController.swift */; };
+		FFF216DB1FCFE07C00504088 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216DA1FCFE07C00504088 /* MyNavigationController.swift */; };
+		FFF216F21FCFEE6D00504088 /* ADKDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216EB1FCFED5600504088 /* ADKDemoViewController.swift */; };
+		FFF216F31FCFEE7100504088 /* ADKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216EC1FCFED5600504088 /* ADKTest2ViewController.swift */; };
+		FFF216F41FCFEE7700504088 /* ADKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF216ED1FCFED5600504088 /* ADKStoryboard_phone.storyboard */; };
+		FFF216F51FCFEE7A00504088 /* ADKSettingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF216EE1FCFED5600504088 /* ADKSettingConfig.plist */; };
+		FFF216F61FCFEE7C00504088 /* ADKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216EF1FCFED5600504088 /* ADKSettingEventHandler.swift */; };
+		FFF216F71FCFEE7F00504088 /* ADKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216F01FCFED5600504088 /* ADKTestViewController.swift */; };
+		FFF216F81FCFEE8100504088 /* ADKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF216F11FCFED5600504088 /* ADKRootConfig.plist */; };
+		FFF216F91FCFEE8600504088 /* ADKSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E11FCFECCE00504088 /* ADKSettingViewController.swift */; };
+		FFF216FA1FCFEE8900504088 /* ADKStoryboard_container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF216E41FCFECCE00504088 /* ADKStoryboard_container.storyboard */; };
+		FFF216FB1FCFEE8C00504088 /* guide.html in Resources */ = {isa = PBXBuildFile; fileRef = FFF216E31FCFECCE00504088 /* guide.html */; };
+		FFF216FC1FCFEE9000504088 /* ADKGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E51FCFECCE00504088 /* ADKGuideViewController.swift */; };
+		FFF216FD1FCFEE9300504088 /* ADKRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E61FCFECCE00504088 /* ADKRootViewController.swift */; };
+		FFF216FE1FCFEE9600504088 /* ADKFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E71FCFECCE00504088 /* ADKFloatingButton.swift */; };
+		FFF216FF1FCFEE9A00504088 /* ADKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E81FCFECCE00504088 /* ADKExtension.swift */; };
+		FFF217001FCFEE9C00504088 /* ADKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216E91FCFECCE00504088 /* ADKContext.swift */; };
+		FFF217031FCFF9D700504088 /* AnwExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF217021FCFF9D700504088 /* AnwExts.swift */; };
+		FFF217071FCFFB5A00504088 /* ASPParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF217061FCFFB5A00504088 /* ASPParentViewController.swift */; };
+		FFF217091FD00D3D00504088 /* ASPTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF217081FD00D3D00504088 /* ASPTopViewController.swift */; };
+		FFF2170B1FD00D5900504088 /* ASPBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2170A1FD00D5900504088 /* ASPBottomViewController.swift */; };
+		FFF2170D1FD1477800504088 /* ASPDemoParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2170C1FD1477800504088 /* ASPDemoParentViewController.swift */; };
+		FFF2170F1FD1479300504088 /* ASPDemoTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2170E1FD1479300504088 /* ASPDemoTopViewController.swift */; };
+		FFF217111FD147A100504088 /* ASPDemoBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF217101FD147A100504088 /* ASPDemoBottomViewController.swift */; };
 		FFF6627F1FCFDB97007D30DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */; };
-		FFF662811FCFDB97007D30DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF662801FCFDB97007D30DD /* ViewController.swift */; };
 		FFF662841FCFDB97007D30DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF662821FCFDB97007D30DD /* Main.storyboard */; };
 		FFF662871FCFDB97007D30DD /* HPToolKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFF662851FCFDB97007D30DD /* HPToolKit.xcdatamodeld */; };
 		FFF662891FCFDB97007D30DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF662881FCFDB97007D30DD /* Assets.xcassets */; };
@@ -35,9 +58,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FFF216D71FCFDD6400504088 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FFF216DA1FCFE07C00504088 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		FFF216E11FCFECCE00504088 /* ADKSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKSettingViewController.swift; sourceTree = "<group>"; };
+		FFF216E31FCFECCE00504088 /* guide.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = guide.html; sourceTree = "<group>"; };
+		FFF216E41FCFECCE00504088 /* ADKStoryboard_container.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADKStoryboard_container.storyboard; sourceTree = "<group>"; };
+		FFF216E51FCFECCE00504088 /* ADKGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKGuideViewController.swift; sourceTree = "<group>"; };
+		FFF216E61FCFECCE00504088 /* ADKRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKRootViewController.swift; sourceTree = "<group>"; };
+		FFF216E71FCFECCE00504088 /* ADKFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKFloatingButton.swift; sourceTree = "<group>"; };
+		FFF216E81FCFECCE00504088 /* ADKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKExtension.swift; sourceTree = "<group>"; };
+		FFF216E91FCFECCE00504088 /* ADKContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKContext.swift; sourceTree = "<group>"; };
+		FFF216EB1FCFED5600504088 /* ADKDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKDemoViewController.swift; sourceTree = "<group>"; };
+		FFF216EC1FCFED5600504088 /* ADKTest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKTest2ViewController.swift; sourceTree = "<group>"; };
+		FFF216ED1FCFED5600504088 /* ADKStoryboard_phone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADKStoryboard_phone.storyboard; sourceTree = "<group>"; };
+		FFF216EE1FCFED5600504088 /* ADKSettingConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ADKSettingConfig.plist; sourceTree = "<group>"; };
+		FFF216EF1FCFED5600504088 /* ADKSettingEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKSettingEventHandler.swift; sourceTree = "<group>"; };
+		FFF216F01FCFED5600504088 /* ADKTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKTestViewController.swift; sourceTree = "<group>"; };
+		FFF216F11FCFED5600504088 /* ADKRootConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ADKRootConfig.plist; sourceTree = "<group>"; };
+		FFF217021FCFF9D700504088 /* AnwExts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnwExts.swift; sourceTree = "<group>"; };
+		FFF217061FCFFB5A00504088 /* ASPParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPParentViewController.swift; sourceTree = "<group>"; };
+		FFF217081FD00D3D00504088 /* ASPTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPTopViewController.swift; sourceTree = "<group>"; };
+		FFF2170A1FD00D5900504088 /* ASPBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPBottomViewController.swift; sourceTree = "<group>"; };
+		FFF2170C1FD1477800504088 /* ASPDemoParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPDemoParentViewController.swift; sourceTree = "<group>"; };
+		FFF2170E1FD1479300504088 /* ASPDemoTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPDemoTopViewController.swift; sourceTree = "<group>"; };
+		FFF217101FD147A100504088 /* ASPDemoBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPDemoBottomViewController.swift; sourceTree = "<group>"; };
 		FFF6627B1FCFDB96007D30DD /* HPToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFF662801FCFDB97007D30DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFF662831FCFDB97007D30DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFF662861FCFDB97007D30DD /* HPToolKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HPToolKit.xcdatamodel; sourceTree = "<group>"; };
 		FFF662881FCFDB97007D30DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +122,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFF216DC1FCFE3E400504088 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				FFF217041FCFFB0C00504088 /* SlidePluginDemo */,
+				FFF216EA1FCFED5600504088 /* DebugKitDemo */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		FFF216DD1FCFE3E500504088 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				FFF217051FCFFB2C00504088 /* AnwSlidePlugin */,
+				FFF216E01FCFECCE00504088 /* AnwDebugKit */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		FFF216E01FCFECCE00504088 /* AnwDebugKit */ = {
+			isa = PBXGroup;
+			children = (
+				FFF216E21FCFECCE00504088 /* resources */,
+				FFF216E11FCFECCE00504088 /* ADKSettingViewController.swift */,
+				FFF216E51FCFECCE00504088 /* ADKGuideViewController.swift */,
+				FFF216E61FCFECCE00504088 /* ADKRootViewController.swift */,
+				FFF216E71FCFECCE00504088 /* ADKFloatingButton.swift */,
+				FFF216E81FCFECCE00504088 /* ADKExtension.swift */,
+				FFF216E91FCFECCE00504088 /* ADKContext.swift */,
+			);
+			path = AnwDebugKit;
+			sourceTree = "<group>";
+		};
+		FFF216E21FCFECCE00504088 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFF216E31FCFECCE00504088 /* guide.html */,
+				FFF216E41FCFECCE00504088 /* ADKStoryboard_container.storyboard */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		FFF216EA1FCFED5600504088 /* DebugKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FFF216EB1FCFED5600504088 /* ADKDemoViewController.swift */,
+				FFF216EC1FCFED5600504088 /* ADKTest2ViewController.swift */,
+				FFF216ED1FCFED5600504088 /* ADKStoryboard_phone.storyboard */,
+				FFF216EE1FCFED5600504088 /* ADKSettingConfig.plist */,
+				FFF216EF1FCFED5600504088 /* ADKSettingEventHandler.swift */,
+				FFF216F01FCFED5600504088 /* ADKTestViewController.swift */,
+				FFF216F11FCFED5600504088 /* ADKRootConfig.plist */,
+			);
+			path = DebugKitDemo;
+			sourceTree = "<group>";
+		};
+		FFF217011FCFF9B300504088 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FFF217021FCFF9D700504088 /* AnwExts.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FFF217041FCFFB0C00504088 /* SlidePluginDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2170C1FD1477800504088 /* ASPDemoParentViewController.swift */,
+				FFF2170E1FD1479300504088 /* ASPDemoTopViewController.swift */,
+				FFF217101FD147A100504088 /* ASPDemoBottomViewController.swift */,
+			);
+			path = SlidePluginDemo;
+			sourceTree = "<group>";
+		};
+		FFF217051FCFFB2C00504088 /* AnwSlidePlugin */ = {
+			isa = PBXGroup;
+			children = (
+				FFF217061FCFFB5A00504088 /* ASPParentViewController.swift */,
+				FFF217081FD00D3D00504088 /* ASPTopViewController.swift */,
+				FFF2170A1FD00D5900504088 /* ASPBottomViewController.swift */,
+			);
+			path = AnwSlidePlugin;
+			sourceTree = "<group>";
+		};
 		FFF662721FCFDB96007D30DD = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +228,17 @@
 		FFF6627D1FCFDB97007D30DD /* HPToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				FFF217011FCFF9B300504088 /* Common */,
+				FFF216DC1FCFE3E400504088 /* Demos */,
+				FFF216DD1FCFE3E500504088 /* Plugins */,
 				FFF6627E1FCFDB97007D30DD /* AppDelegate.swift */,
-				FFF662801FCFDB97007D30DD /* ViewController.swift */,
 				FFF662821FCFDB97007D30DD /* Main.storyboard */,
 				FFF662881FCFDB97007D30DD /* Assets.xcassets */,
 				FFF6628A1FCFDB97007D30DD /* LaunchScreen.storyboard */,
 				FFF6628D1FCFDB97007D30DD /* Info.plist */,
 				FFF662851FCFDB97007D30DD /* HPToolKit.xcdatamodeld */,
+				FFF216D71FCFDD6400504088 /* RootViewController.swift */,
+				FFF216DA1FCFE07C00504088 /* MyNavigationController.swift */,
 			);
 			path = HPToolKit;
 			sourceTree = "<group>";
@@ -235,9 +368,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF216FA1FCFEE8900504088 /* ADKStoryboard_container.storyboard in Resources */,
 				FFF6628C1FCFDB97007D30DD /* LaunchScreen.storyboard in Resources */,
+				FFF216F81FCFEE8100504088 /* ADKRootConfig.plist in Resources */,
+				FFF216FB1FCFEE8C00504088 /* guide.html in Resources */,
 				FFF662891FCFDB97007D30DD /* Assets.xcassets in Resources */,
 				FFF662841FCFDB97007D30DD /* Main.storyboard in Resources */,
+				FFF216F51FCFEE7A00504088 /* ADKSettingConfig.plist in Resources */,
+				FFF216F41FCFEE7700504088 /* ADKStoryboard_phone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +400,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF216F91FCFEE8600504088 /* ADKSettingViewController.swift in Sources */,
+				FFF217091FD00D3D00504088 /* ASPTopViewController.swift in Sources */,
 				FFF662871FCFDB97007D30DD /* HPToolKit.xcdatamodeld in Sources */,
-				FFF662811FCFDB97007D30DD /* ViewController.swift in Sources */,
+				FFF216FD1FCFEE9300504088 /* ADKRootViewController.swift in Sources */,
+				FFF216DB1FCFE07C00504088 /* MyNavigationController.swift in Sources */,
+				FFF217031FCFF9D700504088 /* AnwExts.swift in Sources */,
+				FFF217071FCFFB5A00504088 /* ASPParentViewController.swift in Sources */,
 				FFF6627F1FCFDB97007D30DD /* AppDelegate.swift in Sources */,
+				FFF2170F1FD1479300504088 /* ASPDemoTopViewController.swift in Sources */,
+				FFF2170B1FD00D5900504088 /* ASPBottomViewController.swift in Sources */,
+				FFF216FF1FCFEE9A00504088 /* ADKExtension.swift in Sources */,
+				FFF216F61FCFEE7C00504088 /* ADKSettingEventHandler.swift in Sources */,
+				FFF216D81FCFDD6400504088 /* RootViewController.swift in Sources */,
+				FFF216F71FCFEE7F00504088 /* ADKTestViewController.swift in Sources */,
+				FFF216F31FCFEE7100504088 /* ADKTest2ViewController.swift in Sources */,
+				FFF217001FCFEE9C00504088 /* ADKContext.swift in Sources */,
+				FFF217111FD147A100504088 /* ASPDemoBottomViewController.swift in Sources */,
+				FFF216FC1FCFEE9000504088 /* ADKGuideViewController.swift in Sources */,
+				FFF216FE1FCFEE9600504088 /* ADKFloatingButton.swift in Sources */,
+				FFF2170D1FD1477800504088 /* ASPDemoParentViewController.swift in Sources */,
+				FFF216F21FCFEE6D00504088 /* ADKDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
