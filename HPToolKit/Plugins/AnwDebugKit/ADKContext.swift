@@ -14,6 +14,7 @@ enum ADKError : Error {
 }
 
 enum ADKCellType : String {
+    case groupHeader = "ADKCellTypeGroupHeader"
     case plain  = "ADKCellTypePlain"
     case detail = "ADKCellTypeDetail"
     case async  = "ADKCellTypeAsync"
@@ -78,22 +79,44 @@ public struct ADKSettingCellItem {
     var type: ADKCellType?      // ===> cell type
     var defaultValue: String?   // ===> string value of cell default value selector
     var processing = false      // ===> only used for async cell type
-    static func parse(file: String) -> Array<ADKSettingCellItem> {
+    
+    static func parse(file: String) -> (sections: Array<ADKSettingCellItem>, rows: Array<Array<ADKSettingCellItem>>) {
         let path = Bundle.main.path(forResource: file, ofType: "plist")
         assert(path != nil, "config file [\(file)] not found")
-        let rawItems = NSArray.init(contentsOfFile: path!)
-        var items = Array<ADKSettingCellItem>()
+        let rawSections = NSArray.init(contentsOfFile: path!)
         
-        for rawItem in rawItems! {
-            let rawItemInfo: NSDictionary = rawItem as! NSDictionary
-            var item = ADKSettingCellItem()
-            item.title = rawItemInfo["title"] as? String
-            item.action = rawItemInfo["action"] as? String
-            item.type = ADKCellType.init(rawValue: rawItemInfo["type"] as! String)
-            item.defaultValue = rawItemInfo["defaultValue"] as? String
-            items.append(item)
+        guard rawSections != nil else {
+            return ([], [])
         }
-        return items
+        
+        var rows = Array<Array<ADKSettingCellItem>>()
+        var sections = Array<ADKSettingCellItem>()
+        
+        for rawSection in rawSections! {
+            
+            let rawSectionInfo: NSDictionary = rawSection as! NSDictionary
+            var section = ADKSettingCellItem()
+            section.title = rawSectionInfo["title"] as? String
+            section.type = ADKCellType.init(rawValue: rawSectionInfo["type"] as! String)
+            
+            let rawRows: NSArray? = rawSectionInfo["items"] as? NSArray
+            var sectionRows = Array<ADKSettingCellItem>()
+            
+            if rawRows != nil {
+                for rawRow in rawRows! {
+                    let rawRowInfo: NSDictionary = rawRow as! NSDictionary
+                    var item = ADKSettingCellItem()
+                    item.title = rawRowInfo["title"] as? String
+                    item.action = rawRowInfo["action"] as? String
+                    item.type = ADKCellType.init(rawValue: rawRowInfo["type"] as! String)
+                    item.defaultValue = rawRowInfo["defaultValue"] as? String
+                    sectionRows.append(item)
+                }
+            }
+            sections.append(section)
+            rows.append(sectionRows)
+        }
+        return (sections: sections, rows: rows)
     }
 }
 
@@ -189,10 +212,8 @@ public struct ADKDefaultTheme : ADKTheme {
 }
 
 public class ADKContext {
-    
     public static let shared = ADKContext()
-    public var theme = ADKDefaultTheme()
-    public var config = ADKDefaultConfig()
-    
+    public var theme: ADKTheme = ADKDefaultTheme()
+    public var config: ADKConfig = ADKDefaultConfig()
     private init() {}
 }

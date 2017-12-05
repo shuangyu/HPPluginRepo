@@ -8,22 +8,50 @@
 
 import UIKit
 
+public struct MyTheme : ADKTheme {
+    
+    public var description: String {
+        return "MyTheme"
+    }
+    public var mainColor: UIColor {
+        return UIColor.init(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+    }
+    public var fontColor: UIColor {
+        return UIColor.white
+    }
+    public var floatingButtonSize: CGSize {
+        return CGSize.init(width: 60, height: 60)
+    }
+    public var floationButtonColor: UIColor {
+        return UIColor.green
+    }
+    public var floatingButtonText: String {
+        return NSLocalizedString("MyButton", comment: self.description)
+    }
+    public var floationButtonTextColor: UIColor {
+        return UIColor.yellow
+    }
+    public var floationButtonFontSize: CGFloat {
+        return 14.0
+    }
+}
+
 class RootViewController: UITableViewController {
 
-//    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo"]
-    private let dataSource = ["Debug Kit Demo"];
+    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo"]
     private let segueIDs = ["openDebugKitPage", "openSlidePluginPage"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // init event handler for ADK Demo
+        // Important! : init event handler for ADK Demo
         ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler.init())
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        // user self-defined thems for debug kit
+        if !appSettings.ADKUserDefaultTheme {
+            ADKContext.shared.theme = MyTheme()
+        } else {
+            ADKContext.shared.theme = ADKDefaultTheme()
+        }
+        
     }
 
     // MARK: - Table view data source

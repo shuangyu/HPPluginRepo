@@ -18,7 +18,6 @@ public class ADKSettingCellEventCenter {
     
     public static func register(eventHandler : NSObject) {
         
-        
         for handler in _eventHandlers {
             if type(of: handler) === type(of: eventHandler) {
                 return
@@ -70,7 +69,6 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
         } else if let control = sender as? UISlider {
             value = NSNumber.init(value: control.value)
         }
-        
         ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem!.action!, params: value)
     }
     
@@ -124,7 +122,8 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
 
 class ADKSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let config = ADKContext.shared.config
-    private lazy var items: Array<ADKSettingCellItem> = ADKSettingCellItem.parse(file: config.settingPageConfigFileName)
+    private lazy var items: (sections: Array<ADKSettingCellItem>, rows: Array<Array<ADKSettingCellItem>>) = ADKSettingCellItem.parse(file: config.settingPageConfigFileName)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -142,15 +141,23 @@ class ADKSettingViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return items.sections.count
     }
-     
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = items.sections[section]
+        return section.title
+    }
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        let rows = items.rows
+        return rows[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
+        let rows = items.rows[indexPath.section]
+        let item = rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: item.type!.rawValue) as! ADKSettingCell
         cell.configCell(with: item)
         return cell

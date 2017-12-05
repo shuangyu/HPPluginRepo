@@ -9,8 +9,16 @@
 import UIKit
 
 public struct ASPAnimationConfig {
-    var translationRatio: Float = 0.8
-    var scaleRatio: Float = 0.2
+    // max slide distance will be calculated by translationRatio * viewWidth
+    var translationRatio: Float
+    // if scale ratio is equal to zero, view won't be scaled while sliding
+    // else view will be minimally scaled to 1 - scaleRatio
+    var scaleRatio: Float
+    
+    init(translationRatio: Float = 0.8, scaleRatio: Float = 0.0) {
+        self.translationRatio = translationRatio
+        self.scaleRatio = scaleRatio
+    }
 }
 
 public protocol ASPSlideProtocol {
@@ -23,8 +31,10 @@ class ASPEmptySegue: UIStoryboardSegue {
 }
 
 class ASPParentViewController: UIViewController {
-
-    open var config = ASPAnimationConfig()
+    
+    open var config: ASPAnimationConfig {
+        return ASPAnimationConfig()
+    }
     open var topViewController: ASPTopViewController? {
         return nil
     }

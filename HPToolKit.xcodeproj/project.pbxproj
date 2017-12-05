@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFA3CB011FD698AF00FD8485 /* DemoAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3CB001FD698AF00FD8485 /* DemoAppSettings.swift */; };
 		FFF216D81FCFDD6400504088 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216D71FCFDD6400504088 /* RootViewController.swift */; };
 		FFF216DB1FCFE07C00504088 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216DA1FCFE07C00504088 /* MyNavigationController.swift */; };
 		FFF216F21FCFEE6D00504088 /* ADKDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF216EB1FCFED5600504088 /* ADKDemoViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FFA3CB001FD698AF00FD8485 /* DemoAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppSettings.swift; sourceTree = "<group>"; };
 		FFF216D71FCFDD6400504088 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		FFF216DA1FCFE07C00504088 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		FFF216E11FCFECCE00504088 /* ADKSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKSettingViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		FFF216DC1FCFE3E400504088 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				FFA3CB001FD698AF00FD8485 /* DemoAppSettings.swift */,
 				FFF217041FCFFB0C00504088 /* SlidePluginDemo */,
 				FFF216EA1FCFED5600504088 /* DebugKitDemo */,
 			);
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA3CB011FD698AF00FD8485 /* DemoAppSettings.swift in Sources */,
 				FFF216F91FCFEE8600504088 /* ADKSettingViewController.swift in Sources */,
 				FFF217091FD00D3D00504088 /* ASPTopViewController.swift in Sources */,
 				FFF662871FCFDB97007D30DD /* HPToolKit.xcdatamodeld in Sources */,

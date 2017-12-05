@@ -81,3 +81,15 @@ public extension NSObject {
         return NSStringFromClass(self as! AnyClass).components(separatedBy: ".").last!
     }
 }
+
+public extension Float {
+    public static var random099: Float {
+        return Float(arc4random()%100)/100.0
+    }
+}
+
+public extension UIColor {
+    public static var randomColor: UIColor {
+        return UIColor.init(red: CGFloat(Float.random099), green: CGFloat(Float.random099), blue: CGFloat(Float.random099), alpha: 1.0)
+    }
+}

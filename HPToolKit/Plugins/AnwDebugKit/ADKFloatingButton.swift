@@ -21,11 +21,12 @@ public class ADKFloatingButton: UIWindow {
         }
     }
     
+    public var isShow = false
+    
     static let sharedInstance = ADKFloatingButton(frame: UIScreen.main.bounds)
     static let holdOnDuration: TimeInterval = 10.0
     private var activeTime: NSDate?
     private var panCenter: CGPoint?
-    private var isShow = false
     private var isExpand = false
     private let control = UILabel.init(frame: CGRect.init(origin: CGPoint.zero, size: ADKContext.shared.theme.floatingButtonSize))
     private let theme = ADKContext.shared.theme
@@ -43,6 +44,7 @@ public class ADKFloatingButton: UIWindow {
         control.textColor = theme.floationButtonTextColor
         control.font = UIFont.boldSystemFont(ofSize: theme.floationButtonFontSize)
         control.layer.cornerRadius = theme.floatingButtonSize.width * 0.5
+        control.adjustsFontSizeToFitWidth = true
         control.clipsToBounds = true
         self.addSubview(control)
         

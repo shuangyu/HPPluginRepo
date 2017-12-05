@@ -10,6 +10,13 @@ import UIKit
 
 class ASPDemoParentViewController: ASPParentViewController {
     
+    override var config: ASPAnimationConfig {
+        return ASPAnimationConfig.init(scaleRatio: appSettings.ASPScaleRatio)
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     private var _topViewController: ASPTopViewController?
     private var _bottomViewController: ASPBottomViewController?
     

@@ -10,15 +10,17 @@ import UIKit
 
 class ASPDemoTopViewController: ASPTopViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = UIColor.randomColor
+    }
+
+    @IBAction func dismissBtnClicked(_ sender: Any) {
+        self.parent?.dismiss(animated: true, completion: nil)
+    }
 }
