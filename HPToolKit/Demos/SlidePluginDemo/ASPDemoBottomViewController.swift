@@ -25,5 +25,8 @@ class ASPDemoBottomViewController: ASPBottomViewController, UITableViewDelegate,
         return cell!
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.asp_send(indexPath.row)
+        self.dismiss(nil)
+    }
 }

@@ -14,7 +14,6 @@ public struct ASPAnimationConfig {
     // if scale ratio is equal to zero, view won't be scaled while sliding
     // else view will be minimally scaled to 1 - scaleRatio
     var scaleRatio: Float
-    
     init(translationRatio: Float = 0.8, scaleRatio: Float = 0.0) {
         self.translationRatio = translationRatio
         self.scaleRatio = scaleRatio
@@ -59,6 +58,9 @@ class ASPParentViewController: UIViewController {
         
         self.quickAdd(childViewController: bottomViewController!)
         self.quickAdd(childViewController: topViewController!)
+        
+        topViewController?.asp_add(observer: bottomViewController)
+        bottomViewController?.asp_add(observer: topViewController)
     }
     
     @objc
@@ -102,5 +104,10 @@ class ASPParentViewController: UIViewController {
                 
             })
         }
+    }
+    
+    deinit {
+        self.quickRemove(childViewController: self.topViewController!)
+        self.quickRemove(childViewController: self.bottomViewController!)
     }
 }

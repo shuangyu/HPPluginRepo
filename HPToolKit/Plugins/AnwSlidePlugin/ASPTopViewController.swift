@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ASPTopViewController: UIViewController, ASPSlideProtocol {
+class ASPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver
+{
 
     private var maskView: UIView?
     public var parentController: ASPParentViewController {
@@ -42,7 +43,7 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol {
         parentController.update(UIGestureRecognizerState.ended, with: 1.0)
     }
     
-    public func sliding(with ratio: Float) {
+    open func sliding(with ratio: Float) {
     
         let translationRatio = parentController.config.translationRatio
         let scaleRatio = parentController.config.scaleRatio
@@ -53,7 +54,7 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol {
         self.view.transform = t.concatenating(s)
     }
     
-    public func finishSliding(with ratio: Float, completion block: @escaping ((Bool) -> Void)) {
+    open func finishSliding(with ratio: Float, completion block: @escaping ((Bool) -> Void)) {
         
         let _ratio = ratio >= 0.5 ? 1.0 : 0.0
         
@@ -95,6 +96,11 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol {
     @objc
     private func handleTapGesture(_ sender: UIPanGestureRecognizer) {
         parentController.update(sender.state, with: 0.0)
+    }
+    
+    // MARK: - ASPMessageSender
+    open func asp_recevice(_ message: Any) {
+        
     }
 
 }

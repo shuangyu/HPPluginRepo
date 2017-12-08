@@ -11,6 +11,7 @@ import UIKit
 class ASPDemoTopViewController: ASPTopViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var menuBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,16 @@ class ASPDemoTopViewController: ASPTopViewController {
         self.view.backgroundColor = UIColor.randomColor
     }
 
-    @IBAction func dismissBtnClicked(_ sender: Any) {
+    @IBAction func dismissBtnClicked(_ sender: Any?) {
         self.parent?.dismiss(animated: true, completion: nil)
+    }
+
+    override func sliding(with ratio: Float) {
+        super.sliding(with: ratio)
+        menuBtn.alpha = CGFloat(1 - ratio)
+    }
+    
+    override func asp_recevice(_ message: Any) {
+        self.titleLabel.text = "item(\(message))"
     }
 }

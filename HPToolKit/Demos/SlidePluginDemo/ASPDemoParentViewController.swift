@@ -10,16 +10,12 @@ import UIKit
 
 class ASPDemoParentViewController: ASPParentViewController {
     
+    weak private var _topViewController: ASPTopViewController?
+    weak private var _bottomViewController: ASPBottomViewController?
+    
     override var config: ASPAnimationConfig {
         return ASPAnimationConfig.init(scaleRatio: appSettings.ASPScaleRatio)
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
-    
-    private var _topViewController: ASPTopViewController?
-    private var _bottomViewController: ASPBottomViewController?
-    
     override var topViewController: ASPTopViewController? {
         
         if _topViewController == nil {
@@ -27,22 +23,18 @@ class ASPDemoParentViewController: ASPParentViewController {
         }
         return _topViewController
     }
-    
     override var bottomViewController: ASPBottomViewController? {
         if _bottomViewController == nil {
             _bottomViewController = ASPDemoBottomViewController.loadFromStoryboard() as? ASPBottomViewController
         }
         return _bottomViewController
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

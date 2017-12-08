@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ASPBottomViewController: UIViewController, ASPSlideProtocol {
+class ASPBottomViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver {
 
     private var maskView: UIView?
     private var parentController: ASPParentViewController {
@@ -41,11 +41,12 @@ class ASPBottomViewController: UIViewController, ASPSlideProtocol {
         print("\(#function)")
     }
     
-    @IBAction func dismiss(_ sender: UIButton) {
+    @IBAction func dismiss(_ sender: Any?) {
         parentController.update(UIGestureRecognizerState.ended, with: 0.0)
     }
     
-    public func sliding(with ratio: Float) {
+    // MARK: - ASPSlideProtocol
+    open func sliding(with ratio: Float) {
         if maskView == nil {
             maskView = UIView.init(frame: self.view.bounds)
             maskView!.backgroundColor = UIColor.black
@@ -66,7 +67,7 @@ class ASPBottomViewController: UIViewController, ASPSlideProtocol {
         currentRatio = ratio
     }
     
-    public func finishSliding(with ratio: Float, completion block: @escaping ((Bool) -> Void)) {
+    open func finishSliding(with ratio: Float, completion block: @escaping ((Bool) -> Void)) {
         let _ratio: Float = ratio >= 0.5 ? 1.0 : 0.0
         
         // if this animation is triggered by a tap gestrue,
@@ -86,5 +87,9 @@ class ASPBottomViewController: UIViewController, ASPSlideProtocol {
             block(_ratio > 0.0)
         }
     }
-
+    
+    // MARK: - ASPMessageSender
+    open func asp_recevice(_ message: Any) {
+        
+    }
 }
