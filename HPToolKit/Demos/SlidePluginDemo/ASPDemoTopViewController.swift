@@ -10,8 +10,8 @@ import UIKit
 
 class ASPDemoTopViewController: ASPTopViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var menuBtn: UIButton!    
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,6 @@ class ASPDemoTopViewController: ASPTopViewController {
     }
     
     override func asp_recevice(_ message: Any) {
-        self.titleLabel.text = "item(\(message))"
+        self.label.text = "item(\(message))"
     }
 }

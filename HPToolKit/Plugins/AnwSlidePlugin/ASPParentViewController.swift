@@ -59,8 +59,8 @@ class ASPParentViewController: UIViewController {
         self.quickAdd(childViewController: bottomViewController!)
         self.quickAdd(childViewController: topViewController!)
         
-        topViewController?.asp_add(observer: bottomViewController)
-        bottomViewController?.asp_add(observer: topViewController)
+        topViewController?.asp_add(receiver: bottomViewController!)
+        bottomViewController?.asp_add(receiver: topViewController!)
     }
     
     @objc

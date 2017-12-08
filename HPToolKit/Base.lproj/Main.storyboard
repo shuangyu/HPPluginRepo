@@ -118,23 +118,31 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="ubO-zp-6UQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-wj-CBz">
+                                <rect key="frame" x="160" y="329.5" width="56" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="0.26292782738095233" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ghq-wj-CBz" firstAttribute="centerY" secondItem="7VY-dS-UTg" secondAttribute="centerY" id="7gN-UU-RDh"/>
                             <constraint firstItem="F1N-Yh-pTt" firstAttribute="trailing" secondItem="7VY-dS-UTg" secondAttribute="trailing" id="CoI-x7-uFD"/>
                             <constraint firstItem="F1N-Yh-pTt" firstAttribute="top" secondItem="lRV-hl-6Sb" secondAttribute="top" id="fhg-8o-gwv"/>
+                            <constraint firstItem="ghq-wj-CBz" firstAttribute="centerX" secondItem="7VY-dS-UTg" secondAttribute="centerX" id="gr8-FE-Z0G"/>
                             <constraint firstItem="F1N-Yh-pTt" firstAttribute="leading" secondItem="7VY-dS-UTg" secondAttribute="leading" id="oiX-Ha-1wN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7VY-dS-UTg"/>
                     </view>
                     <connections>
+                        <outlet property="label" destination="ghq-wj-CBz" id="AeG-VZ-tp3"/>
                         <outlet property="menuBtn" destination="P8O-9q-wPO" id="wOS-iN-JrL"/>
-                        <outlet property="titleLabel" destination="5MZ-is-zoQ" id="jMi-ZV-ZfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRv-Zm-YOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593" y="762"/>
+            <point key="canvasLocation" x="2592.8000000000002" y="761.46926536731644"/>
         </scene>
         <!--Demo Bottom View Controller-->
         <scene sceneID="Teg-9W-wrN">
