@@ -28,16 +28,18 @@ public class ADKFloatingButton: UIWindow {
     private var activeTime: NSDate?
     private var panCenter: CGPoint?
     private var isExpand = false
-    private let control = UILabel.init(frame: CGRect.init(origin: CGPoint.zero, size: ADKContext.shared.theme.floatingButtonSize))
+    private let control: UILabel = UILabel.init()
     private let theme = ADKContext.shared.theme
     private let config = ADKContext.shared.config
     
     private let placeHolder = ADKPlaceHolderViewController.init()
 
     private override init(frame: CGRect) {
+    
         super.init(frame: frame)
-      
+        let insets = self.safeAreaInsets
         // init floating button
+        control.frame = CGRect.init(origin: CGPoint.init(x: insets.left, y: insets.top), size: ADKContext.shared.theme.floatingButtonSize)
         control.backgroundColor = theme.floationButtonColor
         control.text = theme.floatingButtonText
         control.textAlignment = NSTextAlignment.center

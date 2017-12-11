@@ -38,8 +38,8 @@ public struct MyTheme : ADKTheme {
 
 class RootViewController: UITableViewController {
 
-    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo"]
-    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage"]
+    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo", "Calendar Demo"]
+    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage", "openCalendarDemoPage"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,6 @@ class RootViewController: UITableViewController {
         } else {
             ADKContext.shared.theme = ADKDefaultTheme()
         }
-        
     }
 
     // MARK: - Table view data source
