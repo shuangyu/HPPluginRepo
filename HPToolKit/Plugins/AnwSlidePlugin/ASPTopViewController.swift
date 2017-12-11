@@ -39,7 +39,7 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiv
         print("\(#function)")
     }
     
-    @IBAction func slideOut(_ sender: UIButton) {
+    @IBAction func slideOut(_ sender: Any?) {
         parentController.update(UIGestureRecognizerState.ended, with: 1.0)
     }
     
