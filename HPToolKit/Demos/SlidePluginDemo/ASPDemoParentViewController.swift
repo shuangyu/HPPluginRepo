@@ -10,8 +10,6 @@ import UIKit
 
 class ASPDemoParentViewController: ASPParentViewController {
     
-    @IBOutlet weak var menuBtn: UIBarButtonItem!
-    
     weak private var _topViewController: ASPTopViewController?
     weak private var _bottomViewController: ASPBottomViewController?
     
@@ -38,12 +36,5 @@ class ASPDemoParentViewController: ASPParentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func dismissBtnClicked(_ sender: Any?) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func menuBtnClicked(_ sender: Any?) {
-        self.topViewController?.slideOut(nil)
     }
 }

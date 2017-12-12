@@ -13,11 +13,6 @@ class ASPDemoBottomViewController: ASPBottomViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.parent?.title = "Menu"
-    }
 
     // MARK: - table view delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
