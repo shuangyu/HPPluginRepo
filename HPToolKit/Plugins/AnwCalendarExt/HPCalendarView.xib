@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HPCalendarView" customModule="HPToolKit" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="HPCalendarView" customModule="HPToolKit" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -37,10 +36,16 @@
                                 <constraint firstAttribute="height" constant="44" id="c8C-pi-tFI"/>
                             </constraints>
                             <state key="normal" image="calendar_back"/>
+                            <connections>
+                                <action selector="preBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="OnH-fP-Kpi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-tF-lWc">
                             <rect key="frame" x="315" y="3" width="44" height="44"/>
                             <state key="normal" image="calendar_forward"/>
+                            <connections>
+                                <action selector="nextBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="3b9-9V-F7N"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,22 +145,29 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewLayout key="collectionViewLayout" id="xhU-B0-kIU" customClass="HPCalendarHorizontalLayout" customModule="HPToolKit" customModuleProvider="target"/>
                     <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="3hO-cI-KT9"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="3pN-Ns-jrQ"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="0.093946196139999993" green="0.34905055169999999" blue="0.61952835319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="h7n-qL-Cfh" firstAttribute="leading" secondItem="RvP-yu-Cj7" secondAttribute="leading" id="13U-0V-nc1"/>
                 <constraint firstItem="RvP-yu-Cj7" firstAttribute="leading" secondItem="ZV5-BK-x6C" secondAttribute="leading" id="4IN-cE-870"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="ZV5-BK-x6C" secondAttribute="top" constant="20" id="LdM-mz-eZx"/>
+                <constraint firstAttribute="top" secondItem="ZV5-BK-x6C" secondAttribute="top" id="LdM-mz-eZx"/>
                 <constraint firstItem="RvP-yu-Cj7" firstAttribute="top" secondItem="ZV5-BK-x6C" secondAttribute="bottom" id="NWr-oB-8Qf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZV5-BK-x6C" secondAttribute="trailing" id="Nku-bo-9wD"/>
+                <constraint firstAttribute="trailing" secondItem="ZV5-BK-x6C" secondAttribute="trailing" id="Nku-bo-9wD"/>
                 <constraint firstItem="h7n-qL-Cfh" firstAttribute="top" secondItem="RvP-yu-Cj7" secondAttribute="bottom" id="PBD-ij-MHM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="h7n-qL-Cfh" secondAttribute="bottom" id="aQC-GS-uX3"/>
+                <constraint firstAttribute="bottom" secondItem="h7n-qL-Cfh" secondAttribute="bottom" id="aQC-GS-uX3"/>
                 <constraint firstItem="h7n-qL-Cfh" firstAttribute="trailing" secondItem="RvP-yu-Cj7" secondAttribute="trailing" id="fRr-0d-NM1"/>
                 <constraint firstItem="RvP-yu-Cj7" firstAttribute="trailing" secondItem="ZV5-BK-x6C" secondAttribute="trailing" id="mMH-aN-k4b"/>
-                <constraint firstItem="ZV5-BK-x6C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wXs-dg-71N"/>
+                <constraint firstItem="ZV5-BK-x6C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wXs-dg-71N"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="h7n-qL-Cfh" id="b0S-fq-wNA"/>
+                <outlet property="titleLabel" destination="3OG-rj-P14" id="WKs-GZ-BWC"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>

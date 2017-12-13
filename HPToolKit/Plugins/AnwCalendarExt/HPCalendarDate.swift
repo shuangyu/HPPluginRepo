@@ -18,10 +18,12 @@ typealias HPCalMonth = Int
 typealias HPCalDay = Int
 typealias HPCalWeekDay = Int
 
-let kHPCalMonthLengths = [31,29,31,30,31,30,31,31,30,31,30,31]
-let kHPCalLeapMonthLengths = [31,28,31,30,31,30,31,31,30,31,30,31]
+let kHPCalMonthLengths = [31,28,31,30,31,30,31,31,30,31,30,31]
+let kHPCalLeapMonthLengths = [31,29,31,30,31,30,31,31,30,31,30,31]
+let kHPCalMonthName = ["January","February","March","April","May","Jun","July","August","September","October","November","December"]
+let kHPCalMonthShortName = ["Jan.","Feb.","Mar.","Apr.","May","Jun","July","Agu.","Sept.","Oct.","Nov.","Dec."]
 
-enum HPCalError: Error {
+enum HPCalendarError: Error {
     case invalidParameter
 }
 
@@ -63,15 +65,16 @@ struct HPMonth {
     let length: Int
     let startWeekDay: HPCalWeekDay
     let endWeekDay: HPCalWeekDay
+    var days: [String] = []
     
-    init() throws {
-        try self.init(year:HPCalDate.today.year, month: HPCalDate.today.month)
+    var name: String {
+        return "\(kHPCalMonthName[month - 1]) \(year)"
     }
-    init(month: HPCalMonth) throws {
-        try self.init(year:HPCalDate.today.year, month: month)
+    var shortName: String {
+        return "\(kHPCalMonthShortName[month - 1]) \(year)"
     }
-    
-    init(year: HPCalYear, month: HPCalMonth) throws {
+
+    init(year: HPCalYear=HPCalDate.today.year, month: HPCalMonth=HPCalDate.today.month) throws {
         
         self.year = year
         self.month = month
@@ -85,17 +88,33 @@ struct HPMonth {
         let startDate = formatter.date(from: startDateStr)
         
         guard let unwrappedStartDate = startDate else {
-            throw HPCalError.invalidParameter
+            throw HPCalendarError.invalidParameter
         }
         
-        self.length = year.isLeapYear ? kHPCalLeapMonthLengths[month] : kHPCalMonthLengths[month]
+        self.length = year.isLeapYear ? kHPCalLeapMonthLengths[month-1] : kHPCalMonthLengths[month-1]
         
         let endDateStr = "\(year)-\(monthStr)-\(self.length)"
         let endDate: HPCalDate! = formatter.date(from: endDateStr)!
         
         self.startWeekDay = unwrappedStartDate.weekDay
         self.endWeekDay = endDate.weekDay
-        self.lengthIncludePadding = self.length + (self.startWeekDay - 1) + (7 - self.endWeekDay)
+        
+        let preOffset = (self.startWeekDay - 1)
+        let sufOffset = (7 - self.endWeekDay)
+        
+        self.lengthIncludePadding = self.length + preOffset + sufOffset
+        
+        for _ in 0..<preOffset {
+            days.append("")
+        }
+        
+        for i in 0..<length {
+            days.append("\(i+1)")
+        }
+        
+        for _ in 0..<sufOffset {
+            days.append("")
+        }
     }
     
     func nextMonth() throws -> HPMonth {

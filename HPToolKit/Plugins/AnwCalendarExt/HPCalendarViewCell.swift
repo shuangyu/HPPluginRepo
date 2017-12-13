@@ -9,6 +9,7 @@
 import UIKit
 
 class HPCalendarViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

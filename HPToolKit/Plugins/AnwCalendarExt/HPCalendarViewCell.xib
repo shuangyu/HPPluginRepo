@@ -34,11 +34,8 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="mkT-8F-Co2" secondAttribute="bottom" id="jRs-IJ-PZa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="title" value="90"/>
-            </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="titleLabel" destination="mkT-8F-Co2" id="yOL-RQ-5c9"/>
+                <outlet property="titleLabel" destination="mkT-8F-Co2" id="xa9-mE-rET"/>
             </connections>
         </collectionViewCell>
     </objects>

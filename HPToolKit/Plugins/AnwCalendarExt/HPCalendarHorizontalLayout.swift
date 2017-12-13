@@ -11,26 +11,21 @@ import UIKit
 class HPCalendarHorizontalLayout: UICollectionViewLayout {
     
     private var contentSize: CGSize?
-    private var itemSize: CGSize
-//    private var preloadSectionCount: Int = 2
+    private var itemSize: CGSize?
     private var w: CGFloat = 0
     private var h: CGFloat = 0
-//
-    init(itemHeight: Int, preloadSectionCount: Int = 2) {
+
+    init(itemHeight: Int) {
         self.itemSize = CGSize.init(width: 0, height: CGFloat(itemHeight))
-//        self.preloadSectionCount = preloadSectionCount
         super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.itemSize = aDecoder.value(forKey: "itemSize") as! CGSize
-//        self.preloadSectionCount = aDecoder.value(forKey: "preloadSectionCount") as! Int
         super.init(coder: aDecoder)
     }
     
     override func prepare() {
         super.prepare()
-        
         guard let unwrappedView = self.collectionView else {
             return
         }
@@ -39,7 +34,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
         let sectionCount = unwrappedView.numberOfSections
         
         let itemWidth = w/7
-        itemSize.width = itemWidth
+        itemSize!.width = itemWidth
         let contentWidth = w * CGFloat(sectionCount)
         
         contentSize = CGSize.init(width: contentWidth, height: h)
@@ -56,10 +51,36 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
         let item = indexPath.item
         let row: Int = item/7
         let column: Int = item%7
-        let offsetX = CGFloat(section) * w + CGFloat(column) * itemSize.width
-        let offsetY = CGFloat(row) * itemSize.height
+        let offsetX = CGFloat(section) * w + CGFloat(column) * itemSize!.width
+        let offsetY = CGFloat(row) * itemSize!.height
         
-        attrs.frame = CGRect.init(x: offsetX, y: offsetY, width: itemSize.width, height: itemSize.height)
+        attrs.frame = CGRect.init(x: offsetX, y: offsetY, width: itemSize!.width, height: itemSize!.height)
+        return attrs
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        
+        let a: Int = Int(rect.minX/w)
+        let b: Int = Int(rect.maxX/w)
+        
+        var attrs: [UICollectionViewLayoutAttributes] = []
+        
+        for section in a...b {
+            
+            if section < 0 {
+                continue
+            }
+            
+            guard section < self.collectionView!.numberOfSections else {
+                return attrs
+            }
+            
+            let itemsCount = self.collectionView!.numberOfItems(inSection: section)
+            for item in 0..<itemsCount {
+                let attr = layoutAttributesForItem(at: IndexPath.init(item: item, section: section))
+                attrs.append(attr!)
+            }
+        }
         return attrs
     }
 }
