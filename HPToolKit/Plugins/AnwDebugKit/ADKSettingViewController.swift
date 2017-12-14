@@ -82,6 +82,11 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
             titleLabel.text = cellItem.title
         }
         switch cellItem.type! {
+        case .plain:
+            if cellItem.defaultValue != nil {
+                let title =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! String
+                titleLabel.text = title
+            }
         case .inputValue:
             let placeHolder =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! String
             textField.text = placeHolder

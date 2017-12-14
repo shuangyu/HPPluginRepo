@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF01BA671FE2531D00B6B217 /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01BA661FE2531D00B6B217 /* HPPasswordView.swift */; };
 		FF74CEA81FDA7CD2002C1077 /* ASPMessageBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74CEA71FDA7CD2002C1077 /* ASPMessageBridge.swift */; };
 		FF74CEAF1FDE618F002C1077 /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74CEAE1FDE618F002C1077 /* HPCalendarDate.swift */; };
 		FFA3CB011FD698AF00FD8485 /* DemoAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3CB001FD698AF00FD8485 /* DemoAppSettings.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF01BA661FE2531D00B6B217 /* HPPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPPasswordView.swift; sourceTree = "<group>"; };
 		FF74CEA71FDA7CD2002C1077 /* ASPMessageBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPMessageBridge.swift; sourceTree = "<group>"; };
 		FF74CEAE1FDE618F002C1077 /* HPCalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
 		FFA3CB001FD698AF00FD8485 /* DemoAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppSettings.swift; sourceTree = "<group>"; };
@@ -142,6 +144,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF01BA641FE2517900B6B217 /* AnwPasswordPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				FF01BA661FE2531D00B6B217 /* HPPasswordView.swift */,
+				FF01BA651FE2517900B6B217 /* BuildInViews */,
+			);
+			path = AnwPasswordPlugin;
+			sourceTree = "<group>";
+		};
+		FF01BA651FE2517900B6B217 /* BuildInViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BuildInViews;
+			sourceTree = "<group>";
+		};
 		FF74CEAD1FDE6151002C1077 /* AnwCalendarExt */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +196,7 @@
 		FFF216DD1FCFE3E500504088 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				FF01BA641FE2517900B6B217 /* AnwPasswordPlugin */,
 				FF74CEAD1FDE6151002C1077 /* AnwCalendarExt */,
 				FFF217051FCFFB2C00504088 /* AnwSlidePlugin */,
 				FFF216E01FCFECCE00504088 /* AnwDebugKit */,
@@ -457,6 +476,7 @@
 				FFF216FD1FCFEE9300504088 /* ADKRootViewController.swift in Sources */,
 				FFF216DB1FCFE07C00504088 /* MyNavigationController.swift in Sources */,
 				FFF217031FCFF9D700504088 /* AnwExts.swift in Sources */,
+				FF01BA671FE2531D00B6B217 /* HPPasswordView.swift in Sources */,
 				FFF217071FCFFB5A00504088 /* ASPParentViewController.swift in Sources */,
 				FFF6627F1FCFDB97007D30DD /* AppDelegate.swift in Sources */,
 				FFF2170F1FD1479300504088 /* ASPDemoTopViewController.swift in Sources */,

@@ -26,10 +26,13 @@ class HPCalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     private var selectedIndex: Int = 1
     
     @IBAction func nextBtnClicked(_ sender: Any) {
+        
+        scroll(to: selectedIndex + 1, animated: true)
         selectMonth(at: selectedIndex + 1, animated: true)
         
     }
     @IBAction func preBtnClicked(_ sender: Any) {
+        scroll(to: selectedIndex - 1, animated: true)
         selectMonth(at: selectedIndex - 1, animated: true)
     }
    
@@ -46,7 +49,11 @@ class HPCalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     @objc
     private func scrollToSelectedMonth(animated: Bool = false) {
-        collectionView.scrollToItem(at: IndexPath.init(item: 0, section: selectedIndex), at: UICollectionViewScrollPosition.left, animated: animated)
+        scroll(to: selectedIndex, animated: animated)
+    }
+    
+    private func scroll(to section: Int, animated: Bool) {
+        collectionView.scrollToItem(at: IndexPath.init(item: 0, section: section), at: UICollectionViewScrollPosition.left, animated: animated)
     }
     
     private func selectMonth(at index: Int, animated: Bool = false) {
