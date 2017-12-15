@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public extension CGPoint {
-
     public func add(_ point: CGPoint) -> CGPoint {
         return CGPoint.init(x: self.x + point.x, y: self.y + point.y)
     }
@@ -27,6 +26,16 @@ public extension CGPoint {
         y = max(y, bound.minY)
         y = min(y, bound.maxY)
         return CGPoint.init(x: x, y: y)
+    }
+}
+
+public extension CGRect {
+    public static func rectOfCircle(center:CGPoint, radius: CGFloat) -> CGRect {
+        return CGRect.init(x: center.x - radius, y: center.y - radius, width: 2 * radius, height: 2 * radius)
+    }
+    
+    public var center: CGPoint {
+        return CGPoint.init(x: self.width/2.0 + self.origin.x, y: self.height/2.0 + self.origin.y)
     }
 }
 
@@ -91,5 +100,11 @@ public extension Float {
 public extension UIColor {
     public static var randomColor: UIColor {
         return UIColor.init(red: CGFloat(Float.random099), green: CGFloat(Float.random099), blue: CGFloat(Float.random099), alpha: 1.0)
+    }
+    public static func color01(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
+        return UIColor.init(red: tuple.r, green: tuple.g, blue: tuple.b, alpha: tuple.a)
+    }
+    public static func color255(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
+        return UIColor.init(red: tuple.r/255.0, green: tuple.g/255.0, blue: tuple.b/255.0, alpha: tuple.a)
     }
 }

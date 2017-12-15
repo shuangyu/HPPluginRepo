@@ -38,8 +38,8 @@ public struct MyTheme : ADKTheme {
 
 class RootViewController: UITableViewController {
 
-    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo", "Calendar Demo"]
-    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage", "openCalendarDemoPage"]
+    private let dataSource = ["Debug Kit Demo", "Slide Plugin Demo", "Calendar Demo", "Password Plugin Demo"]
+    private let segueIDs = ["openDebugKitPage", "openSlidePluginPage", "openCalendarDemoPage", "openPasswordPluginPage"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

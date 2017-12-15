@@ -42,6 +42,7 @@
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
                         <segue destination="Tml-6i-AbN" kind="show" identifier="openCalendarDemoPage" id="IRc-id-AzF"/>
+                        <segue destination="C0U-sk-lL2" kind="show" identifier="openPasswordPluginPage" id="Tej-PA-lFT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQl-UO-jMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +82,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FO-Mh-zkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.6" y="1197.7511244377813"/>
+        </scene>
+        <!--Anw Password Demo View Controller-->
+        <scene sceneID="r0h-Eg-egK">
+            <objects>
+                <viewController id="C0U-sk-lL2" customClass="AnwPasswordDemoViewController" customModule="HPToolKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q5G-jS-CgU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5kj-kO-UTN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpR-Jn-hB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="1198"/>
         </scene>
         <!--Demo Top View Controller-->
         <scene sceneID="ZID-eS-w1G">
