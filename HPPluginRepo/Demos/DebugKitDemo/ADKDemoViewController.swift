@@ -15,7 +15,7 @@ class ADKDemoViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Debug Kit Demo"
         
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tap(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
         self.view.addGestureRecognizer(tap)
     }
 

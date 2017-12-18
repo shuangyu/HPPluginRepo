@@ -46,7 +46,7 @@ class ASPParentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        edgePan = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(handleEdgePan(_:)))
+        edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleEdgePan(_:)))
         edgePan!.edges = UIRectEdge.left
         self.view.addGestureRecognizer(edgePan!)
         

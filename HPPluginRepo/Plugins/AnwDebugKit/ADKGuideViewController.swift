@@ -28,7 +28,7 @@ class ADKGuideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let guideFilePath = Bundle.main.path(forResource: "guide", ofType: "html")
-        let htmlStr = try! String.init(contentsOfFile: guideFilePath!)
+        let htmlStr = try! String(contentsOfFile: guideFilePath!)
         webview.loadHTMLString(htmlStr, baseURL: nil)
     }
 }

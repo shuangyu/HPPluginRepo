@@ -22,7 +22,7 @@ class HPCalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
            return _dataSource!
         }
     }
-    private var selectedMonth: HPMonth = try! HPMonth.init()
+    private var selectedMonth: HPMonth = try! HPMonth()
     private var selectedIndex: Int = 1
     
     @IBAction func nextBtnClicked(_ sender: Any) {
@@ -37,9 +37,9 @@ class HPCalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
    
     override func awakeFromNib() {
-        let layout = HPCalendarHorizontalLayout.init(itemHeight: 40)
+        let layout = HPCalendarHorizontalLayout(itemHeight: 40)
         collectionView.collectionViewLayout = layout
-        let cell = UINib.init(nibName: "HPCalendarViewCell", bundle: nil)
+        let cell = UINib(nibName: "HPCalendarViewCell", bundle: nil)
         collectionView.register(cell, forCellWithReuseIdentifier: "cell")
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
@@ -53,7 +53,7 @@ class HPCalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     private func scroll(to section: Int, animated: Bool) {
-        collectionView.scrollToItem(at: IndexPath.init(item: 0, section: section), at: UICollectionViewScrollPosition.left, animated: animated)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: section), at: UICollectionViewScrollPosition.left, animated: animated)
     }
     
     private func selectMonth(at index: Int, animated: Bool = false) {

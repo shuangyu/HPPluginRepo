@@ -39,7 +39,7 @@ public struct ADKRootCellItem {
             let controllerClz = clz as! UIViewController.Type
             return controllerClz.init()
         } else if controllerID != nil {
-            let sb = UIStoryboard.init(name: controllerContainer!, bundle: nil)
+            let sb = UIStoryboard(name: controllerContainer!, bundle: nil)
             return sb.instantiateViewController(withIdentifier: controllerID!)
         } else {
             return nil
@@ -57,7 +57,7 @@ public struct ADKRootCellItem {
     static func parse(file: String) -> Array<ADKRootCellItem> {
         let path = Bundle.main.path(forResource: file, ofType: "plist")
         assert(path != nil, "config file [\(file)] not found")
-        let rawItems = NSArray.init(contentsOfFile: path!)
+        let rawItems = NSArray(contentsOfFile: path!)
         var items = Array<ADKRootCellItem>()
         
         for rawItem in rawItems! {
@@ -83,7 +83,7 @@ public struct ADKSettingCellItem {
     static func parse(file: String) -> (sections: Array<ADKSettingCellItem>, rows: Array<Array<ADKSettingCellItem>>) {
         let path = Bundle.main.path(forResource: file, ofType: "plist")
         assert(path != nil, "config file [\(file)] not found")
-        let rawSections = NSArray.init(contentsOfFile: path!)
+        let rawSections = NSArray(contentsOfFile: path!)
         
         guard rawSections != nil else {
             return ([], [])
@@ -97,7 +97,7 @@ public struct ADKSettingCellItem {
             let rawSectionInfo: NSDictionary = rawSection as! NSDictionary
             var section = ADKSettingCellItem()
             section.title = rawSectionInfo["title"] as? String
-            section.type = ADKCellType.init(rawValue: rawSectionInfo["type"] as! String)
+            section.type = ADKCellType(rawValue: rawSectionInfo["type"] as! String)
             
             let rawRows: NSArray? = rawSectionInfo["items"] as? NSArray
             var sectionRows = Array<ADKSettingCellItem>()
@@ -108,7 +108,7 @@ public struct ADKSettingCellItem {
                     var item = ADKSettingCellItem()
                     item.title = rawRowInfo["title"] as? String
                     item.action = rawRowInfo["action"] as? String
-                    item.type = ADKCellType.init(rawValue: rawRowInfo["type"] as! String)
+                    item.type = ADKCellType(rawValue: rawRowInfo["type"] as! String)
                     item.defaultValue = rawRowInfo["defaultValue"] as? String
                     sectionRows.append(item)
                 }
@@ -173,7 +173,7 @@ public struct ADKDefaultConfig: ADKConfig {
         return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? storyboardName_pad : storyboardName_phone
     }
     public var storyboard: UIStoryboard {
-        return  UIStoryboard.init(name: storyboardName, bundle: nil)
+        return  UIStoryboard(name: storyboardName, bundle: nil)
     }
     public var rootPageCellReuseID: String {
         return "cell"
@@ -189,16 +189,16 @@ public struct ADKDefaultTheme : ADKTheme {
         return "ADKDefaultTheme"
     }
     public var mainColor: UIColor {
-        return UIColor.init(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+        return UIColor(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
     }
     public var fontColor: UIColor {
         return UIColor.white
     }
     public var floatingButtonSize: CGSize {
-        return CGSize.init(width: 60, height: 60)
+        return CGSize(width: 60, height: 60)
     }
     public var floationButtonColor: UIColor {
-        return UIColor.init(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+        return UIColor(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
     }
     public var floatingButtonText: String {
         return NSLocalizedString("Debug", comment: self.description)

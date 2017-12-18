@@ -14,19 +14,19 @@ public struct MyTheme : ADKTheme {
         return "MyTheme"
     }
     public var mainColor: UIColor {
-        return UIColor.init(red: 137.0/255.0, green: 49.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+        return UIColor.colorFrom(hex: "0C5195")
     }
     public var fontColor: UIColor {
         return UIColor.white
     }
     public var floatingButtonSize: CGSize {
-        return CGSize.init(width: 60, height: 60)
+        return CGSize(width: 60, height: 60)
     }
     public var floationButtonColor: UIColor {
-        return UIColor.green
+        return UIColor.colorFrom(hex: "0C5195")
     }
     public var floatingButtonText: String {
-        return NSLocalizedString("MyButton", comment: self.description)
+        return NSLocalizedString("MyBtn", comment: self.description)
     }
     public var floationButtonTextColor: UIColor {
         return UIColor.yellow
@@ -44,7 +44,7 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Important! : init event handler for ADK Demo
-        ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler.init())
+        ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler())
         // user self-defined thems for debug kit
         if !appSettings.ADKUserDefaultTheme {
             ADKContext.shared.theme = MyTheme()

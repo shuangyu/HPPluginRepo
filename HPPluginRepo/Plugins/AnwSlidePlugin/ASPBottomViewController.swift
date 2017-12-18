@@ -48,7 +48,7 @@ class ASPBottomViewController: UIViewController, ASPSlideProtocol, ASPMessageRec
     // MARK: - ASPSlideProtocol
     open func sliding(with ratio: Float) {
         if maskView == nil {
-            maskView = UIView.init(frame: self.view.bounds)
+            maskView = UIView(frame: self.view.bounds)
             maskView!.backgroundColor = UIColor.black
             maskView!.alpha = oriAlpha
             parentController.view.insertSubview(maskView!, aboveSubview: self.view)
@@ -58,8 +58,8 @@ class ASPBottomViewController: UIViewController, ASPSlideProtocol, ASPMessageRec
         let w = Float(self.view.bounds.width)
         let _ratio = 1 - ratio
         
-        let t = CGAffineTransform.init(translationX: CGFloat(-translationRatio * w * _ratio), y: 0)
-        let s = CGAffineTransform.init(scaleX: CGFloat(1 - scaleRatio * _ratio), y: CGFloat(1 - scaleRatio * _ratio))
+        let t = CGAffineTransform(translationX: CGFloat(-translationRatio * w * _ratio), y: 0)
+        let s = CGAffineTransform(scaleX: CGFloat(1 - scaleRatio * _ratio), y: CGFloat(1 - scaleRatio * _ratio))
         
         self.view.transform = t.concatenating(s)
         

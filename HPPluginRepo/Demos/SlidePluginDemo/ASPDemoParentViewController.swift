@@ -14,7 +14,7 @@ class ASPDemoParentViewController: ASPParentViewController {
     weak private var _bottomViewController: ASPBottomViewController?
     
     override var config: ASPAnimationConfig {
-        return ASPAnimationConfig.init(scaleRatio: appSettings.ASPScaleRatio)
+        return ASPAnimationConfig(scaleRatio: appSettings.ASPScaleRatio)
     }
     override var topViewController: ASPTopViewController? {
         

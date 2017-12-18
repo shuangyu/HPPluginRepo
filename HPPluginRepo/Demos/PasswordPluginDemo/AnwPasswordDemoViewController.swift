@@ -28,16 +28,28 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
         super.updateViewConstraints()
         
         let insets = self.view.safeAreaInsets
-        let topConstraint = NSLayoutConstraint.init(item: nineDotView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
+        let topConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
         
-        let bottomConstraint = NSLayoutConstraint.init(item: nineDotView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
+        let bottomConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
         
-        let leadingConstraint = NSLayoutConstraint.init(item: nineDotView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
+        let leadingConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
         
-        let trailingConstraint = NSLayoutConstraint.init(item: nineDotView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
+        let trailingConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
         
         self.view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }
+    
+    private func update(status: String, with error: Bool = false) {
+        statusLabel.text = status
+        statusLabel.textColor = error ? UIColor.colorFrom(hex: "F26D5F") : UIColor.colorFrom(hex: "4E4749")
+    }
+    
+    @objc
+    private func closePage() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - HPPasswordViewDelegate
     
     func statusWill(change: HPPasswordViewStatusChange) {
         //...
@@ -49,18 +61,17 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
             
             switch toStatus {
             case .invalid:
-                statusLabel.text = "Passcode length should be longger than 3"
+                update(status: "Passcode length should be longger than 3", with: true)
             case .create:
-                statusLabel.text = "Input Again to Confirm"
+                update(status: "Input Again to Confirm")
             case .mismatch:
-                statusLabel.text = "Mismatch! Please Try Again"
+                update(status: "Mismatch! Please Try Again", with: true)
             case .match:
-                statusLabel.text = "Success"
+                update(status: "Create Success")
+                perform(#selector(closePage), with: nil, afterDelay: 1.5)
             default:
                 break
             }
-            
-            
         }
         
     }

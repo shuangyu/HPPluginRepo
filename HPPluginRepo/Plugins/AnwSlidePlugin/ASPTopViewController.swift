@@ -49,8 +49,8 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiv
         let scaleRatio = parentController.config.scaleRatio
         let w = Float(self.view.bounds.width)
         
-        let t = CGAffineTransform.init(translationX: CGFloat(w * ratio * translationRatio), y: 0)
-        let s = CGAffineTransform.init(scaleX: CGFloat(1 - scaleRatio * ratio), y: CGFloat(1 - scaleRatio * ratio))
+        let t = CGAffineTransform(translationX: CGFloat(w * ratio * translationRatio), y: 0)
+        let s = CGAffineTransform(scaleX: CGFloat(1 - scaleRatio * ratio), y: CGFloat(1 - scaleRatio * ratio))
         self.view.transform = t.concatenating(s)
     }
     
@@ -68,14 +68,14 @@ class ASPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiv
                     self.maskView = nil
                 }
                 
-                self.maskView = UIView.init(frame: self.view.bounds)
+                self.maskView = UIView(frame: self.view.bounds)
                 self.maskView!.backgroundColor = UIColor.clear
                 self.view.addSubview(self.maskView!)
                 
-                let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handlePanGesture(_:)))
+                let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
                 self.maskView?.addGestureRecognizer(panGesture)
                 
-                let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTapGesture(_:)))
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(_:)))
                 self.maskView?.addGestureRecognizer(tapGesture)
                 
             } else {

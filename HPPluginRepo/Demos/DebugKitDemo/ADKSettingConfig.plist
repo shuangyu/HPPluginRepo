@@ -55,7 +55,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Async Cell Demo(try click)</string>
+				<string>Async Cell Demo(try to click)</string>
 				<key>action</key>
 				<string>asyncProcess</string>
 				<key>type</key>
@@ -98,6 +98,21 @@
 				<string>ADKCellTypeSlider</string>
 				<key>defaultValue</key>
 				<string>getScaleRatio</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>ADKCellTypeGroupHeader</string>
+		<key>title</key>
+		<string>Password View Settings</string>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>ADKCellTypePlain</string>
+				<key>defaultValue</key>
+				<string>getPassword</string>
 			</dict>
 		</array>
 	</dict>

@@ -34,10 +34,10 @@ class ADKSettingEventHandler: NSObject {
     
     private func save() {
         self.cache.set(self.ADK_Demo_CachedText, forKey: "demoInputCellKey")
-        self.cache.set(NSNumber.init(value: self.ADK_Demo_CachedBool), forKey: "demoSwitchCellKey")
-        self.cache.set(NSNumber.init(value: self.ADK_Demo_CachedFloat), forKey: "demoSliderCellKey")
-        self.cache.set(NSNumber.init(value: self.ADK_NotDefaultTheme), forKey: "ADKNotDefaultThemeKey")
-        self.cache.set(NSNumber.init(value: self.ASP_ScaleRatio), forKey: "ASPScaleRatioKey")
+        self.cache.set(NSNumber(value: self.ADK_Demo_CachedBool), forKey: "demoSwitchCellKey")
+        self.cache.set(NSNumber(value: self.ADK_Demo_CachedFloat), forKey: "demoSliderCellKey")
+        self.cache.set(NSNumber(value: self.ADK_NotDefaultTheme), forKey: "ADKNotDefaultThemeKey")
+        self.cache.set(NSNumber(value: self.ASP_ScaleRatio), forKey: "ASPScaleRatioKey")
     }
     
     // MARK: - AnwDebugKit Demo
@@ -62,7 +62,7 @@ class ADKSettingEventHandler: NSObject {
     }
     
     public func switchCellDefaultValue() -> NSNumber {
-        return NSNumber.init(value: ADK_Demo_CachedBool)
+        return NSNumber(value: ADK_Demo_CachedBool)
     }
     
     public func sliderValueChanged(_ newValue: NSNumber) {
@@ -70,7 +70,7 @@ class ADKSettingEventHandler: NSObject {
     }
     
     public func sliderCellDefaultValue() -> NSNumber {
-        return NSNumber.init(value: ADK_Demo_CachedFloat)
+        return NSNumber(value: ADK_Demo_CachedFloat)
     }
     
     // async cell action will run async thread
@@ -86,10 +86,10 @@ class ADKSettingEventHandler: NSObject {
         
         self.save()
         
-        let okAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default) { (actionItem) in
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (actionItem) in
             exit(0)
         }
-        let controller = UIAlertController.init(title: "Tips", message: "You need restart app to apply this change", preferredStyle: UIAlertControllerStyle.alert)
+        let controller = UIAlertController(title: "Tips", message: "You need restart app to apply this change", preferredStyle: UIAlertControllerStyle.alert)
         controller.addAction(okAction)
         UIApplication.shared.keyWindow!.rootViewController!.present(controller, animated: true) {
             
@@ -97,7 +97,7 @@ class ADKSettingEventHandler: NSObject {
     }
     
     public func isDefaultTheme() -> NSNumber {
-        return NSNumber.init(value: !ADK_NotDefaultTheme)
+        return NSNumber(value: !ADK_NotDefaultTheme)
     }
     
     // MARK: - AnwDebugKit Settings
@@ -107,6 +107,15 @@ class ADKSettingEventHandler: NSObject {
     }
 
     public func getScaleRatio() -> NSNumber {
-        return NSNumber.init(value: ASP_ScaleRatio)
+        return NSNumber(value: ASP_ScaleRatio)
+    }
+    
+    // MARK: - HPPasswordView Demo Settings
+    
+    public func getPassword() -> String {
+        guard let pwd = HPNineDotViewStorage().password else {
+            return "No Password"
+        }
+        return "Password is: \(pwd)"
     }
 }

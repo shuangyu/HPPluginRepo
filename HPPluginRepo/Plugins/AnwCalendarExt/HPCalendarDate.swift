@@ -29,22 +29,22 @@ enum HPCalendarError: Error {
 
 extension HPCalDate {
     static var today: HPCalDate {
-        return Date.init()
+        return Date()
     }
     var year: HPCalYear {
-        return Calendar.init(identifier:.gregorian).component(.year, from: self)
+        return Calendar(identifier:.gregorian).component(.year, from: self)
     }
     
     var month: HPCalMonth {
-        return Calendar.init(identifier:.gregorian).component(.month, from: self)
+        return Calendar(identifier:.gregorian).component(.month, from: self)
     }
     
     var day: HPCalDay {
-        return Calendar.init(identifier:.gregorian).component(.day, from: self)
+        return Calendar(identifier:.gregorian).component(.day, from: self)
     }
     // start from 1 to 7, and 1 represent Sunday
     var weekDay: HPCalWeekDay {
-        return Calendar.init(identifier:.gregorian).component(.weekday, from: self)
+        return Calendar(identifier:.gregorian).component(.weekday, from: self)
     }
 }
 
@@ -81,7 +81,7 @@ struct HPMonth {
         
         let monthStr =  month > 9 ? "\(month)" : "0\(month)"
         
-        let formatter = DateFormatter.init()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         let startDateStr = "\(year)-\(monthStr)-01"
@@ -121,13 +121,13 @@ struct HPMonth {
         let nextMonth = self.month + 1
         let month = nextMonth > 12 ? nextMonth%12 : nextMonth
         let year = nextMonth > 12 ? self.year + 1 : self.year
-        return try HPMonth.init(year: year, month: month)
+        return try HPMonth(year: year, month: month)
     }
     
     func preMonth() throws -> HPMonth {
         let preMonth = self.month - 1
         let month = preMonth < 1 ? preMonth + 12  : preMonth
         let year = preMonth < 1 ? self.year - 1 : self.year
-        return try HPMonth.init(year: year, month: month)
+        return try HPMonth(year: year, month: month)
     }
 }

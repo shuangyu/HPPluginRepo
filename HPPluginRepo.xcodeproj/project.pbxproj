@@ -51,11 +51,8 @@
 		FFF726C11FE7A5FA009F093A /* ADKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726941FE7A5F9009F093A /* ADKSettingEventHandler.swift */; };
 		FFF726C21FE7A5FA009F093A /* ADKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726951FE7A5F9009F093A /* ADKTestViewController.swift */; };
 		FFF726C31FE7A5FA009F093A /* ADKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726961FE7A5F9009F093A /* ADKRootConfig.plist */; };
-		FFF726C41FE7A5FA009F093A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726971FE7A5F9009F093A /* Info.plist */; };
 		FFF726C51FE7A8C1009F093A /* HPPluginRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726541FE7A5F4009F093A /* HPPluginRepoTests.swift */; };
-		FFF726C61FE7A8C7009F093A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726551FE7A5F4009F093A /* Info.plist */; };
 		FFF726C71FE7A8CB009F093A /* HPPluginRepoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726511FE7A5F3009F093A /* HPPluginRepoUITests.swift */; };
-		FFF726C81FE7A8CE009F093A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726521FE7A5F3009F093A /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,7 +409,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Hu, Peng";
 				TargetAttributes = {
 					FFF6627A1FCFDB96007D30DD = {
@@ -462,7 +459,6 @@
 				FFF7269D1FE7A5FA009F093A /* HPCalendarView.xib in Resources */,
 				FFF726A01FE7A5FA009F093A /* HPNineDotView.xib in Resources */,
 				FFF726BE1FE7A5FA009F093A /* ADKStoryboard_phone.storyboard in Resources */,
-				FFF726C41FE7A5FA009F093A /* Info.plist in Resources */,
 				FFF7269B1FE7A5FA009F093A /* HPCalendarViewCell.xib in Resources */,
 				FFF726C31FE7A5FA009F093A /* ADKRootConfig.plist in Resources */,
 				FFF726BF1FE7A5FA009F093A /* ADKSettingConfig.plist in Resources */,
@@ -475,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF726C61FE7A8C7009F093A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF726C81FE7A8CE009F093A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

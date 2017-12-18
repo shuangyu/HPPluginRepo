@@ -16,7 +16,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
     private var h: CGFloat = 0
 
     init(itemHeight: Int) {
-        self.itemSize = CGSize.init(width: 0, height: CGFloat(itemHeight))
+        self.itemSize = CGSize(width: 0, height: CGFloat(itemHeight))
         super.init()
     }
     
@@ -37,7 +37,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
         itemSize!.width = itemWidth
         let contentWidth = w * CGFloat(sectionCount)
         
-        contentSize = CGSize.init(width: contentWidth, height: h)
+        contentSize = CGSize(width: contentWidth, height: h)
     }
     
     override var collectionViewContentSize: CGSize {
@@ -46,7 +46,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
-        let attrs = UICollectionViewLayoutAttributes.init(forCellWith: indexPath)
+        let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         let section = indexPath.section
         let item = indexPath.item
         let row: Int = item/7
@@ -54,7 +54,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
         let offsetX = CGFloat(section) * w + CGFloat(column) * itemSize!.width
         let offsetY = CGFloat(row) * itemSize!.height
         
-        attrs.frame = CGRect.init(x: offsetX, y: offsetY, width: itemSize!.width, height: itemSize!.height)
+        attrs.frame = CGRect(x: offsetX, y: offsetY, width: itemSize!.width, height: itemSize!.height)
         return attrs
     }
     
@@ -77,7 +77,7 @@ class HPCalendarHorizontalLayout: UICollectionViewLayout {
             
             let itemsCount = self.collectionView!.numberOfItems(inSection: section)
             for item in 0..<itemsCount {
-                let attr = layoutAttributesForItem(at: IndexPath.init(item: item, section: section))
+                let attr = layoutAttributesForItem(at: IndexPath(item: item, section: section))
                 attrs.append(attr!)
             }
         }

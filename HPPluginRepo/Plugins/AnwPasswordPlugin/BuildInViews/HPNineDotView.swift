@@ -67,7 +67,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
     @IBInspectable var errorConnectLineColor: UIColor = kNDVErrorLineColor
     
     
-    @IBOutlet weak var dragLineMaskView: UIImageView!
+    @IBOutlet weak var draggedLineMaskView: UIImageView!
     @IBOutlet weak var connectedLineMaskView: UIImageView!
     private var nineDotImage: UIImage?
     private var seletedIndies: Array<Int> = []
@@ -104,7 +104,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     private var decorator: HPPasswordViewDecorator<HPNineDotView, HPNineDotViewStorage> {
         if _decorator == nil {
-            _decorator = HPPasswordViewDecorator.init(passwordView: self, storage: HPNineDotViewStorage.init())
+            _decorator = HPPasswordViewDecorator(passwordView: self, storage: HPNineDotViewStorage())
         }
         return _decorator!
     }
@@ -158,8 +158,8 @@ open class HPNineDotView: UIView, IHPPasswordView {
             return
         }
         
-        decorator.triggerStatusChange(HPPasswordViewStatusChange.init(from: self.currentStatus, to: .empty, tryTimes: leftTryTime))
-        dragLineMaskView.image = nil
+        decorator.triggerStatusChange(HPPasswordViewStatusChange(from: self.currentStatus, to: .empty, tryTimes: leftTryTime))
+        draggedLineMaskView.image = nil
         
         self.delegate?.endInput(passwordView: self)
     }
@@ -182,6 +182,14 @@ open class HPNineDotView: UIView, IHPPasswordView {
     }
     
     
+    private func resetView() {
+        connectedLineMaskView.image = nil
+        draggedLineMaskView.image = nil
+        seletedIndies.removeAll()
+        preIndex = NSNotFound
+        prePoint = nil
+    }
+    
     // MARK: - IHPPasswordView implementation
     
     open func passwordImage() -> UIImage? {
@@ -190,6 +198,12 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     func updateView(with change: HPPasswordViewStatusChange) {
         
+        let toStatus = change.to
+        if toStatus != .mismatch || toStatus != .invalid {
+            resetView()
+        } else {
+            
+        }
     }
     
     // MARK: -
@@ -198,7 +212,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         let w = self.bounds.width
         let h = self.bounds.height
         
-        let viewCenter = CGPoint.init(x: w/2.0, y: h/2.0)
+        let viewCenter = CGPoint(x: w/2.0, y: h/2.0)
         let viewCenterRow = 1
         let viewCenterColumn = 1
         
@@ -207,7 +221,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         
         let x = viewCenter.x + CGFloat(column - viewCenterRow) * (dotRadius * 2 + dotMargin)
         let y = viewCenter.y + CGFloat(row - viewCenterColumn) * (dotRadius * 2 + dotMargin)
-        return CGPoint.init(x: x, y: y)
+        return CGPoint(x: x, y: y)
     }
     
     open func draw(dot: (radius: CGFloat, center: CGPoint), with context: CGContext) {
@@ -293,7 +307,6 @@ open class HPNineDotView: UIView, IHPPasswordView {
         let fromPoint = dotRects[index].center
         let toPoint = dotRects[toIndex].center
         
-        
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()!
         connectedLineMaskView.image?.draw(in: self.bounds)
@@ -314,7 +327,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         context.saveGState()
         let line = (width: connectLineWidth, color: connectLineColor)
         connect(point: point, to: anotherPoint, in: context, with: line)
-        dragLineMaskView.image = UIGraphicsGetImageFromCurrentImageContext()
+        draggedLineMaskView.image = UIGraphicsGetImageFromCurrentImageContext()
         context.saveGState()
         UIGraphicsEndImageContext()
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpU-qr-uqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpU-qr-uqA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw A Pattern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTT-XI-qqP">
-                                <rect key="frame" x="0.0" y="100" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="mVi-AF-85T"/>
                                 </constraints>
@@ -103,7 +103,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aTT-XI-qqP" firstAttribute="top" secondItem="5kj-kO-UTN" secondAttribute="top" constant="36" id="A1G-BS-muY"/>
+                            <constraint firstItem="aTT-XI-qqP" firstAttribute="top" secondItem="5kj-kO-UTN" secondAttribute="top" constant="86" id="A1G-BS-muY"/>
                             <constraint firstItem="aTT-XI-qqP" firstAttribute="leading" secondItem="5kj-kO-UTN" secondAttribute="leading" id="DGu-29-0Az"/>
                             <constraint firstItem="5kj-kO-UTN" firstAttribute="trailing" secondItem="aTT-XI-qqP" secondAttribute="trailing" id="O7W-dm-HV0"/>
                         </constraints>
@@ -166,8 +166,8 @@
                                     <constraint firstItem="5MZ-is-zoQ" firstAttribute="centerY" secondItem="F1N-Yh-pTt" secondAttribute="centerY" constant="6.5" id="gyb-95-vuB"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-wj-CBz">
-                                <rect key="frame" x="159.5" y="329" width="56" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to slide from left edge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghq-wj-CBz">
+                                <rect key="frame" x="45.5" y="329" width="284.5" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="0.26292782738095233" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -219,7 +219,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.046815998849999998" green="0.31767636539999999" blue="0.58423835040000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.047058823529411764" green="0.31764705882352939" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="E1A-ii-0LL" firstAttribute="centerX" secondItem="FGT-vs-U2w" secondAttribute="centerX" id="Gmp-h9-uOZ"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yni-mE-1lf" secondAttribute="trailing" constant="20" symbolic="YES" id="MAw-7F-iSD"/>

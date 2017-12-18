@@ -23,13 +23,13 @@ class AnwCalendarViewController: UIViewController {
         super.updateViewConstraints()
         
         let insets = self.view.safeAreaInsets
-        let topConstraint = NSLayoutConstraint.init(item: calendarView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
+        let topConstraint = NSLayoutConstraint(item: calendarView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
         
-        let bottomConstraint = NSLayoutConstraint.init(item: calendarView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
+        let bottomConstraint = NSLayoutConstraint(item: calendarView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
         
-        let leadingConstraint = NSLayoutConstraint.init(item: calendarView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
+        let leadingConstraint = NSLayoutConstraint(item: calendarView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
         
-        let trailingConstraint = NSLayoutConstraint.init(item: calendarView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
+        let trailingConstraint = NSLayoutConstraint(item: calendarView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
         
         self.view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }

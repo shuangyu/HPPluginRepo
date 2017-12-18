@@ -83,6 +83,7 @@ class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
     // use weak property to avoid retain recycle
     weak var passwordView: T?
     var storage: P?
+    var tmpPwd: String?
     
     init(passwordView: T, storage: P) {
         self.passwordView = passwordView
@@ -96,13 +97,18 @@ class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
         let tryTimes = change.tryTimes
         
         if change.from == .create {
-            if pwd == nil { // input first time
-                outChange.to = storage!.validate(password: inputtedPwd) ? .create : .invalid
+            if tmpPwd == nil { // input first time
+                let validePwd = storage!.validate(password: passwordView!.tmpPassword)
+                outChange.to = validePwd ? .create : .invalid
+                if validePwd {
+                    tmpPwd = inputtedPwd
+                }
             } else { // input second time
-                if pwd == inputtedPwd {
+                if tmpPwd == inputtedPwd {
                     outChange.to = .match
                     storage!.save(password: inputtedPwd!)
                 } else {
+                    tmpPwd = nil
                     outChange.to = .mismatch
                 }
             }

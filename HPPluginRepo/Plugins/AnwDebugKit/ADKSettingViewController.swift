@@ -63,11 +63,11 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
     private var cellItem: ADKSettingCellItem?
     
     @IBAction func valueChanged(_ sender: AnyObject) {
-        var value = NSNumber.init(value: 0)
+        var value = NSNumber(value: 0)
         if let control = sender as? UISwitch {
-            value = NSNumber.init(value: control.isOn)
+            value = NSNumber(value: control.isOn)
         } else if let control = sender as? UISlider {
-            value = NSNumber.init(value: control.value)
+            value = NSNumber(value: control.value)
         }
         ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem!.action!, params: value)
     }

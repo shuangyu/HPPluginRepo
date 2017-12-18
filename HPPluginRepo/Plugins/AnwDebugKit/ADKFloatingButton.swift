@@ -8,8 +8,8 @@
 
 import UIKit
 
-public let ADKFloatingButtonShrinkNotifName = Notification.Name.init("ADKFloatingButtonShrinkNotifName")
-public let ADKFloatingButtonExpandNotifName = Notification.Name.init("ADKFloatingButtonExpandNotifName")
+public let ADKFloatingButtonShrinkNotifName = Notification.Name("ADKFloatingButtonShrinkNotifName")
+public let ADKFloatingButtonExpandNotifName = Notification.Name("ADKFloatingButtonExpandNotifName")
 
 
 
@@ -28,18 +28,18 @@ public class ADKFloatingButton: UIWindow {
     private var activeTime: NSDate?
     private var panCenter: CGPoint?
     private var isExpand = false
-    private let control: UILabel = UILabel.init()
+    private let control: UILabel = UILabel()
     private let theme = ADKContext.shared.theme
     private let config = ADKContext.shared.config
     
-    private let placeHolder = ADKPlaceHolderViewController.init()
+    private let placeHolder = ADKPlaceHolderViewController()
 
     private override init(frame: CGRect) {
     
         super.init(frame: frame)
         let insets = self.safeAreaInsets
         // init floating button
-        control.frame = CGRect.init(origin: CGPoint.init(x: insets.left, y: insets.top), size: ADKContext.shared.theme.floatingButtonSize)
+        control.frame = CGRect(origin: CGPoint(x: insets.left, y: insets.top), size: ADKContext.shared.theme.floatingButtonSize)
         control.backgroundColor = theme.floationButtonColor
         control.text = theme.floatingButtonText
         control.textAlignment = NSTextAlignment.center
@@ -51,9 +51,9 @@ public class ADKFloatingButton: UIWindow {
         self.addSubview(control)
         
         // add gesture handlers
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tap(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
         control.addGestureRecognizer(tapGesture)
-        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(pan(_:)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(pan(_:)))
         control.addGestureRecognizer(panGesture)
     
         self.rootViewController = placeHolder
@@ -89,25 +89,25 @@ public class ADKFloatingButton: UIWindow {
         let w = self.bounds.width
         let h = self.bounds.height
         let controlHalfW = control.bounds.width * 0.5
-        activeTime = NSDate.init()
+        activeTime = NSDate()
         
         if sender.state == UIGestureRecognizerState.began {
             panCenter = control.center
         } else if sender.state == UIGestureRecognizerState.changed {
             control.center = panCenter!.add(point).restricted(to: self.bounds.insetBy(dx: controlHalfW, dy: controlHalfW))
         } else {
-            let pinLeft = control.center.divide(by: CGPoint.init(x: w, y: h)).x <= 0.5
+            let pinLeft = control.center.divide(by: CGPoint(x: w, y: h)).x <= 0.5
             let controlY = control.center.y
             UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.2, options: UIViewAnimationOptions(rawValue: 0x01), animations: {
                 [unowned self] in
                 
                 if pinLeft {
-                    self.control.center = CGPoint.init(x: controlHalfW, y: controlY)
-                    self.control.autoresizingMask = UIViewAutoresizing.init(rawValue: UIViewAutoresizing.flexibleRightMargin.rawValue | UIViewAutoresizing.flexibleTopMargin.rawValue | UIViewAutoresizing.flexibleBottomMargin.rawValue )
+                    self.control.center = CGPoint(x: controlHalfW, y: controlY)
+                    self.control.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleRightMargin.rawValue | UIViewAutoresizing.flexibleTopMargin.rawValue | UIViewAutoresizing.flexibleBottomMargin.rawValue )
                     
                 } else {
-                    self.control.center = CGPoint.init(x: w - controlHalfW, y: controlY)
-                    self.control.autoresizingMask = UIViewAutoresizing.init(rawValue: UIViewAutoresizing.flexibleLeftMargin.rawValue | UIViewAutoresizing.flexibleTopMargin.rawValue | UIViewAutoresizing.flexibleBottomMargin.rawValue )
+                    self.control.center = CGPoint(x: w - controlHalfW, y: controlY)
+                    self.control.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleLeftMargin.rawValue | UIViewAutoresizing.flexibleTopMargin.rawValue | UIViewAutoresizing.flexibleBottomMargin.rawValue )
                 }
                 
             }, completion: { [unowned self](finished) in
@@ -165,7 +165,7 @@ public class ADKFloatingButton: UIWindow {
     @objc
     func resignActive() {
 //        if activeTime == nil || activeTime!.timeIntervalSinceNow < -5 {
-//            control.center = CGPoint.init(x: 0, y: control.center.y)
+//            control.center = CGPoint(x: 0, y: control.center.y)
 //        }
     }
     
