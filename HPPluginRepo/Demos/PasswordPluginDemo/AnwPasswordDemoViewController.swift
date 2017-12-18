@@ -8,15 +8,18 @@
 
 import UIKit
 
-class AnwPasswordDemoViewController: UIViewController {
-
+class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
+    
+    @IBOutlet weak var statusLabel: UILabel!
     private var nineDotView: HPNineDotView = Bundle.main.loadNibNamed("HPNineDotView", owner: nil, options: nil)?.first as! HPNineDotView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Password View Demo"
         
-        self.view.addSubview(nineDotView)
+        nineDotView.status = .create
+        nineDotView.delegate = self
+        self.view.insertSubview(nineDotView, belowSubview: statusLabel)
         nineDotView.translatesAutoresizingMaskIntoConstraints = false
         
     }
@@ -36,5 +39,42 @@ class AnwPasswordDemoViewController: UIViewController {
         self.view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }
     
+    func statusWill(change: HPPasswordViewStatusChange) {
+        //...
+        
+        let fromStatus = change.from
+        let toStatus = change.to
+        
+        if fromStatus == .create {
+            
+            switch toStatus {
+            case .invalid:
+                statusLabel.text = "Passcode length should be longger than 3"
+            case .create:
+                statusLabel.text = "Input Again to Confirm"
+            case .mismatch:
+                statusLabel.text = "Mismatch! Please Try Again"
+            case .match:
+                statusLabel.text = "Success"
+            default:
+                break
+            }
+            
+            
+        }
+        
+    }
+    
+    func statusDid(change: HPPasswordViewStatusChange) {
+        //
+    }
+    
+    func beginInput<T>(passwordView: T) where T : IHPPasswordView {
+        statusLabel.text = "Release Finger When Done"
+    }
+    
+    func endInput<T>(passwordView: T) where T : IHPPasswordView {
+        
+    }
     
 }

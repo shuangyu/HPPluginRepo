@@ -15,23 +15,30 @@ enum HPPasswordViewStatus {
     case reset
     case delete
     case verify
+    case empty
     // result status
     case mismatch
     case match
     case invalid
+    
 }
 
 struct HPPasswordViewStatusChange {
     var from: HPPasswordViewStatus
     var to: HPPasswordViewStatus
-    var tryTimes : Int = 0
+    var tryTimes : Int
+    init(from: HPPasswordViewStatus, to: HPPasswordViewStatus = .empty, tryTimes: Int = Int.max) {
+        self.from = from
+        self.to = to
+        self.tryTimes = tryTimes
+    }
 }
 
 protocol IHPPasswordView: NSObjectProtocol {
     
     var maxTryTime: Int { get }
     var status: HPPasswordViewStatus { get set }    // ==> current status
-    var tmpPassword: String? { get set }            // ==> current inputted password
+    var tmpPassword: Any? { get set }            // ==> current inputted password
     weak var delegate: HPPasswordViewDelegate? { get set }
     /*
      * generate password image for some special password view type,
@@ -43,8 +50,13 @@ protocol IHPPasswordView: NSObjectProtocol {
 }
 
 protocol HPPasswordViewDelegate: NSObjectProtocol {
+    // called before password view updateView(with change: HPPasswordViewStatusChange)
     func statusWill(change: HPPasswordViewStatusChange)
+    // called after password view updateView(with change: HPPasswordViewStatusChange)
     func statusDid(change: HPPasswordViewStatusChange)
+    
+    func beginInput<T: IHPPasswordView>(passwordView: T)
+    func endInput<T: IHPPasswordView>(passwordView: T)
 }
 
 protocol IHPPasswordStorage: NSObjectProtocol {
@@ -65,39 +77,12 @@ protocol IHPPasswordStorage: NSObjectProtocol {
      */
     func password(from: Any?) -> String?
 }
-//
-//class HPDefaultPasswordStorage: NSObject, IHPPasswordStorage {
-//    
-//    private override init() {}
-//    
-//    static let `default` = HPDefaultPasswordStorage.init()
-//    
-//    var password: String? {
-//        return "111"
-//    }
-//    
-//    func save(password: String) {
-//        
-//    }
-//    
-//    func deletePassword() {
-//        
-//    }
-//    
-//    func validate(password: Any?) -> Bool {
-//        return password != nil
-//    }
-//    
-//    func password(from: Any?) -> String? {
-//        return from == nil ? nil : "\(String(describing: from))"
-//    }
-//}
 
 class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
 
     // use weak property to avoid retain recycle
     weak var passwordView: T?
-    weak var storage: P?
+    var storage: P?
     
     init(passwordView: T, storage: P) {
         self.passwordView = passwordView

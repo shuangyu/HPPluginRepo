@@ -196,16 +196,16 @@
 		FFF7265A1FE7A5F9009F093A /* HPPluginRepo */ = {
 			isa = PBXGroup;
 			children = (
+				FFF726841FE7A5F9009F093A /* Demos */,
+				FFF7267D1FE7A5F9009F093A /* Common */,
 				FFF7265B1FE7A5F9009F093A /* Plugins */,
 				FFF726771FE7A5F9009F093A /* RootViewController.swift */,
 				FFF726781FE7A5F9009F093A /* Assets.xcassets */,
 				FFF726791FE7A5F9009F093A /* LaunchScreen.storyboard */,
 				FFF7267B1FE7A5F9009F093A /* Main.storyboard */,
-				FFF7267D1FE7A5F9009F093A /* Common */,
 				FFF726801FE7A5F9009F093A /* HPPluginRepo.xcdatamodeld */,
 				FFF726821FE7A5F9009F093A /* AppDelegate.swift */,
 				FFF726831FE7A5F9009F093A /* MyNavigationController.swift */,
-				FFF726841FE7A5F9009F093A /* Demos */,
 				FFF726971FE7A5F9009F093A /* Info.plist */,
 			);
 			path = HPPluginRepo;
@@ -299,10 +299,10 @@
 		FFF726841FE7A5F9009F093A /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				FFF726851FE7A5F9009F093A /* SlidePluginDemo */,
 				FFF726891FE7A5F9009F093A /* HPNavView.swift */,
-				FFF7268A1FE7A5F9009F093A /* PasswordPluginDemo */,
 				FFF7268C1FE7A5F9009F093A /* DemoAppSettings.swift */,
+				FFF726851FE7A5F9009F093A /* SlidePluginDemo */,
+				FFF7268A1FE7A5F9009F093A /* PasswordPluginDemo */,
 				FFF7268D1FE7A5F9009F093A /* CalendarDemo */,
 				FFF7268F1FE7A5F9009F093A /* DebugKitDemo */,
 			);

@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+public extension Float {
+    static func == (lhs: Float, rhs: Float) -> Bool {
+        return fabsf(rhs - lhs) < FLT_EPSILON
+    }
+    static func != (lhs: Float, rhs: Float) -> Bool {
+        return fabsf(rhs - lhs) >= FLT_EPSILON
+    }
+}
+
 public extension CGPoint {
     public func add(_ point: CGPoint) -> CGPoint {
         return CGPoint.init(x: self.x + point.x, y: self.y + point.y)
@@ -26,6 +35,10 @@ public extension CGPoint {
         y = max(y, bound.minY)
         y = min(y, bound.maxY)
         return CGPoint.init(x: x, y: y)
+    }
+    
+    public func slope(with point: CGPoint) -> Float {
+        return Float((self.y - point.y) / (self.x - point.x))
     }
 }
 

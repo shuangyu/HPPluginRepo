@@ -12,9 +12,48 @@ let kNDVMainColor = UIColor.color255(from: (r: 91.0, g: 153.0, b: 238.0, a: 1.0)
 let kNDVSelectedBorderColor = UIColor.color255(from: (r: 53.0, g: 183.0, b: 127.0, a: 1.0))
 let kNDVErrorLineColor = UIColor.color255(from: (r: 53.0, g: 183.0, b: 127.0, a: 1.0))
 
+class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
+    
+    static let passwordKey = "com.hpDemo.9DotView.password.key"
+    let defaultStorage = UserDefaults.standard
+    var _password: String?
+    var password: String? {
+        if _password == nil {
+            _password = defaultStorage.string(forKey: HPNineDotViewStorage.passwordKey)
+        }
+        return _password
+    }
+    
+    func save(password: String) {
+        defaultStorage.set(password, forKey: HPNineDotViewStorage.passwordKey)
+    }
+    
+    func deletePassword() {
+        defaultStorage.removeObject(forKey: HPNineDotViewStorage.passwordKey)
+    }
+    
+    func validate(password: Any?) -> Bool {
+        
+        guard let indies = password as? Array<Int> else {
+            return false
+        }
+        return indies.count >= 3
+    }
+    
+    func password(from: Any?) -> String? {
+        guard let indies = from as? Array<Int> else {
+            return nil
+        }
+        
+        return indies.map({ (i) -> String in
+            return "\(i)"
+        }) .joined(separator: "-")
+    }
+}
+
 @IBDesignable
 open class HPNineDotView: UIView, IHPPasswordView {
-    
+
     // UI Var.
     @IBInspectable var dotRadius: CGFloat = 30
     @IBInspectable var dotMargin: CGFloat = 30
@@ -28,54 +67,17 @@ open class HPNineDotView: UIView, IHPPasswordView {
     @IBInspectable var errorConnectLineColor: UIColor = kNDVErrorLineColor
     
     
-    @IBOutlet weak var _maskView: UIImageView!
-    private var staticImage: UIImage?
+    @IBOutlet weak var dragLineMaskView: UIImageView!
+    @IBOutlet weak var connectedLineMaskView: UIImageView!
+    private var nineDotImage: UIImage?
     private var seletedIndies: Array<Int> = []
     
     // Logic Var.
     private var dotRects: Array<CGRect> = []
     private var prePoint: CGPoint?
-    
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let point = touch.location(in: self)
-        
-        let index = selectedDot(with: point)
-
-        guard index != NSNotFound else {
-            return
-        }
-        selectDot(at: index)
-        prePoint = dotRects[index].center
-        
-    }
-    
-    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        guard let startPoint = prePoint else {
-            return
-        }
-        
-        let touch = touches.first!
-        let point = touch.location(in: self)
-    }
-    
-    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    
-    override open func draw(_ rect: CGRect) {
-        super.draw(rect)
-        let context = UIGraphicsGetCurrentContext()!
-        for i in 0..<9 {
-            let center = centerOfDot(at: i)
-            draw(dot: (radius: CGFloat(dotRadius), center: center), with: context)
-            dotRects.append(CGRect.rectOfCircle(center: center, radius: dotRadius))
-        }
-        staticImage = UIGraphicsGetImageFromCurrentImageContext()
-    }
-    
+    private var preIndex: Int = NSNotFound
+    lazy private var currentStatus: HPPasswordViewStatus = self.status
+    lazy private var leftTryTime = self.maxTryTime
     
     // MARK: - IHPPasswordView implementation
     var maxTryTime: Int {
@@ -84,11 +86,105 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     var status: HPPasswordViewStatus = .create
     
-    var tmpPassword: String?
+    var tmpPassword: Any? {
+        get {
+            return seletedIndies
+        }
+        set(newValue) {
+            seletedIndies = newValue as! Array<Int>
+        }
+        
+    }
     
     var delegate: HPPasswordViewDelegate?
     
-    func passwordImage() -> UIImage? {
+    //
+    
+    private var _decorator: HPPasswordViewDecorator<HPNineDotView, HPNineDotViewStorage>? = nil
+    
+    private var decorator: HPPasswordViewDecorator<HPNineDotView, HPNineDotViewStorage> {
+        if _decorator == nil {
+            _decorator = HPPasswordViewDecorator.init(passwordView: self, storage: HPNineDotViewStorage.init())
+        }
+        return _decorator!
+    }
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.delegate?.beginInput(passwordView: self)
+        
+        let touch = touches.first!
+        let point = touch.location(in: self)
+        
+        let index = selectedDot(with: point)
+
+        guard index != NSNotFound else {
+            return
+        }
+        didSelectDot(at: index)
+    }
+    
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard preIndex != NSNotFound else {
+            return
+        }
+        
+        let touch = touches.first!
+        let point = touch.location(in: self)
+        
+        connect(point: prePoint!, to: point)
+        
+        let index = selectedDot(with: point)
+        
+        guard index != NSNotFound  && index != preIndex else {
+            return
+        }
+        
+        let middleIndex = middleDot(between: preIndex, and: index)
+        
+        if middleIndex != NSNotFound {
+            connectDot(at: preIndex, toIndex: middleIndex)
+            didSelectDot(at: middleIndex)
+        }
+        
+        connectDot(at: preIndex, toIndex: index)
+        didSelectDot(at: index)
+    }
+    
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard preIndex != NSNotFound else {
+            return
+        }
+        
+        decorator.triggerStatusChange(HPPasswordViewStatusChange.init(from: self.currentStatus, to: .empty, tryTimes: leftTryTime))
+        dragLineMaskView.image = nil
+        
+        self.delegate?.endInput(passwordView: self)
+    }
+    
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesEnded(touches, with: event)
+    }
+    
+    override open func draw(_ rect: CGRect) {
+        
+        super.draw(rect)
+        let context = UIGraphicsGetCurrentContext()!
+        for i in 0..<9 {
+            let center = centerOfDot(at: i)
+            draw(dot: (radius: CGFloat(dotRadius), center: center), with: context)
+            dotRects.append(CGRect.rectOfCircle(center: center, radius: dotRadius))
+            
+        }
+        nineDotImage = UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
+    
+    // MARK: - IHPPasswordView implementation
+    
+    open func passwordImage() -> UIImage? {
         return nil
     }
     
@@ -109,8 +205,8 @@ open class HPNineDotView: UIView, IHPPasswordView {
         let row = index/3
         let column = index%3
         
-        let x = viewCenter.x + CGFloat(row - viewCenterRow) * (dotRadius * 2 + dotMargin)
-        let y = viewCenter.y + CGFloat(column - viewCenterColumn) * (dotRadius * 2 + dotMargin)
+        let x = viewCenter.x + CGFloat(column - viewCenterRow) * (dotRadius * 2 + dotMargin)
+        let y = viewCenter.y + CGFloat(row - viewCenterColumn) * (dotRadius * 2 + dotMargin)
         return CGPoint.init(x: x, y: y)
     }
     
@@ -123,37 +219,117 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
 
     private func selectedDot(with touchPoint:CGPoint) -> Int {
+        
+        var matchedIndex = NSNotFound
+        
         for dotRect in dotRects {
             if dotRect.contains(touchPoint) {
-                return dotRects.index(of: dotRect)!
+                matchedIndex = dotRects.index(of: dotRect)!
+                break
             }
         }
-        return NSNotFound
+        
+        // case: no matched dot has been found
+        guard matchedIndex != NSNotFound else {
+            return NSNotFound
+        }
+        
+        // case: first dot always can be selected
+        guard preIndex != NSNotFound else {
+            return matchedIndex
+        }
+        
+        // case: duplicated seleted index
+        guard !seletedIndies.contains(matchedIndex) else {
+            return NSNotFound
+        }
+        
+        // case: some special connect logic has not been fulfilled
+        guard canConnectPoint(at: preIndex, to: matchedIndex) else {
+            return NSNotFound
+        }
+        
+        return matchedIndex
     }
     
-    private func selectDot(at index: Int) {
+    private func middleDot(between oneDot: Int, and anotherDot: Int) -> Int {
+        
+        guard (oneDot + anotherDot)%2 == 0 else {
+            return NSNotFound
+        }
+        
+        let middleIndex = (oneDot + anotherDot)/2
+        
+        guard !seletedIndies.contains(middleIndex) else {
+            return NSNotFound
+        }
+        
+        let fromPoint = dotRects[oneDot].center
+        let toPoint = dotRects[anotherDot].center
+        let middlePoint = dotRects[middleIndex].center
+        
+        guard middlePoint.slope(with: fromPoint) == middlePoint.slope(with: toPoint) else {
+            return NSNotFound
+        }
+        return middleIndex
+    }
+    
+    /*
+     * override this function if there are some special demands
+     * ex. only nearby point can be connected to each other...
+     */
+    open func canConnectPoint(at index: Int, to point: Int) -> Bool {
+        return true
+    }
+    
+    private func didSelectDot(at index: Int) {
         seletedIndies.append(index)
+        preIndex = index
+        prePoint = dotRects[index].center
     }
     
-    private func connect(point: CGPoint, to anotherPoint: CGPoint) {
+    private func connectDot(at index: Int, toIndex: Int ) {
+        
+        let fromPoint = dotRects[index].center
+        let toPoint = dotRects[toIndex].center
+        
         
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()!
+        connectedLineMaskView.image?.draw(in: self.bounds)
         context.saveGState()
         
         let line = (width: connectLineWidth, color: connectLineColor)
+        connect(point: fromPoint, to: toPoint, in: context, with: line)
         
+        connectedLineMaskView.image = UIGraphicsGetImageFromCurrentImageContext()
+        context.saveGState()
+        UIGraphicsEndImageContext()
+        
+    }
+    
+    open func connect(point: CGPoint, to anotherPoint: CGPoint) {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()!
+        context.saveGState()
+        let line = (width: connectLineWidth, color: connectLineColor)
         connect(point: point, to: anotherPoint, in: context, with: line)
-        _maskView.image = UIGraphicsGetImageFromCurrentImageContext()
+        dragLineMaskView.image = UIGraphicsGetImageFromCurrentImageContext()
         context.saveGState()
         UIGraphicsEndImageContext()
     }
     
     open func connect(point: CGPoint, to anotherPoint: CGPoint, `in` context: CGContext, with line:(width: CGFloat, color: UIColor)) {
         
-    }
-    
-    func updateMaskView(with image: UIImage) {
+        let lineColor = line.color
+        let lineWidth = line.width
         
+        context.setLineCap(.round)
+        context.move(to: point)
+        context.addLine(to: anotherPoint)
+        context.setLineWidth(lineWidth)
+        context.setStrokeColor(lineColor.cgColor)
+        context.strokePath()
+        context.saveGState()
     }
 }

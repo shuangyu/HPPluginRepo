@@ -90,13 +90,32 @@
                     <view key="view" contentMode="scaleToFill" id="Q5G-jS-CgU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw A Pattern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTT-XI-qqP">
+                                <rect key="frame" x="0.0" y="100" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="mVi-AF-85T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.23863965270000001" green="0.21453884240000001" blue="0.22207650540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aTT-XI-qqP" firstAttribute="top" secondItem="5kj-kO-UTN" secondAttribute="top" constant="36" id="A1G-BS-muY"/>
+                            <constraint firstItem="aTT-XI-qqP" firstAttribute="leading" secondItem="5kj-kO-UTN" secondAttribute="leading" id="DGu-29-0Az"/>
+                            <constraint firstItem="5kj-kO-UTN" firstAttribute="trailing" secondItem="aTT-XI-qqP" secondAttribute="trailing" id="O7W-dm-HV0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5kj-kO-UTN"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="aTT-XI-qqP" id="yyJ-r5-QoO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpR-Jn-hB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1198"/>
+            <point key="canvasLocation" x="1872.8" y="1197.7511244377813"/>
         </scene>
         <!--Demo Top View Controller-->
         <scene sceneID="ZID-eS-w1G">
