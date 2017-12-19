@@ -50,6 +50,11 @@ public extension CGRect {
     public var center: CGPoint {
         return CGPoint(x: self.width/2.0 + self.origin.x, y: self.height/2.0 + self.origin.y)
     }
+    
+    public static func rect(with center: CGPoint, size: CGSize) -> CGRect {
+        let origin = CGPoint(x: center.x - size.width * 0.5, y: center.y - size.height * 0.5)
+        return CGRect(origin: origin, size: size)
+    }
 }
 
 public extension UIViewController {

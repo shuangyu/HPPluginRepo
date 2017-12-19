@@ -54,28 +54,53 @@ class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
 @IBDesignable
 open class HPNineDotView: UIView, IHPPasswordView {
 
+    public struct Dot {
+        var center: CGPoint {
+            return rect.center
+        }
+        var rect: CGRect
+        var index: Int
+        
+        init(rect: CGRect, index: Int) {
+            self.rect = rect
+            self.index = index
+        }
+        
+        func contains(_ point: CGPoint) -> Bool {
+            return rect.contains(point)
+        }
+        
+        static func == (lhs: Dot, rhs: Dot) -> Bool {
+            return lhs.index == rhs.index
+        }
+        static func != (lhs: Dot, rhs: Dot) -> Bool {
+            return lhs.index != rhs.index
+        }
+    }
+    
     // UI Var.
     @IBInspectable var dotRadius: CGFloat = 30
     @IBInspectable var dotMargin: CGFloat = 30
-    @IBInspectable var dotBordrrWidth: CGFloat = 1
+    @IBInspectable var dotBorderWidth: CGFloat = 1
     @IBInspectable var dotBorderColor: UIColor = kNDVMainColor
     @IBInspectable var dotSelectedBorderColor: UIColor = kNDVSelectedBorderColor
     
     
-    @IBInspectable var connectLineWidth: CGFloat = 1
+    @IBInspectable var connectLineWidth: CGFloat = 2
     @IBInspectable var connectLineColor: UIColor = kNDVMainColor
-    @IBInspectable var errorConnectLineColor: UIColor = kNDVErrorLineColor
     
+    @IBInspectable var errorLineColor: UIColor = kNDVErrorLineColor
     
     @IBOutlet weak var draggedLineMaskView: UIImageView!
     @IBOutlet weak var connectedLineMaskView: UIImageView!
-    private var nineDotImage: UIImage?
+    
+    
+    private var effectViews: Array<UIView> = []
     private var seletedIndies: Array<Int> = []
     
     // Logic Var.
-    private var dotRects: Array<CGRect> = []
-    private var prePoint: CGPoint?
-    private var preIndex: Int = NSNotFound
+    private var dots: Array<Dot> = []
+    private var preDot: Dot?
     lazy private var currentStatus: HPPasswordViewStatus = self.status
     lazy private var leftTryTime = self.maxTryTime
     
@@ -116,45 +141,49 @@ open class HPNineDotView: UIView, IHPPasswordView {
         let touch = touches.first!
         let point = touch.location(in: self)
         
-        let index = selectedDot(with: point)
+        let dot = selectedDot(with: point)
 
-        guard index != NSNotFound else {
+        guard dot != nil else {
             return
         }
-        didSelectDot(at: index)
+        did(select: dot!)
     }
     
     override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard preIndex != NSNotFound else {
+        guard preDot != nil else {
             return
         }
         
         let touch = touches.first!
         let point = touch.location(in: self)
         
-        connect(point: prePoint!, to: point)
+        connect(point: preDot!.center, to: point)
         
-        let index = selectedDot(with: point)
+        let dot = selectedDot(with: point)
         
-        guard index != NSNotFound  && index != preIndex else {
+        guard dot != nil else {
             return
         }
         
-        let middleIndex = middleDot(between: preIndex, and: index)
-        
-        if middleIndex != NSNotFound {
-            connectDot(at: preIndex, toIndex: middleIndex)
-            didSelectDot(at: middleIndex)
+        guard dot! != preDot! else {
+            return
         }
         
-        connectDot(at: preIndex, toIndex: index)
-        didSelectDot(at: index)
+        let midDot = middleDot(between: preDot!, and: dot!)
+        
+        if midDot != nil {
+            connect(preDot!, to: midDot!)
+            did(select: midDot!)
+        }
+        
+        connect(preDot!, to: dot!)
+        did(select: dot!)
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard preIndex != NSNotFound else {
+        guard preDot != nil else {
             return
         }
         
@@ -175,10 +204,9 @@ open class HPNineDotView: UIView, IHPPasswordView {
         for i in 0..<9 {
             let center = centerOfDot(at: i)
             draw(dot: (radius: CGFloat(dotRadius), center: center), with: context)
-            dotRects.append(CGRect.rectOfCircle(center: center, radius: dotRadius))
-            
+            let dot = Dot(rect:CGRect.rectOfCircle(center: center, radius: dotRadius), index: i)
+            dots.append(dot)
         }
-        nineDotImage = UIGraphicsGetImageFromCurrentImageContext()
     }
     
     
@@ -186,8 +214,11 @@ open class HPNineDotView: UIView, IHPPasswordView {
         connectedLineMaskView.image = nil
         draggedLineMaskView.image = nil
         seletedIndies.removeAll()
-        preIndex = NSNotFound
-        prePoint = nil
+        preDot = nil
+        for view in effectViews {
+            view.removeFromSuperview()
+        }
+        effectViews.removeAll()
     }
     
     // MARK: - IHPPasswordView implementation
@@ -199,7 +230,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
     func updateView(with change: HPPasswordViewStatusChange) {
         
         let toStatus = change.to
-        if toStatus != .mismatch || toStatus != .invalid {
+        if toStatus != .mismatch && toStatus != .invalid {
             resetView()
         } else {
             
@@ -207,7 +238,6 @@ open class HPNineDotView: UIView, IHPPasswordView {
     }
     
     // MARK: -
-    
     private func centerOfDot(at index: Int) -> CGPoint {
         let w = self.bounds.width
         let h = self.bounds.height
@@ -227,85 +257,121 @@ open class HPNineDotView: UIView, IHPPasswordView {
     open func draw(dot: (radius: CGFloat, center: CGPoint), with context: CGContext) {
         context.addArc(center: dot.center, radius: dot.radius, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
         context.setStrokeColor(dotBorderColor.cgColor)
-        context.setLineWidth(dotBordrrWidth)
+        context.setLineWidth(dotBorderWidth)
         context.strokePath()
     }
     
-
-    private func selectedDot(with touchPoint:CGPoint) -> Int {
+    private func selectedDot(with touchPoint: CGPoint) -> Dot? {
         
-        var matchedIndex = NSNotFound
-        
-        for dotRect in dotRects {
-            if dotRect.contains(touchPoint) {
-                matchedIndex = dotRects.index(of: dotRect)!
+        var matchedDot: Dot? = nil
+        for dot in dots {
+            if dot.contains(touchPoint) {
+                matchedDot = dot
                 break
             }
         }
         
         // case: no matched dot has been found
-        guard matchedIndex != NSNotFound else {
-            return NSNotFound
+        guard matchedDot != nil else {
+            return nil
         }
         
         // case: first dot always can be selected
-        guard preIndex != NSNotFound else {
-            return matchedIndex
+        guard preDot != nil else {
+            return matchedDot
         }
         
         // case: duplicated seleted index
-        guard !seletedIndies.contains(matchedIndex) else {
-            return NSNotFound
+        guard !seletedIndies.contains(matchedDot!.index) else {
+            return nil
         }
         
         // case: some special connect logic has not been fulfilled
-        guard canConnectPoint(at: preIndex, to: matchedIndex) else {
-            return NSNotFound
+        guard can(connect: preDot!, to: matchedDot!) else {
+            return nil
         }
         
-        return matchedIndex
+        return matchedDot
     }
     
-    private func middleDot(between oneDot: Int, and anotherDot: Int) -> Int {
+    private func middleDot(between oneDot: Dot, and anotherDot: Dot) -> Dot? {
         
-        guard (oneDot + anotherDot)%2 == 0 else {
-            return NSNotFound
+        guard (oneDot.index + anotherDot.index)%2 == 0 else {
+            return nil
         }
         
-        let middleIndex = (oneDot + anotherDot)/2
+        let middleIndex = (oneDot.index + anotherDot.index)/2
         
         guard !seletedIndies.contains(middleIndex) else {
-            return NSNotFound
+            return nil
         }
+        let midDot = dots[middleIndex]
         
-        let fromPoint = dotRects[oneDot].center
-        let toPoint = dotRects[anotherDot].center
-        let middlePoint = dotRects[middleIndex].center
+        let fromPoint = oneDot.center
+        let toPoint = anotherDot.center
+        let midPoint = midDot.center
         
-        guard middlePoint.slope(with: fromPoint) == middlePoint.slope(with: toPoint) else {
-            return NSNotFound
+        guard midPoint.slope(with: fromPoint) == midPoint.slope(with: toPoint) else {
+            return nil
         }
-        return middleIndex
+        return midDot
     }
     
     /*
      * override this function if there are some special demands
      * ex. only nearby point can be connected to each other...
      */
-    open func canConnectPoint(at index: Int, to point: Int) -> Bool {
+    open func can(connect dot: Dot, to anotherDot: Dot) -> Bool {
         return true
     }
     
-    private func didSelectDot(at index: Int) {
-        seletedIndies.append(index)
-        preIndex = index
-        prePoint = dotRects[index].center
+    private func did(select dot: Dot) {
+        seletedIndies.append(dot.index)
+        preDot = dot
+        applySelectedEffect(to: dot, error: false)
     }
     
-    private func connectDot(at index: Int, toIndex: Int ) {
+    open func applySelectedEffect(to dot: Dot, error: Bool) {
         
-        let fromPoint = dotRects[index].center
-        let toPoint = dotRects[toIndex].center
+        let effectView = UIView(frame: dot.rect.insetBy(dx: -dotBorderWidth, dy: -dotBorderWidth))
+        effectView.backgroundColor = error ? errorLineColor : connectLineColor
+        effectView.layer.cornerRadius = effectView.frame.width * 0.5
+        effectView.layer.borderWidth = dotBorderWidth
+        effectView.layer.borderColor = error ? errorLineColor.cgColor : connectLineColor.cgColor
+        
+        
+        let animatedLayerSize: CGFloat = 20.0
+        let scale = animatedLayerSize/dot.rect.width
+        let animatedLayer = CALayer()
+        animatedLayer.frame = effectView.bounds
+        animatedLayer.cornerRadius = effectView.layer.cornerRadius
+        animatedLayer.backgroundColor = UIColor.color255(from: (r: 245.0, g: 246.0, b: 247.0, a: 1.0)).cgColor
+        
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = CATransform3DMakeAffineTransform(CGAffineTransform(scaleX: scale, y: scale))
+        animation.toValue = CATransform3DIdentity
+        animation.duration = 0.2
+        animation.isRemovedOnCompletion = false
+        animatedLayer.add(animation, forKey: "scale")
+        
+
+        let centerLayer = CALayer()
+        centerLayer.frame = CGRect.rect(with: effectView.bounds.center, size: CGSize(width: animatedLayerSize, height: animatedLayerSize))
+        centerLayer.cornerRadius = animatedLayerSize * 0.5
+        centerLayer.backgroundColor = error ? errorLineColor.cgColor : connectLineColor.cgColor
+        
+        effectView.layer.addSublayer(animatedLayer)
+        effectView.layer.addSublayer(centerLayer)
+    
+        self.addSubview(effectView)
+        effectViews.append(effectView)
+    
+    }
+    
+    private func connect(_ dot: Dot, to anotherDot: Dot) {
+        
+        let fromPoint = dot.center
+        let toPoint = anotherDot.center
         
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()!
