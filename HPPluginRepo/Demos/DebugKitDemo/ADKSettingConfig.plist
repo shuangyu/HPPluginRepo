@@ -72,7 +72,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>Use Default theme</string>
+				<string>Use Default Theme</string>
 				<key>action</key>
 				<string>toggleTheme:</string>
 				<key>type</key>

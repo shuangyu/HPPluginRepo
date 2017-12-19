@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FFF726981FE7A5FA009F093A /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7265D1FE7A5F9009F093A /* HPCalendarViewCell.swift */; };
-		FFF726991FE7A5FA009F093A /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7265E1FE7A5F9009F093A /* HPCalendarView.swift */; };
-		FFF7269A1FE7A5FA009F093A /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7265F1FE7A5F9009F093A /* HPCalendarDate.swift */; };
-		FFF7269B1FE7A5FA009F093A /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF726601FE7A5F9009F093A /* HPCalendarViewCell.xib */; };
-		FFF7269C1FE7A5FA009F093A /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726611FE7A5F9009F093A /* HPCalendarHorizontalLayout.swift */; };
-		FFF7269D1FE7A5FA009F093A /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF726621FE7A5F9009F093A /* HPCalendarView.xib */; };
+		FF04BE5A1FE8F2DC00A4D86D /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE531FE8F2DC00A4D86D /* HPCalendarDate.swift */; };
+		FF04BE5B1FE8F2DC00A4D86D /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */; };
+		FF04BE5C1FE8F2DC00A4D86D /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */; };
+		FF04BE5D1FE8F2DC00A4D86D /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */; };
+		FF04BE5E1FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */; };
+		FF04BE5F1FE8F2DC00A4D86D /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */; };
 		FFF7269E1FE7A5FA009F093A /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726641FE7A5F9009F093A /* HPPasswordView.swift */; };
 		FFF7269F1FE7A5FA009F093A /* HPNineDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726661FE7A5F9009F093A /* HPNineDotView.swift */; };
 		FFF726A01FE7A5FA009F093A /* HPNineDotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF726671FE7A5F9009F093A /* HPNineDotView.xib */; };
@@ -73,6 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF04BE531FE8F2DC00A4D86D /* HPCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
+		FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewCell.swift; sourceTree = "<group>"; };
+		FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarView.swift; sourceTree = "<group>"; };
+		FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarViewCell.xib; sourceTree = "<group>"; };
+		FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarHorizontalLayout.swift; sourceTree = "<group>"; };
+		FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarView.xib; sourceTree = "<group>"; };
 		FFF6627B1FCFDB96007D30DD /* HPPluginRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPluginRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF662921FCFDB97007D30DD /* HPPluginRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF6629D1FCFDB97007D30DD /* HPPluginRepoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,12 +86,6 @@
 		FFF726521FE7A5F3009F093A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF726541FE7A5F4009F093A /* HPPluginRepoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPluginRepoTests.swift; sourceTree = "<group>"; };
 		FFF726551FE7A5F4009F093A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFF7265D1FE7A5F9009F093A /* HPCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewCell.swift; sourceTree = "<group>"; };
-		FFF7265E1FE7A5F9009F093A /* HPCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarView.swift; sourceTree = "<group>"; };
-		FFF7265F1FE7A5F9009F093A /* HPCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
-		FFF726601FE7A5F9009F093A /* HPCalendarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarViewCell.xib; sourceTree = "<group>"; };
-		FFF726611FE7A5F9009F093A /* HPCalendarHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarHorizontalLayout.swift; sourceTree = "<group>"; };
-		FFF726621FE7A5F9009F093A /* HPCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarView.xib; sourceTree = "<group>"; };
 		FFF726641FE7A5F9009F093A /* HPPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPasswordView.swift; sourceTree = "<group>"; };
 		FFF726661FE7A5F9009F093A /* HPNineDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNineDotView.swift; sourceTree = "<group>"; };
 		FFF726671FE7A5F9009F093A /* HPNineDotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPNineDotView.xib; sourceTree = "<group>"; };
@@ -152,6 +152,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF04BE521FE8F2DC00A4D86D /* AnwCalendarExt */ = {
+			isa = PBXGroup;
+			children = (
+				FF04BE531FE8F2DC00A4D86D /* HPCalendarDate.swift */,
+				FF04BE541FE8F2DC00A4D86D /* BuildInView */,
+			);
+			path = AnwCalendarExt;
+			sourceTree = "<group>";
+		};
+		FF04BE541FE8F2DC00A4D86D /* BuildInView */ = {
+			isa = PBXGroup;
+			children = (
+				FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */,
+				FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */,
+				FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */,
+				FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */,
+				FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */,
+			);
+			path = BuildInView;
+			sourceTree = "<group>";
+		};
 		FFF662721FCFDB96007D30DD = {
 			isa = PBXGroup;
 			children = (
@@ -211,25 +232,12 @@
 		FFF7265B1FE7A5F9009F093A /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				FFF7265C1FE7A5F9009F093A /* AnwCalendarExt */,
+				FF04BE521FE8F2DC00A4D86D /* AnwCalendarExt */,
 				FFF726631FE7A5F9009F093A /* AnwPasswordPlugin */,
 				FFF726681FE7A5F9009F093A /* AnwDebugKit */,
 				FFF726721FE7A5F9009F093A /* AnwSlidePlugin */,
 			);
 			path = Plugins;
-			sourceTree = "<group>";
-		};
-		FFF7265C1FE7A5F9009F093A /* AnwCalendarExt */ = {
-			isa = PBXGroup;
-			children = (
-				FFF7265D1FE7A5F9009F093A /* HPCalendarViewCell.swift */,
-				FFF7265E1FE7A5F9009F093A /* HPCalendarView.swift */,
-				FFF7265F1FE7A5F9009F093A /* HPCalendarDate.swift */,
-				FFF726601FE7A5F9009F093A /* HPCalendarViewCell.xib */,
-				FFF726611FE7A5F9009F093A /* HPCalendarHorizontalLayout.swift */,
-				FFF726621FE7A5F9009F093A /* HPCalendarView.xib */,
-			);
-			path = AnwCalendarExt;
 			sourceTree = "<group>";
 		};
 		FFF726631FE7A5F9009F093A /* AnwPasswordPlugin */ = {
@@ -456,13 +464,13 @@
 				FFF726AF1FE7A5FA009F093A /* LaunchScreen.storyboard in Resources */,
 				FFF726B01FE7A5FA009F093A /* Main.storyboard in Resources */,
 				FFF726A31FE7A5FA009F093A /* ADKStoryboard_container.storyboard in Resources */,
-				FFF7269D1FE7A5FA009F093A /* HPCalendarView.xib in Resources */,
 				FFF726A01FE7A5FA009F093A /* HPNineDotView.xib in Resources */,
 				FFF726BE1FE7A5FA009F093A /* ADKStoryboard_phone.storyboard in Resources */,
-				FFF7269B1FE7A5FA009F093A /* HPCalendarViewCell.xib in Resources */,
 				FFF726C31FE7A5FA009F093A /* ADKRootConfig.plist in Resources */,
+				FF04BE5F1FE8F2DC00A4D86D /* HPCalendarView.xib in Resources */,
 				FFF726BF1FE7A5FA009F093A /* ADKSettingConfig.plist in Resources */,
 				FFF726AE1FE7A5FA009F093A /* Assets.xcassets in Resources */,
+				FF04BE5D1FE8F2DC00A4D86D /* HPCalendarViewCell.xib in Resources */,
 				FFF726A21FE7A5FA009F093A /* guide.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,18 +501,16 @@
 				FFF726AD1FE7A5FA009F093A /* RootViewController.swift in Sources */,
 				FFF726B71FE7A5FA009F093A /* ASPDemoBottomViewController.swift in Sources */,
 				FFF726C01FE7A5FA009F093A /* ADKDemoViewController.swift in Sources */,
-				FFF726991FE7A5FA009F093A /* HPCalendarView.swift in Sources */,
 				FFF726A51FE7A5FA009F093A /* ADKRootViewController.swift in Sources */,
 				FFF726B91FE7A5FA009F093A /* HPNavView.swift in Sources */,
 				FFF726BC1FE7A5FA009F093A /* AnwCalendarViewController.swift in Sources */,
 				FFF7269F1FE7A5FA009F093A /* HPNineDotView.swift in Sources */,
+				FF04BE5A1FE8F2DC00A4D86D /* HPCalendarDate.swift in Sources */,
 				FFF726AA1FE7A5FA009F093A /* ASPParentViewController.swift in Sources */,
 				FFF726A71FE7A5FA009F093A /* ADKExtension.swift in Sources */,
 				FFF726B51FE7A5FA009F093A /* MyNavigationController.swift in Sources */,
-				FFF726981FE7A5FA009F093A /* HPCalendarViewCell.swift in Sources */,
 				FFF726B31FE7A5FA009F093A /* HPPluginRepo.xcdatamodeld in Sources */,
 				FFF726C21FE7A5FA009F093A /* ADKTestViewController.swift in Sources */,
-				FFF7269C1FE7A5FA009F093A /* HPCalendarHorizontalLayout.swift in Sources */,
 				FFF7269E1FE7A5FA009F093A /* HPPasswordView.swift in Sources */,
 				FFF726C11FE7A5FA009F093A /* ADKSettingEventHandler.swift in Sources */,
 				FFF726BB1FE7A5FA009F093A /* DemoAppSettings.swift in Sources */,
@@ -513,13 +519,15 @@
 				FFF726BA1FE7A5FA009F093A /* AnwPasswordDemoViewController.swift in Sources */,
 				FFF726B11FE7A5FA009F093A /* AnwExts.swift in Sources */,
 				FFF726A41FE7A5FA009F093A /* ADKGuideViewController.swift in Sources */,
+				FF04BE5B1FE8F2DC00A4D86D /* HPCalendarViewCell.swift in Sources */,
 				FFF726BD1FE7A5FA009F093A /* ADKTest2ViewController.swift in Sources */,
 				FFF726A61FE7A5FA009F093A /* ADKFloatingButton.swift in Sources */,
 				FFF726AC1FE7A5FA009F093A /* ASPMessageBridge.swift in Sources */,
-				FFF7269A1FE7A5FA009F093A /* HPCalendarDate.swift in Sources */,
 				FFF726A91FE7A5FA009F093A /* ASPBottomViewController.swift in Sources */,
+				FF04BE5C1FE8F2DC00A4D86D /* HPCalendarView.swift in Sources */,
 				FFF726B61FE7A5FA009F093A /* ASPDemoTopViewController.swift in Sources */,
 				FFF726B41FE7A5FA009F093A /* AppDelegate.swift in Sources */,
+				FF04BE5E1FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift in Sources */,
 				FFF726B81FE7A5FA009F093A /* ASPDemoParentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
