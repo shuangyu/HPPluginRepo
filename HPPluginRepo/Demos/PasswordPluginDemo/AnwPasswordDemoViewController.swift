@@ -81,7 +81,7 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
     }
     
     func beginInput<T>(passwordView: T) where T : IHPPasswordView {
-        statusLabel.text = "Release Finger When Done"
+        update(status: "Release Finger When Done")
     }
     
     func endInput<T>(passwordView: T) where T : IHPPasswordView {
