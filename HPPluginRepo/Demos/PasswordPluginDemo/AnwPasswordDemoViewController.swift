@@ -67,7 +67,7 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
             case .mismatch:
                 update(status: "Mismatch! Please Try Again", with: true)
             case .match:
-                update(status: "Create Success")
+                update(status: "Pattern Saved")
                 perform(#selector(closePage), with: nil, afterDelay: 1.5)
             default:
                 break

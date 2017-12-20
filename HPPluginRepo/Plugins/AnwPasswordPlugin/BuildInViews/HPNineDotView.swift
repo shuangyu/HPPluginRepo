@@ -10,7 +10,7 @@ import UIKit
 
 let kNDVMainColor = UIColor.color255(from: (r: 91.0, g: 153.0, b: 238.0, a: 1.0))
 let kNDVSelectedBorderColor = UIColor.color255(from: (r: 53.0, g: 183.0, b: 127.0, a: 1.0))
-let kNDVErrorLineColor = UIColor.color255(from: (r: 53.0, g: 183.0, b: 127.0, a: 1.0))
+let kNDVErrorLineColor = UIColor.color255(from: (r: 255.0, g: 78.0, b: 78.0, a: 1.0))
 
 class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
     
@@ -34,19 +34,19 @@ class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
     
     func validate(password: Any?) -> Bool {
         
-        guard let indies = password as? Array<Int> else {
+        guard let dots = password as? Array<HPNineDotView.Dot> else {
             return false
         }
-        return indies.count >= 3
+        return dots.count >= 3
     }
     
     func password(from: Any?) -> String? {
-        guard let indies = from as? Array<Int> else {
+        guard let dots = from as? Array<HPNineDotView.Dot> else {
             return nil
         }
         
-        return indies.map({ (i) -> String in
-            return "\(i)"
+        return dots.map({ (dot) -> String in
+            return "\(dot.index)"
         }) .joined(separator: "-")
     }
 }
@@ -96,7 +96,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     
     private var effectViews: Array<UIView> = []
-    private var seletedIndies: Array<Int> = []
+    private var selectedDots: Array<Dot> = []
     
     // Logic Var.
     private var dots: Array<Dot> = []
@@ -113,10 +113,10 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     var tmpPassword: Any? {
         get {
-            return seletedIndies
+            return selectedDots
         }
         set(newValue) {
-            seletedIndies = newValue as! Array<Int>
+            selectedDots = newValue as! Array<Dot>
         }
         
     }
@@ -146,7 +146,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         guard dot != nil else {
             return
         }
-        did(select: dot!)
+        didSelect(dot: dot!)
     }
     
     override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -174,11 +174,11 @@ open class HPNineDotView: UIView, IHPPasswordView {
         
         if midDot != nil {
             connect(preDot!, to: midDot!)
-            did(select: midDot!)
+            didSelect(dot: midDot!)
         }
         
         connect(preDot!, to: dot!)
-        did(select: dot!)
+        didSelect(dot: dot!)
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -209,16 +209,31 @@ open class HPNineDotView: UIView, IHPPasswordView {
         }
     }
     
-    
+    @objc
     private func resetView() {
         connectedLineMaskView.image = nil
         draggedLineMaskView.image = nil
-        seletedIndies.removeAll()
+        selectedDots.removeAll()
         preDot = nil
         for view in effectViews {
             view.removeFromSuperview()
         }
         effectViews.removeAll()
+    }
+    
+    private func showErrorStatus() {
+        
+        var preDot = selectedDots.first!
+        
+        for dot in selectedDots {
+            
+            if dot != preDot {
+                connect(preDot, to: dot)
+                preDot = dot
+            }
+            applySelectedEffect(to: dot, error: true)
+        }
+        
     }
     
     // MARK: - IHPPasswordView implementation
@@ -233,7 +248,8 @@ open class HPNineDotView: UIView, IHPPasswordView {
         if toStatus != .mismatch && toStatus != .invalid {
             resetView()
         } else {
-            
+            showErrorStatus()
+            perform(#selector(resetView), with: nil, afterDelay: 1)
         }
     }
     
@@ -282,7 +298,11 @@ open class HPNineDotView: UIView, IHPPasswordView {
         }
         
         // case: duplicated seleted index
-        guard !seletedIndies.contains(matchedDot!.index) else {
+        let duplicated = selectedDots.contains { (dot) -> Bool in
+            return dot == matchedDot!
+        }
+        
+        guard !duplicated else {
             return nil
         }
         
@@ -301,11 +321,15 @@ open class HPNineDotView: UIView, IHPPasswordView {
         }
         
         let middleIndex = (oneDot.index + anotherDot.index)/2
+        let midDot = dots[middleIndex]
         
-        guard !seletedIndies.contains(middleIndex) else {
+        let duplicated = selectedDots.contains { (dot) -> Bool in
+            return dot == midDot
+        }
+        
+        guard !duplicated else {
             return nil
         }
-        let midDot = dots[middleIndex]
         
         let fromPoint = oneDot.center
         let toPoint = anotherDot.center
@@ -325,8 +349,8 @@ open class HPNineDotView: UIView, IHPPasswordView {
         return true
     }
     
-    private func did(select dot: Dot) {
-        seletedIndies.append(dot.index)
+    private func didSelect(dot: Dot) {
+        selectedDots.append(dot)
         preDot = dot
         applySelectedEffect(to: dot, error: false)
     }
