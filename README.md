@@ -17,4 +17,6 @@ Plugins
 ### Calendar Plugin
 ![alt tag](https://github.com/shuangyu/HPPluginRepo/blob/master/calendarDemo.gif)
 
-### Password Plugin(not complete yet...)
+### Password Plugin
+<b>Nine Dot View Demo(build on password plugin)</b>
+![alt tag](https://github.com/shuangyu/HPPluginRepo/blob/master/NineDotViewDemo.gif)
