@@ -17,7 +17,9 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
         super.viewDidLoad()
         self.title = "Password View Demo"
         
-        nineDotView.status = .create
+        let initalType = ADKPasswordViewSetting().initialType
+        nineDotView.status = HPPasswordViewStatus(rawValue:initalType)!
+        
         nineDotView.delegate = self
         self.view.insertSubview(nineDotView, belowSubview: statusLabel)
         nineDotView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,21 +58,61 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
         
         let fromStatus = change.from
         let toStatus = change.to
+        let tryTimes = change.tryTimes
         
         if fromStatus == .create {
-            
             switch toStatus {
+            
             case .invalid:
                 update(status: "Passcode length should be longger than 3", with: true)
             case .create:
-                update(status: "Input Again to Confirm")
+                update(status: "Draw Again to Confirm")
             case .mismatch:
                 update(status: "Mismatch! Please Try Again", with: true)
             case .match:
                 update(status: "Pattern Saved")
-                perform(#selector(closePage), with: nil, afterDelay: 1.5)
+                perform(#selector(closePage), with: nil, afterDelay: 1)
             default:
                 break
+            }
+        } else if fromStatus == .reset {
+            
+            switch toStatus {
+            case .empty:
+                update(status: "Draw A New Pattern")
+            case .mismatch:
+                update(status: "Mismatch! Left Try Times \(tryTimes)", with: true)
+                if tryTimes == 0 {
+                    perform(#selector(closePage), with: nil, afterDelay: 1)
+                }
+            default:
+                break
+            }
+        } else if fromStatus == .delete {
+            switch toStatus {
+            case .mismatch:
+                update(status: "Mismatch! Left Try Times \(tryTimes)", with: true)
+                if tryTimes == 0 {
+                    perform(#selector(closePage), with: nil, afterDelay: 1)
+                }
+            case .match:
+                update(status: "Pattern Deleted")
+                perform(#selector(closePage), with: nil, afterDelay: 1)
+            default:
+                break
+            }
+        } else if fromStatus == .verify {
+            switch toStatus {
+            case .mismatch:
+            update(status: "Mismatch! Left Try Times \(tryTimes)", with: true)
+            if tryTimes == 0 {
+            perform(#selector(closePage), with: nil, afterDelay: 1)
+            }
+            case .match:
+            update(status: "Unlocked")
+            perform(#selector(closePage), with: nil, afterDelay: 1)
+            default:
+            break
             }
         }
         

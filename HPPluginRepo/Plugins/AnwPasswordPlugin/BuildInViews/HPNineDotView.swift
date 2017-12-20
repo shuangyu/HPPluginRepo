@@ -101,7 +101,6 @@ open class HPNineDotView: UIView, IHPPasswordView {
     // Logic Var.
     private var dots: Array<Dot> = []
     private var preDot: Dot?
-    lazy private var currentStatus: HPPasswordViewStatus = self.status
     lazy private var leftTryTime = self.maxTryTime
     
     // MARK: - IHPPasswordView implementation
@@ -187,7 +186,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
             return
         }
         
-        decorator.triggerStatusChange(HPPasswordViewStatusChange(from: self.currentStatus, to: .empty, tryTimes: leftTryTime))
+        decorator.triggerStatusChange(HPPasswordViewStatusChange(from: self.status, to: .empty, tryTimes: leftTryTime))
         draggedLineMaskView.image = nil
         
         self.delegate?.endInput(passwordView: self)
@@ -228,7 +227,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         for dot in selectedDots {
             
             if dot != preDot {
-                connect(preDot, to: dot)
+                connect(preDot, to: dot, error: true)
                 preDot = dot
             }
             applySelectedEffect(to: dot, error: true)
@@ -245,6 +244,8 @@ open class HPNineDotView: UIView, IHPPasswordView {
     func updateView(with change: HPPasswordViewStatusChange) {
         
         let toStatus = change.to
+        leftTryTime = change.tryTimes
+        
         if toStatus != .mismatch && toStatus != .invalid {
             resetView()
         } else {
@@ -392,7 +393,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
     
     }
     
-    private func connect(_ dot: Dot, to anotherDot: Dot) {
+    private func connect(_ dot: Dot, to anotherDot: Dot, error: Bool = false) {
         
         let fromPoint = dot.center
         let toPoint = anotherDot.center
@@ -402,7 +403,7 @@ open class HPNineDotView: UIView, IHPPasswordView {
         connectedLineMaskView.image?.draw(in: self.bounds)
         context.saveGState()
         
-        let line = (width: connectLineWidth, color: connectLineColor)
+        let line = (width: connectLineWidth, color: error ? errorLineColor : connectLineColor)
         connect(point: fromPoint, to: toPoint, in: context, with: line)
         
         connectedLineMaskView.image = UIGraphicsGetImageFromCurrentImageContext()

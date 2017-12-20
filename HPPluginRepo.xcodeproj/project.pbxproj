@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67B4324D1FEA9C6A003F0A1F /* ADKPasswordSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4324C1FEA9C6A003F0A1F /* ADKPasswordSettingViewController.swift */; };
 		FF04BE5A1FE8F2DC00A4D86D /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE531FE8F2DC00A4D86D /* HPCalendarDate.swift */; };
 		FF04BE5B1FE8F2DC00A4D86D /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */; };
 		FF04BE5C1FE8F2DC00A4D86D /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */; };
@@ -47,7 +48,6 @@
 		FFF726BD1FE7A5FA009F093A /* ADKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726901FE7A5F9009F093A /* ADKTest2ViewController.swift */; };
 		FFF726BE1FE7A5FA009F093A /* ADKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF726911FE7A5F9009F093A /* ADKStoryboard_phone.storyboard */; };
 		FFF726BF1FE7A5FA009F093A /* ADKSettingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726921FE7A5F9009F093A /* ADKSettingConfig.plist */; };
-		FFF726C01FE7A5FA009F093A /* ADKDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726931FE7A5F9009F093A /* ADKDemoViewController.swift */; };
 		FFF726C11FE7A5FA009F093A /* ADKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726941FE7A5F9009F093A /* ADKSettingEventHandler.swift */; };
 		FFF726C21FE7A5FA009F093A /* ADKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726951FE7A5F9009F093A /* ADKTestViewController.swift */; };
 		FFF726C31FE7A5FA009F093A /* ADKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726961FE7A5F9009F093A /* ADKRootConfig.plist */; };
@@ -73,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67B4324C1FEA9C6A003F0A1F /* ADKPasswordSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADKPasswordSettingViewController.swift; sourceTree = "<group>"; };
 		FF04BE531FE8F2DC00A4D86D /* HPCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
 		FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewCell.swift; sourceTree = "<group>"; };
 		FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarView.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		FFF726901FE7A5F9009F093A /* ADKTest2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADKTest2ViewController.swift; sourceTree = "<group>"; };
 		FFF726911FE7A5F9009F093A /* ADKStoryboard_phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ADKStoryboard_phone.storyboard; sourceTree = "<group>"; };
 		FFF726921FE7A5F9009F093A /* ADKSettingConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ADKSettingConfig.plist; sourceTree = "<group>"; };
-		FFF726931FE7A5F9009F093A /* ADKDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADKDemoViewController.swift; sourceTree = "<group>"; };
 		FFF726941FE7A5F9009F093A /* ADKSettingEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADKSettingEventHandler.swift; sourceTree = "<group>"; };
 		FFF726951FE7A5F9009F093A /* ADKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADKTestViewController.swift; sourceTree = "<group>"; };
 		FFF726961FE7A5F9009F093A /* ADKRootConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ADKRootConfig.plist; sourceTree = "<group>"; };
@@ -346,10 +346,10 @@
 				FFF726901FE7A5F9009F093A /* ADKTest2ViewController.swift */,
 				FFF726911FE7A5F9009F093A /* ADKStoryboard_phone.storyboard */,
 				FFF726921FE7A5F9009F093A /* ADKSettingConfig.plist */,
-				FFF726931FE7A5F9009F093A /* ADKDemoViewController.swift */,
 				FFF726941FE7A5F9009F093A /* ADKSettingEventHandler.swift */,
 				FFF726951FE7A5F9009F093A /* ADKTestViewController.swift */,
 				FFF726961FE7A5F9009F093A /* ADKRootConfig.plist */,
+				67B4324C1FEA9C6A003F0A1F /* ADKPasswordSettingViewController.swift */,
 			);
 			path = DebugKitDemo;
 			sourceTree = "<group>";
@@ -500,7 +500,6 @@
 				FFF726AB1FE7A5FA009F093A /* ASPTopViewController.swift in Sources */,
 				FFF726AD1FE7A5FA009F093A /* RootViewController.swift in Sources */,
 				FFF726B71FE7A5FA009F093A /* ASPDemoBottomViewController.swift in Sources */,
-				FFF726C01FE7A5FA009F093A /* ADKDemoViewController.swift in Sources */,
 				FFF726A51FE7A5FA009F093A /* ADKRootViewController.swift in Sources */,
 				FFF726B91FE7A5FA009F093A /* HPNavView.swift in Sources */,
 				FFF726BC1FE7A5FA009F093A /* AnwCalendarViewController.swift in Sources */,
@@ -527,6 +526,7 @@
 				FF04BE5C1FE8F2DC00A4D86D /* HPCalendarView.swift in Sources */,
 				FFF726B61FE7A5FA009F093A /* ASPDemoTopViewController.swift in Sources */,
 				FFF726B41FE7A5FA009F093A /* AppDelegate.swift in Sources */,
+				67B4324D1FEA9C6A003F0A1F /* ADKPasswordSettingViewController.swift in Sources */,
 				FF04BE5E1FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift in Sources */,
 				FFF726B81FE7A5FA009F093A /* ASPDemoParentViewController.swift in Sources */,
 			);

@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum HPPasswordViewStatus {
+enum HPPasswordViewStatus: Int {
     // initial status
     case create
     case reset
@@ -20,7 +20,6 @@ enum HPPasswordViewStatus {
     case mismatch
     case match
     case invalid
-    
 }
 
 struct HPPasswordViewStatusChange {
@@ -115,9 +114,10 @@ class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
         } else if change.from == .reset {
 
             if pwd == inputtedPwd { // unlock first and succeed, then skip to create process
-                outChange.to = .create
+                outChange.to = .empty
+                passwordView!.status = .create
             } else { // unlock failed
-                outChange.tryTimes = tryTimes + 1
+                outChange.tryTimes = tryTimes - 1
                 outChange.to = .mismatch
             }
         } else if change.from == .delete {
@@ -126,14 +126,14 @@ class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
                 outChange.to = .match
                 storage!.deletePassword()
             } else {
-                outChange.tryTimes = tryTimes + 1
+                outChange.tryTimes = tryTimes - 1
                 outChange.to = .mismatch
             }
         } else if change.from == .verify {
             if pwd == inputtedPwd {
                 outChange.to = .match
             } else {
-                outChange.tryTimes = tryTimes + 1
+                outChange.tryTimes = tryTimes - 1
                 outChange.to = .mismatch
             }
         }

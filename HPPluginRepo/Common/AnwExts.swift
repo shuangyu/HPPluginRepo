@@ -74,11 +74,15 @@ public extension UIViewController {
         
     }
     
-    public static func loadFromStoryboard(with identifier: String?=nil) -> UIViewController {
+    public static func loadFromStoryboard(_ storyboardName: String? = nil ,with identifier: String?=nil) -> UIViewController {
         
         let _identifier = identifier == nil ? self.nameOfClass : identifier
+        var sb = UIStoryboard.default()
+        if storyboardName != nil {
+            sb = UIStoryboard.init(name: storyboardName!, bundle: nil)
+        }
         
-        return UIStoryboard.default().instantiateViewController(withIdentifier:_identifier!)
+        return sb.instantiateViewController(withIdentifier:_identifier!)
     }
 }
 

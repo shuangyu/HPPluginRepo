@@ -114,6 +114,14 @@
 				<key>defaultValue</key>
 				<string>getPassword</string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>set initial status</string>
+				<key>action</key>
+				<string>openPasswodViewSettingPage</string>
+				<key>type</key>
+				<string>ADKCellTypeDetail</string>
+			</dict>
 		</array>
 	</dict>
 </array>

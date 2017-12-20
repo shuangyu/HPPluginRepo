@@ -111,11 +111,20 @@ class ADKSettingEventHandler: NSObject {
     }
     
     // MARK: - HPPasswordView Demo Settings
-    
+
     public func getPassword() -> String {
         guard let pwd = HPNineDotViewStorage().password else {
             return "No Password"
         }
-        return "Password is: \(pwd)"
+        return "password is: \(pwd)"
+    }
+    
+    public func openPasswodViewSettingPage() {
+        let passwordVC = ADKPasswordSettingViewController.loadFromStoryboard("ADKStoryboard_phone")
+        
+        let navigationVC = UIApplication.shared.keyWindow!.rootViewController as! UINavigationController
+        
+        navigationVC.pushViewController(passwordVC, animated: true)
+        
     }
 }
