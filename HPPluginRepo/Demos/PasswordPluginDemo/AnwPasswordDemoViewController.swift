@@ -78,7 +78,7 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
         } else if fromStatus == .reset {
             
             switch toStatus {
-            case .empty:
+            case .match:
                 update(status: "Draw A New Pattern")
             case .mismatch:
                 update(status: "Mismatch! Left Try Times \(tryTimes)", with: true)

@@ -114,7 +114,7 @@ class HPPasswordViewDecorator<T: IHPPasswordView, P: IHPPasswordStorage> {
         } else if change.from == .reset {
 
             if pwd == inputtedPwd { // unlock first and succeed, then skip to create process
-                outChange.to = .empty
+                outChange.to = .match
                 passwordView!.status = .create
             } else { // unlock failed
                 outChange.tryTimes = tryTimes - 1
