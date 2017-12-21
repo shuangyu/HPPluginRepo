@@ -89,7 +89,7 @@ class ADKSettingEventHandler: NSObject {
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (actionItem) in
             exit(0)
         }
-        let controller = UIAlertController(title: "Tips", message: "You need restart app to apply this change", preferredStyle: UIAlertControllerStyle.alert)
+        let controller = UIAlertController(title: "Tips", message: "You need to restart app to apply this change", preferredStyle: UIAlertControllerStyle.alert)
         controller.addAction(okAction)
         UIApplication.shared.keyWindow!.rootViewController!.present(controller, animated: true) {
             
@@ -114,7 +114,7 @@ class ADKSettingEventHandler: NSObject {
 
     public func getPassword() -> String {
         guard let pwd = HPNineDotViewStorage().password else {
-            return "No Password"
+            return "No password"
         }
         return "password is: \(pwd)"
     }
