@@ -166,8 +166,8 @@
 			children = (
 				FF04BE551FE8F2DC00A4D86D /* HPCalendarViewCell.swift */,
 				FF04BE561FE8F2DC00A4D86D /* HPCalendarView.swift */,
-				FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */,
 				FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */,
+				FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */,
 				FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */,
 			);
 			path = BuildInView;

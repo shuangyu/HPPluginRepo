@@ -65,6 +65,7 @@ struct HPMonth {
     let length: Int
     let startWeekDay: HPCalWeekDay
     let endWeekDay: HPCalWeekDay
+    // use this as data source of calendar view
     var days: [String] = []
     
     var name: String {
@@ -74,7 +75,7 @@ struct HPMonth {
         return "\(kHPCalMonthShortName[month - 1]) \(year)"
     }
 
-    init(year: HPCalYear=HPCalDate.today.year, month: HPCalMonth=HPCalDate.today.month) throws {
+    init(year: HPCalYear = HPCalDate.today.year, month: HPCalMonth = HPCalDate.today.month) throws {
         
         self.year = year
         self.month = month
