@@ -20,3 +20,5 @@ Plugins
 ### Password Plugin
 #### Nine Dot View Demo(build on password plugin)
 ![alt tag](https://github.com/shuangyu/HPPluginRepo/blob/master/NineDotViewDemo.gif)
+#### Simple Passcode View Demo(build on password plugin)
+![alt tag](https://github.com/shuangyu/HPPluginRepo/blob/master/passcodeViewDemo.gif)
