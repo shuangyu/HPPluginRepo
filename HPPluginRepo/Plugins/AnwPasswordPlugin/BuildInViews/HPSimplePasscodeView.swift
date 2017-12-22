@@ -50,6 +50,7 @@ class HPPasscodeInputViewCursor: UIView {
     }
     
     @IBInspectable var borderColor: UIColor = UIColor.color255(from: (r: 12.0, g: 81.0, b: 149, a: 1.0))
+    @IBInspectable var errorColor: UIColor = UIColor.color255(from: (r: 255.0, g: 78.0, b: 78.0, a: 1.0))
     @IBInspectable var borderWidth: CGFloat = 1
     @IBInspectable var borderMask: Int = BorderMask.all.rawValue
     
@@ -58,6 +59,8 @@ class HPPasscodeInputViewCursor: UIView {
     
     private var _selected: Bool = false;
     private var _text: String?
+    
+    var showError: Bool = false
     
     var selected: Bool {
         get {
@@ -90,7 +93,7 @@ class HPPasscodeInputViewCursor: UIView {
         let w = rect.width
         let h = rect.height
         let context = UIGraphicsGetCurrentContext()!
-        context.setStrokeColor(borderColor.cgColor)
+        context.setStrokeColor(showError ? errorColor.cgColor : borderColor.cgColor)
         context.setLineWidth(borderWidth)
         if borderMask | BorderMask.top.rawValue > 0 {
             context.move(to: CGPoint.zero)
@@ -130,17 +133,17 @@ class HPSimplePasscodeViewStorage: NSObject, IHPPasswordStorage {
     var _password: String?
     var password: String? {
         if _password == nil {
-            _password = defaultStorage.string(forKey: HPNineDotViewStorage.passwordKey)
+            _password = defaultStorage.string(forKey: HPSimplePasscodeViewStorage.passwordKey)
         }
         return _password
     }
     
     func save(password: String) {
-        defaultStorage.set(password, forKey: HPNineDotViewStorage.passwordKey)
+        defaultStorage.set(password, forKey: HPSimplePasscodeViewStorage.passwordKey)
     }
     
     func deletePassword() {
-        defaultStorage.removeObject(forKey: HPNineDotViewStorage.passwordKey)
+        defaultStorage.removeObject(forKey: HPSimplePasscodeViewStorage.passwordKey)
     }
     func validate(password: Any?) -> Bool {
         return true
@@ -152,14 +155,13 @@ class HPSimplePasscodeViewStorage: NSObject, IHPPasswordStorage {
         }
         return passcodeArr.joined(separator: "-")
     }
-    
-    
 }
 
 @IBDesignable class HPSimplePasscodeView: UIView, IHPPasswordView, UITextFieldDelegate {
     
     @IBOutlet var inputViews: [HPPasscodeInputView]!
     @IBOutlet weak var textField: UITextField!
+    private var enable: Bool = true
     
     var tmpPassword: Any? {
         get {
@@ -202,17 +204,52 @@ class HPSimplePasscodeViewStorage: NSObject, IHPPasswordStorage {
         inputViews.first!.selected = true
     }
     
+    @objc private func resetView() {
+       
+        for inputView in inputViews {
+            inputView.text = nil
+            inputView.selected = false
+            inputView.showError = false
+            inputView.setNeedsDisplay()
+        }
+        currentIndex = 0
+        enable = true
+        inputViews[currentIndex].selected = true
+    }
+    
+    private func showErrorStatus() {
+        
+        
+        inputViews[currentIndex].selected = false
+        for inputView in inputViews {
+            inputView.showError = true
+            inputView.setNeedsDisplay()
+        }
+    }
+    
     // MARK: - IHPPasswordView
     func passwordImage() -> UIImage? {
         return nil
     }
     
     func updateView(with change: HPPasswordViewStatusChange) {
-        
+        let toStatus = change.to
+        leftTryTime = change.tryTimes
+        enable = false
+        if toStatus != .mismatch && toStatus != .invalid {
+            perform(#selector(resetView), with: nil, afterDelay: 0.5)
+        } else {
+            showErrorStatus()
+            perform(#selector(resetView), with: nil, afterDelay: 1)
+        }
     }
 
     // MARK: - IHPPasswordView
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if !enable {
+            return false
+        }
         
         inputViews[currentIndex].text = string
         inputViews[currentIndex].selected = false

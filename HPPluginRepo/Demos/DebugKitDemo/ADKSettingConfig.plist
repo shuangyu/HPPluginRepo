@@ -109,9 +109,19 @@
 		<key>items</key>
 		<array>
 			<dict>
+				<key>title</key>
+				<string>simplePasscodeView</string>
+				<key>action</key>
+				<string>passwordViewChanged:</string>
+				<key>type</key>
+				<string>ADKCellTypeSwitch</string>
+				<key>defaultValue</key>
+				<string>passwordViewType</string>
+			</dict>
+			<dict>
 				<key>type</key>
 				<string>ADKCellTypePlain</string>
-				<key>defaultValue</key>
+				<key>varTitle</key>
 				<string>getPassword</string>
 			</dict>
 			<dict>

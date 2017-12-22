@@ -267,8 +267,8 @@
 		FFF726681FE7A5F9009F093A /* AnwDebugKit */ = {
 			isa = PBXGroup;
 			children = (
-				FFF726691FE7A5F9009F093A /* ADKSettingViewController.swift */,
 				FFF7266A1FE7A5F9009F093A /* resources */,
+				FFF726691FE7A5F9009F093A /* ADKSettingViewController.swift */,
 				FFF7266D1FE7A5F9009F093A /* ADKGuideViewController.swift */,
 				FFF7266E1FE7A5F9009F093A /* ADKRootViewController.swift */,
 				FFF7266F1FE7A5F9009F093A /* ADKFloatingButton.swift */,

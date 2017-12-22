@@ -54,7 +54,6 @@ public class ADKSettingCellEventCenter {
 }
 
 class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchControl: UISwitch!
     @IBOutlet weak var sliderControl: UISlider!
@@ -70,6 +69,7 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
             value = NSNumber(value: control.value)
         }
         ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem!.action!, params: value)
+        
     }
     
     override func prepareForReuse() {
@@ -79,14 +79,15 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
     func configCell(with cellItem: ADKSettingCellItem) {
         self.cellItem = cellItem
         if titleLabel != nil {
-            titleLabel.text = cellItem.title
-        }
-        switch cellItem.type! {
-        case .plain:
-            if cellItem.defaultValue != nil {
-                let title =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! String
+            if cellItem.varTitle != nil {
+                let title =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.varTitle!).takeUnretainedValue() as! String
                 titleLabel.text = title
+            } else {
+                titleLabel.text = cellItem.title
             }
+        }
+        
+        switch cellItem.type! {
         case .inputValue:
             let placeHolder =  ADKSettingCellEventCenter.sharedInstance.handleEvent(with: cellItem.defaultValue!).takeUnretainedValue() as! String
             textField.text = placeHolder

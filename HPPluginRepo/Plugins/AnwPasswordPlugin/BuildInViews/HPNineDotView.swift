@@ -207,8 +207,7 @@ class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
         }
     }
     
-    @objc
-    private func resetView() {
+    @objc private func resetView() {
         connectedLineMaskView.image = nil
         draggedLineMaskView.image = nil
         selectedDots.removeAll()

@@ -75,6 +75,7 @@ public struct ADKRootCellItem {
 
 public struct ADKSettingCellItem {
     var title: String?          // ===> cell title
+    var varTitle: String?       // ===> string value of cell title selector
     var action: String?         // ===> string value of cell action selector
     var type: ADKCellType?      // ===> cell type
     var defaultValue: String?   // ===> string value of cell default value selector
@@ -110,6 +111,7 @@ public struct ADKSettingCellItem {
                     item.action = rawRowInfo["action"] as? String
                     item.type = ADKCellType(rawValue: rawRowInfo["type"] as! String)
                     item.defaultValue = rawRowInfo["defaultValue"] as? String
+                    item.varTitle = rawRowInfo["varTitle"] as? String
                     sectionRows.append(item)
                 }
             }

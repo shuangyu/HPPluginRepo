@@ -11,34 +11,37 @@ import UIKit
 class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
-//    private var passwordView: HPNineDotView = Bundle.main.loadNibNamed("HPNineDotView", owner: nil, options: nil)?.first as! HPNineDotView
     
-    private var passwordView: HPSimplePasscodeView = Bundle.main.loadNibNamed("HPSimplePasscodeView", owner: nil, options: nil)?.first as! HPSimplePasscodeView
+    let passwordViewType = UserDefaults.standard.integer(forKey: "APPPasswordViewTypeKey")
+    
+    private var passwordView: IHPPasswordView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Password View Demo"
-        
+        let nibName = passwordViewType == 0 ? "HPNineDotView" : "HPSimplePasscodeView"
+        self.title = passwordViewType == 0 ? "Nine Dot View Demo" : "Simple Passcode View Demo"
+        passwordView = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)?.first as? IHPPasswordView
         let initalType = ADKPasswordViewSetting().initialType
-        passwordView.status = HPPasswordViewStatus(rawValue:initalType)!
+        passwordView!.status = HPPasswordViewStatus(rawValue:initalType)!
         
-        passwordView.delegate = self
-        self.view.insertSubview(passwordView, belowSubview: statusLabel)
-        passwordView.translatesAutoresizingMaskIntoConstraints = false
+        passwordView!.delegate = self
+        
+        self.view.insertSubview(passwordView as! UIView, belowSubview: statusLabel)
+        (passwordView as! UIView).translatesAutoresizingMaskIntoConstraints = false
         
     }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        
+        let pwdView = passwordView as! UIView
         let insets = self.view.safeAreaInsets
-        let topConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
+        let topConstraint = NSLayoutConstraint(item: pwdView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
         
-        let bottomConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
+        let bottomConstraint = NSLayoutConstraint(item: pwdView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
         
-        let leadingConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
+        let leadingConstraint = NSLayoutConstraint(item: pwdView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
         
-        let trailingConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
+        let trailingConstraint = NSLayoutConstraint(item: pwdView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
         
         self.view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }
@@ -68,11 +71,12 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
             case .invalid:
                 update(status: "Passcode length should be longger than 3", with: true)
             case .create:
-                update(status: "Draw Again to Confirm")
+                
+                passwordViewType == 0 ? update(status: "Draw Again to Confirm") : update(status: "Input Again to Confirm")
             case .mismatch:
                 update(status: "Mismatch! Please Try Again", with: true)
             case .match:
-                update(status: "Pattern Saved")
+                passwordViewType == 0 ? update(status: "Pattern Saved") : update(status: "Passcode Saved")
                 perform(#selector(closePage), with: nil, afterDelay: 1)
             default:
                 break
@@ -81,7 +85,7 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
             
             switch toStatus {
             case .match:
-                update(status: "Draw A New Pattern")
+                passwordViewType == 0 ? update(status: "Draw A New Pattern") : update(status: "Input A New Passcode")
             case .mismatch:
                 update(status: "Mismatch! Left Try Times \(tryTimes)", with: true)
                 if tryTimes == 0 {
@@ -98,7 +102,7 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
                     perform(#selector(closePage), with: nil, afterDelay: 1)
                 }
             case .match:
-                update(status: "Pattern Deleted")
+                passwordViewType == 0 ? update(status: "Pattern Deleted") : update(status: "Passcode Deleted")
                 perform(#selector(closePage), with: nil, afterDelay: 1)
             default:
                 break
