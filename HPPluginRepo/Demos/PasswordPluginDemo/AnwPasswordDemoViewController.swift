@@ -11,18 +11,20 @@ import UIKit
 class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
-    private var nineDotView: HPNineDotView = Bundle.main.loadNibNamed("HPNineDotView", owner: nil, options: nil)?.first as! HPNineDotView
+//    private var passwordView: HPNineDotView = Bundle.main.loadNibNamed("HPNineDotView", owner: nil, options: nil)?.first as! HPNineDotView
+    
+    private var passwordView: HPSimplePasscodeView = Bundle.main.loadNibNamed("HPSimplePasscodeView", owner: nil, options: nil)?.first as! HPSimplePasscodeView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Password View Demo"
         
         let initalType = ADKPasswordViewSetting().initialType
-        nineDotView.status = HPPasswordViewStatus(rawValue:initalType)!
+        passwordView.status = HPPasswordViewStatus(rawValue:initalType)!
         
-        nineDotView.delegate = self
-        self.view.insertSubview(nineDotView, belowSubview: statusLabel)
-        nineDotView.translatesAutoresizingMaskIntoConstraints = false
+        passwordView.delegate = self
+        self.view.insertSubview(passwordView, belowSubview: statusLabel)
+        passwordView.translatesAutoresizingMaskIntoConstraints = false
         
     }
     
@@ -30,13 +32,13 @@ class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
         super.updateViewConstraints()
         
         let insets = self.view.safeAreaInsets
-        let topConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
+        let topConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: insets.top)
         
-        let bottomConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
+        let bottomConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: insets.bottom)
         
-        let leadingConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
+        let leadingConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: insets.left)
         
-        let trailingConstraint = NSLayoutConstraint(item: nineDotView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
+        let trailingConstraint = NSLayoutConstraint(item: passwordView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: insets.right)
         
         self.view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }

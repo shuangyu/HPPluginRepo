@@ -14,6 +14,8 @@
 		FF04BE5D1FE8F2DC00A4D86D /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */; };
 		FF04BE5E1FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */; };
 		FF04BE5F1FE8F2DC00A4D86D /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */; };
+		FFED17991FECDD890092264C /* HPSimplePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED17981FECDD890092264C /* HPSimplePasscodeView.swift */; };
+		FFED179B1FECDDA40092264C /* HPSimplePasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFED179A1FECDDA40092264C /* HPSimplePasscodeView.xib */; };
 		FFF7269E1FE7A5FA009F093A /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726641FE7A5F9009F093A /* HPPasswordView.swift */; };
 		FFF7269F1FE7A5FA009F093A /* HPNineDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726661FE7A5F9009F093A /* HPNineDotView.swift */; };
 		FFF726A01FE7A5FA009F093A /* HPNineDotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF726671FE7A5F9009F093A /* HPNineDotView.xib */; };
@@ -80,6 +82,8 @@
 		FF04BE571FE8F2DC00A4D86D /* HPCalendarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarViewCell.xib; sourceTree = "<group>"; };
 		FF04BE581FE8F2DC00A4D86D /* HPCalendarHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarHorizontalLayout.swift; sourceTree = "<group>"; };
 		FF04BE591FE8F2DC00A4D86D /* HPCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarView.xib; sourceTree = "<group>"; };
+		FFED17981FECDD890092264C /* HPSimplePasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSimplePasscodeView.swift; sourceTree = "<group>"; };
+		FFED179A1FECDDA40092264C /* HPSimplePasscodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HPSimplePasscodeView.xib; sourceTree = "<group>"; };
 		FFF6627B1FCFDB96007D30DD /* HPPluginRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPluginRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF662921FCFDB97007D30DD /* HPPluginRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF6629D1FCFDB97007D30DD /* HPPluginRepoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +258,8 @@
 			children = (
 				FFF726661FE7A5F9009F093A /* HPNineDotView.swift */,
 				FFF726671FE7A5F9009F093A /* HPNineDotView.xib */,
+				FFED17981FECDD890092264C /* HPSimplePasscodeView.swift */,
+				FFED179A1FECDDA40092264C /* HPSimplePasscodeView.xib */,
 			);
 			path = BuildInViews;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFED179B1FECDDA40092264C /* HPSimplePasscodeView.xib in Resources */,
 				FFF726AF1FE7A5FA009F093A /* LaunchScreen.storyboard in Resources */,
 				FFF726B01FE7A5FA009F093A /* Main.storyboard in Resources */,
 				FFF726A31FE7A5FA009F093A /* ADKStoryboard_container.storyboard in Resources */,
@@ -514,6 +521,7 @@
 				FFF726C11FE7A5FA009F093A /* ADKSettingEventHandler.swift in Sources */,
 				FFF726BB1FE7A5FA009F093A /* DemoAppSettings.swift in Sources */,
 				FFF726A81FE7A5FA009F093A /* ADKContext.swift in Sources */,
+				FFED17991FECDD890092264C /* HPSimplePasscodeView.swift in Sources */,
 				FFF726B21FE7A5FA009F093A /* AnwMacros.swift in Sources */,
 				FFF726BA1FE7A5FA009F093A /* AnwPasswordDemoViewController.swift in Sources */,
 				FFF726B11FE7A5FA009F093A /* AnwExts.swift in Sources */,

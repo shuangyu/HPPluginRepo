@@ -51,8 +51,7 @@ class HPNineDotViewStorage: NSObject, IHPPasswordStorage {
     }
 }
 
-@IBDesignable
-open class HPNineDotView: UIView, IHPPasswordView {
+@IBDesignable open class HPNineDotView: UIView, IHPPasswordView {
 
     public struct Dot {
         var center: CGPoint {

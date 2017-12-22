@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HPSimplePasscodeView" customModule="HPPluginRepo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h16-ku-gp6" customClass="HPPasscodeInputView" customModule="HPPluginRepo" customModuleProvider="target">
+                    <rect key="frame" x="57" y="150" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-bc-ivu">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <color key="textColor" red="0.23863965270000001" green="0.21453884240000001" blue="0.22207650540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vZ-Dl-QAX" customClass="HPPasscodeInputViewCursor" customModule="HPPluginRepo" customModuleProvider="target">
+                            <rect key="frame" x="24" y="10" width="2" height="30"/>
+                            <color key="backgroundColor" red="0.13493480935714289" green="0.71042178870000006" blue="0.8257155861571428" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2" id="90g-ST-nGD"/>
+                                <constraint firstAttribute="height" constant="30" id="Pmm-e5-kHK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="qQe-bc-ivu" firstAttribute="top" secondItem="h16-ku-gp6" secondAttribute="top" id="CSn-tN-ZeV"/>
+                        <constraint firstAttribute="height" constant="50" id="DfI-7t-7de"/>
+                        <constraint firstItem="5vZ-Dl-QAX" firstAttribute="centerX" secondItem="h16-ku-gp6" secondAttribute="centerX" id="MzW-di-pkO"/>
+                        <constraint firstAttribute="trailing" secondItem="qQe-bc-ivu" secondAttribute="trailing" id="NNk-bB-cvL"/>
+                        <constraint firstItem="qQe-bc-ivu" firstAttribute="leading" secondItem="h16-ku-gp6" secondAttribute="leading" id="Tr2-gl-L9k"/>
+                        <constraint firstItem="5vZ-Dl-QAX" firstAttribute="centerY" secondItem="h16-ku-gp6" secondAttribute="centerY" id="erL-Kv-L8w"/>
+                        <constraint firstAttribute="bottom" secondItem="qQe-bc-ivu" secondAttribute="bottom" id="oa2-0J-NtI"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="cursor" destination="5vZ-Dl-QAX" id="fAU-Ew-D48"/>
+                        <outlet property="titleLabel" destination="qQe-bc-ivu" id="JXI-dz-dsr"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxA-ZB-wv8" customClass="HPPasscodeInputView" customModule="HPPluginRepo" customModuleProvider="target">
+                    <rect key="frame" x="127" y="150" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOP-Sg-sav">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <color key="textColor" red="0.23863965270000001" green="0.21453884240000001" blue="0.22207650540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icq-92-fEa" customClass="HPPasscodeInputViewCursor" customModule="HPPluginRepo" customModuleProvider="target">
+                            <rect key="frame" x="24" y="10" width="2" height="30"/>
+                            <color key="backgroundColor" red="0.13493480939999999" green="0.71042178869999995" blue="0.82571558619999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2" id="ZT0-Fh-6PA"/>
+                                <constraint firstAttribute="height" constant="30" id="d8M-x1-SBj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="icq-92-fEa" firstAttribute="centerY" secondItem="qxA-ZB-wv8" secondAttribute="centerY" id="R02-IX-pXe"/>
+                        <constraint firstAttribute="trailing" secondItem="uOP-Sg-sav" secondAttribute="trailing" id="ZhJ-cD-BWO"/>
+                        <constraint firstItem="uOP-Sg-sav" firstAttribute="top" secondItem="qxA-ZB-wv8" secondAttribute="top" id="fn5-Cp-UHY"/>
+                        <constraint firstItem="uOP-Sg-sav" firstAttribute="leading" secondItem="qxA-ZB-wv8" secondAttribute="leading" id="hr3-eO-ZZQ"/>
+                        <constraint firstItem="icq-92-fEa" firstAttribute="centerX" secondItem="qxA-ZB-wv8" secondAttribute="centerX" id="iuC-wb-HwP"/>
+                        <constraint firstAttribute="bottom" secondItem="uOP-Sg-sav" secondAttribute="bottom" id="l9W-SI-rd2"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="cursor" destination="icq-92-fEa" id="VNx-Cu-bwJ"/>
+                        <outlet property="titleLabel" destination="uOP-Sg-sav" id="HIm-lE-386"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-FI-oaz" customClass="HPPasscodeInputView" customModule="HPPluginRepo" customModuleProvider="target">
+                    <rect key="frame" x="197" y="150" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xR-5f-Wku">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <color key="textColor" red="0.23863965270000001" green="0.21453884240000001" blue="0.22207650540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0T-u8-AWM" customClass="HPPasscodeInputViewCursor" customModule="HPPluginRepo" customModuleProvider="target">
+                            <rect key="frame" x="24" y="10" width="2" height="30"/>
+                            <color key="backgroundColor" red="0.13493480939999999" green="0.71042178869999995" blue="0.82571558619999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2" id="Jp5-zq-F5T"/>
+                                <constraint firstAttribute="height" constant="30" id="nuj-hJ-Vew"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7xR-5f-Wku" secondAttribute="bottom" id="6Ff-Ip-P43"/>
+                        <constraint firstItem="z0T-u8-AWM" firstAttribute="centerX" secondItem="nF9-FI-oaz" secondAttribute="centerX" id="DTv-d1-6Fm"/>
+                        <constraint firstItem="z0T-u8-AWM" firstAttribute="centerY" secondItem="nF9-FI-oaz" secondAttribute="centerY" id="InO-lr-G23"/>
+                        <constraint firstItem="7xR-5f-Wku" firstAttribute="top" secondItem="nF9-FI-oaz" secondAttribute="top" id="Mar-om-fNs"/>
+                        <constraint firstAttribute="trailing" secondItem="7xR-5f-Wku" secondAttribute="trailing" id="ZgQ-XI-KD2"/>
+                        <constraint firstItem="7xR-5f-Wku" firstAttribute="leading" secondItem="nF9-FI-oaz" secondAttribute="leading" id="eRq-8F-VX5"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="cursor" destination="z0T-u8-AWM" id="noR-Jj-20N"/>
+                        <outlet property="titleLabel" destination="7xR-5f-Wku" id="gpu-gM-pOd"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqu-Po-7uy" customClass="HPPasscodeInputView" customModule="HPPluginRepo" customModuleProvider="target">
+                    <rect key="frame" x="267" y="150" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUT-oT-950">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <color key="textColor" red="0.23863965270000001" green="0.21453884240000001" blue="0.22207650540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91X-zX-kko" customClass="HPPasscodeInputViewCursor" customModule="HPPluginRepo" customModuleProvider="target">
+                            <rect key="frame" x="24" y="10" width="2" height="30"/>
+                            <color key="backgroundColor" red="0.13493480939999999" green="0.71042178869999995" blue="0.82571558619999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="u4h-N7-eUT"/>
+                                <constraint firstAttribute="width" constant="2" id="uci-a8-CkQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="91X-zX-kko" firstAttribute="centerY" secondItem="Dqu-Po-7uy" secondAttribute="centerY" id="Agq-Pz-DOz"/>
+                        <constraint firstAttribute="trailing" secondItem="jUT-oT-950" secondAttribute="trailing" id="F7H-qX-fIr"/>
+                        <constraint firstItem="91X-zX-kko" firstAttribute="centerX" secondItem="Dqu-Po-7uy" secondAttribute="centerX" id="FW7-gr-vW0"/>
+                        <constraint firstItem="jUT-oT-950" firstAttribute="leading" secondItem="Dqu-Po-7uy" secondAttribute="leading" id="Lt3-Jm-M3a"/>
+                        <constraint firstItem="jUT-oT-950" firstAttribute="top" secondItem="Dqu-Po-7uy" secondAttribute="top" id="cER-IM-6lZ"/>
+                        <constraint firstAttribute="bottom" secondItem="jUT-oT-950" secondAttribute="bottom" id="iOe-4l-vXg"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="cursor" destination="91X-zX-kko" id="TPb-yy-QLh"/>
+                        <outlet property="titleLabel" destination="jUT-oT-950" id="iUY-Wy-LZq"/>
+                    </connections>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-Za-ErX">
+                    <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Cta-g9-y14"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nF9-FI-oaz" firstAttribute="height" secondItem="qxA-ZB-wv8" secondAttribute="height" id="0eD-Yp-OG3"/>
+                <constraint firstItem="qxA-ZB-wv8" firstAttribute="top" secondItem="h16-ku-gp6" secondAttribute="top" id="1wF-ng-DNn"/>
+                <constraint firstAttribute="trailing" secondItem="sJ5-Za-ErX" secondAttribute="trailing" id="Bm0-9I-kUg"/>
+                <constraint firstItem="h16-ku-gp6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="CJt-ju-xpo"/>
+                <constraint firstAttribute="bottom" secondItem="sJ5-Za-ErX" secondAttribute="bottom" id="DaK-4h-jfi"/>
+                <constraint firstItem="sJ5-Za-ErX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nne-nY-3A4"/>
+                <constraint firstItem="qxA-ZB-wv8" firstAttribute="centerX" secondItem="h16-ku-gp6" secondAttribute="centerX" constant="70" id="PG2-fu-Glb"/>
+                <constraint firstItem="nF9-FI-oaz" firstAttribute="top" secondItem="qxA-ZB-wv8" secondAttribute="top" id="Pq6-yB-guo"/>
+                <constraint firstItem="Dqu-Po-7uy" firstAttribute="top" secondItem="nF9-FI-oaz" secondAttribute="top" id="T9W-pc-nAX"/>
+                <constraint firstItem="nF9-FI-oaz" firstAttribute="width" secondItem="qxA-ZB-wv8" secondAttribute="width" id="W5e-Z5-foF"/>
+                <constraint firstItem="Dqu-Po-7uy" firstAttribute="centerX" secondItem="nF9-FI-oaz" secondAttribute="centerX" constant="70" id="XLl-xe-mO2"/>
+                <constraint firstItem="qxA-ZB-wv8" firstAttribute="width" secondItem="h16-ku-gp6" secondAttribute="width" id="c4r-xM-GM8"/>
+                <constraint firstItem="Dqu-Po-7uy" firstAttribute="height" secondItem="nF9-FI-oaz" secondAttribute="height" id="kYv-nB-cEU"/>
+                <constraint firstItem="h16-ku-gp6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-325" id="lkC-wQ-d8m"/>
+                <constraint firstItem="nF9-FI-oaz" firstAttribute="centerX" secondItem="qxA-ZB-wv8" secondAttribute="centerX" constant="70" id="pWD-H0-oIh"/>
+                <constraint firstItem="Dqu-Po-7uy" firstAttribute="width" secondItem="nF9-FI-oaz" secondAttribute="width" id="psX-gR-ieo"/>
+                <constraint firstItem="qxA-ZB-wv8" firstAttribute="height" secondItem="h16-ku-gp6" secondAttribute="height" id="zAs-cJ-UDg"/>
+                <constraint firstItem="h16-ku-gp6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-105.5" id="zDF-Ja-Aho"/>
+            </constraints>
+            <connections>
+                <outlet property="textField" destination="sJ5-Za-ErX" id="h0B-wX-wTZ"/>
+                <outletCollection property="inputViews" destination="h16-ku-gp6" collectionClass="NSMutableArray" id="Rle-7i-YGy"/>
+                <outletCollection property="inputViews" destination="qxA-ZB-wv8" collectionClass="NSMutableArray" id="Vld-81-vOe"/>
+                <outletCollection property="inputViews" destination="nF9-FI-oaz" collectionClass="NSMutableArray" id="JFd-0E-azE"/>
+                <outletCollection property="inputViews" destination="Dqu-Po-7uy" collectionClass="NSMutableArray" id="lPh-gC-GXf"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
