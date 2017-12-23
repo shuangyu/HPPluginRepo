@@ -1,5 +1,5 @@
 //
-//  AnwPasswordDemoViewController.swift
+//  HPPasswordDemoViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 15/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnwPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
+class HPPasswordDemoViewController: UIViewController, HPPasswordViewDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
     

@@ -1,5 +1,5 @@
 //
-//  ADKTest2ViewController.swift
+//  HDKTestViewController.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 26/10/2017.
@@ -8,21 +8,20 @@
 
 import UIKit
 
-class ADKTest2ViewController: UIViewController {
+class HDKTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        applyADKNavigationBar(title: "Test Page 2", backAction: #selector(backBtnClicked(_:)), dismissAction: #selector(dismissBtnClicked(_:)), theme: ADKContext.shared.theme)
-        self.view.backgroundColor = UIColor.white
+        // Do any additional setup after loading the view.
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
-
+    
     @IBAction func dismissBtnClicked(_ sender: Any) {
-        ADKFloatingButton.shrink()
+        HDKFloatingButton.shrink()
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {

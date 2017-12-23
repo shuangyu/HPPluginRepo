@@ -29,7 +29,7 @@ public struct ADKRootCellItem {
     var controllerName: String?      // ===> class name of this controller
     var controllerID: String?        // ===> stoaryboard id of this controller
     // ===> stoaryboard name which contains this controller
-    var controllerContainer : String? = ADKContext.shared.config.storyboardName
+    var controllerContainer : String? = HDKContext.shared.config.storyboardName
     
     func controller () throws -> UIViewController? {
         if controllerName != nil {
@@ -125,13 +125,13 @@ public struct ADKSettingCellItem {
 public let settingItem = ADKRootCellItem(title: "Settings",
                                          segueID: nil,
                                          controllerName: nil,
-                                         controllerID: "ADKSettingViewController",
+                                         controllerID: "HDKSettingViewController",
                                          controllerContainer: "ADKStoryboard_container")
 
 public let guideItem = ADKRootCellItem(title: "Guide",
                                        segueID: nil,
                                        controllerName: nil,
-                                       controllerID: "ADKGuideViewController",
+                                       controllerID: "HDKGuideViewController",
                                        controllerContainer: "ADKStoryboard_container")
 
 
@@ -160,16 +160,16 @@ public protocol ADKConfig {
 
 public struct ADKDefaultConfig: ADKConfig {
     public var storyboardName_phone: String {
-        return "ADKStoryboard_phone"
+        return "HDKStoryboard_phone"
     }
     public var storyboardName_pad: String {
         return "ADKStoryboard_pad"
     }
     public var rootPageConfigFileName: String {
-        return "ADKRootConfig"
+        return "HDKRootConfig"
     }
     public var settingPageConfigFileName: String {
-        return "ADKSettingConfig"
+        return "HDKSettingConfig"
     }
     public var storyboardName: String {
         return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? storyboardName_pad : storyboardName_phone
@@ -213,8 +213,8 @@ public struct ADKDefaultTheme : ADKTheme {
     }
 }
 
-public class ADKContext {
-    public static let shared = ADKContext()
+public class HDKContext {
+    public static let shared = HDKContext()
     public var theme: ADKTheme = ADKDefaultTheme()
     public var config: ADKConfig = ADKDefaultConfig()
     private init() {}

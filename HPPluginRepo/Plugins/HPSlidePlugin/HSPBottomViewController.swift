@@ -1,5 +1,5 @@
 //
-//  ASPBottomViewController.swift
+//  HSPBottomViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 30/11/2017.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ASPBottomViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver {
+class HSPBottomViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver {
 
     private var maskView: UIView?
-    private var parentController: ASPParentViewController {
-        return self.parent as! ASPParentViewController
+    private var parentController: HSPParentViewController {
+        return self.parent as! HSPParentViewController
     }
     private var currentRatio: Float = 0.0
     private let oriAlpha: CGFloat = 0.6

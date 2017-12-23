@@ -1,5 +1,5 @@
 //
-//  ADKRootViewController.swift
+//  HDKRootViewController.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 24/10/2017.
@@ -9,9 +9,9 @@
 import UIKit
 
 
-class ADKRootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HDKRootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let configs = ADKContext.shared.config
+    private let configs = HDKContext.shared.config
     private lazy var configItems = ADKRootCellItem.parse(file: configs.rootPageConfigFileName)
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class ADKRootViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func dismissBtnClicked(_ sender: Any) {
-        ADKFloatingButton.shrink()
+        HDKFloatingButton.shrink()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

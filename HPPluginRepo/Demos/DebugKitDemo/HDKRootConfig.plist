@@ -12,7 +12,7 @@
 		<key>title</key>
 		<string>Controller Test Cell</string>
 		<key>controllerName</key>
-		<string>HPPluginRepo.ADKTest2ViewController</string>
+		<string>HPPluginRepo.HDKTest2ViewController</string>
 	</dict>
 </array>
 </plist>

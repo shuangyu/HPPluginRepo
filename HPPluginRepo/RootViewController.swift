@@ -44,12 +44,12 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Important! : init event handler for ADK Demo
-        ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler())
+        ADKSettingCellEventCenter.register(eventHandler: HDKSettingEventHandler())
         // user self-defined thems for debug kit
         if !appSettings.ADKUserDefaultTheme {
-            ADKContext.shared.theme = MyTheme()
+            HDKContext.shared.theme = MyTheme()
         } else {
-            ADKContext.shared.theme = ADKDefaultTheme()
+            HDKContext.shared.theme = ADKDefaultTheme()
         }
     }
 
@@ -71,7 +71,7 @@ class RootViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            ADKFloatingButton.shift()
+            HDKFloatingButton.shift()
         } else {
             self.performSegue(withIdentifier: segueIDs[indexPath.row], sender: self)
         }

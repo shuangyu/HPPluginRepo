@@ -1,5 +1,5 @@
 //
-//  ASPTopViewController.swift
+//  HSPTopViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 30/11/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ASPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver
+class HSPTopViewController: UIViewController, ASPSlideProtocol, ASPMessageReceiver
 {
 
     private var maskView: UIView?
-    public var parentController: ASPParentViewController {
-        return self.parent as! ASPParentViewController
+    public var parentController: HSPParentViewController {
+        return self.parent as! HSPParentViewController
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  ASPParentViewController.swift
+//  HSPParentViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 30/11/2017.
@@ -29,15 +29,15 @@ class ASPEmptySegue: UIStoryboardSegue {
     
 }
 
-class ASPParentViewController: UIViewController {
+class HSPParentViewController: UIViewController {
     
     open var config: ASPAnimationConfig {
         return ASPAnimationConfig()
     }
-    open var topViewController: ASPTopViewController? {
+    open var topViewController: HSPTopViewController? {
         return nil
     }
-    open var bottomViewController: ASPBottomViewController? {
+    open var bottomViewController: HSPBottomViewController? {
         return nil
     }
     

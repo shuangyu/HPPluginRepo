@@ -1,5 +1,5 @@
 //
-//  AnwCalendarViewController.swift
+//  HPCalendarViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 11/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnwCalendarViewController: UIViewController {
+class HPCalendarViewController: UIViewController {
     
     private var calendarView: HPCalendarView = Bundle.main.loadNibNamed("HPCalendarView", owner: nil, options: nil)?.first as! HPCalendarView
     override func viewDidLoad() {

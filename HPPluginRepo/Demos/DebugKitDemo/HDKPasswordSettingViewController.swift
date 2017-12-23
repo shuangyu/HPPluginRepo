@@ -1,5 +1,5 @@
 //
-//  ADKPasswordSettingViewController.swift
+//  HDKPasswordSettingViewController.swift
 //  HPPluginRepo
 //
 //  Created by 胡鹏 on 20/12/2017.
@@ -47,7 +47,7 @@ struct ADKPasswordViewSetting {
     }
 }
 
-class ADKPasswordSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HDKPasswordSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let passwordViews = ["Nine Dot View"]
     let initialStatus = ["create", "reset", "delete", "verify"]

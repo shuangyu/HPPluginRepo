@@ -1,5 +1,5 @@
 //
-//  ADKSettingViewController.swift
+//  HDKSettingViewController.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 30/10/2017.
@@ -126,8 +126,8 @@ class ADKSettingCell: UITableViewCell, UITextFieldDelegate {
 }
 
 
-class ADKSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private let config = ADKContext.shared.config
+class HDKSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private let config = HDKContext.shared.config
     private lazy var items: (sections: Array<ADKSettingCellItem>, rows: Array<Array<ADKSettingCellItem>>) = ADKSettingCellItem.parse(file: config.settingPageConfigFileName)
     
     override func viewDidLoad() {
@@ -139,7 +139,7 @@ class ADKSettingViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func dismissBtnClicked(_ sender: Any) {
-        ADKFloatingButton.shrink()
+        HDKFloatingButton.shrink()
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {

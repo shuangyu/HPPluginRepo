@@ -27,7 +27,7 @@
         <!--Root View Controller-->
         <scene sceneID="Sjd-ZG-kc0">
             <objects>
-                <viewController id="xJ3-ft-PSw" customClass="ADKRootViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xJ3-ft-PSw" customClass="HDKRootViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nya-bT-JGz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="4st-Fg-3Zh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="4st-Fg-3Zh">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4st-Fg-3Zh" id="gYR-jS-VfQ">
@@ -113,7 +113,7 @@
         <!--Test View Controller-->
         <scene sceneID="4hd-WA-vKn">
             <objects>
-                <viewController id="a5o-az-hHP" customClass="ADKTestViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a5o-az-hHP" customClass="HDKTestViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c90-oT-5ho">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +184,7 @@
         <!--Password Setting View Controller-->
         <scene sceneID="b5r-nv-b0Y">
             <objects>
-                <viewController storyboardIdentifier="ADKPasswordSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XP4-l9-j59" customClass="ADKPasswordSettingViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HDKPasswordSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XP4-l9-j59" customClass="HDKPasswordSettingViewController" customModule="HPPluginRepo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="97B-ZF-ZVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ADKPasswordSettingViewController" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="UOs-wT-AF3" customClass="ADKPasswordViewSettingCell" customModule="HPPluginRepo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HDKPasswordSettingViewController" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="UOs-wT-AF3" customClass="ADKPasswordViewSettingCell" customModule="HPPluginRepo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UOs-wT-AF3" id="DHY-tD-8ll">

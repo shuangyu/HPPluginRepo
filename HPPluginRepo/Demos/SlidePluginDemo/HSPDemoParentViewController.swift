@@ -1,5 +1,5 @@
 //
-//  ASPDemoParentViewController.swift
+//  HSPDemoParentViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 01/12/2017.
@@ -8,24 +8,24 @@
 
 import UIKit
 
-class ASPDemoParentViewController: ASPParentViewController {
+class HSPDemoParentViewController: HSPParentViewController {
     
-    weak private var _topViewController: ASPTopViewController?
-    weak private var _bottomViewController: ASPBottomViewController?
+    weak private var _topViewController: HSPTopViewController?
+    weak private var _bottomViewController: HSPBottomViewController?
     
     override var config: ASPAnimationConfig {
         return ASPAnimationConfig(scaleRatio: appSettings.ASPScaleRatio)
     }
-    override var topViewController: ASPTopViewController? {
+    override var topViewController: HSPTopViewController? {
         
         if _topViewController == nil {
-            _topViewController =  ASPDemoTopViewController.loadFromStoryboard() as? ASPTopViewController
+            _topViewController =  HSPDemoTopViewController.loadFromStoryboard() as? HSPTopViewController
         }
         return _topViewController
     }
-    override var bottomViewController: ASPBottomViewController? {
+    override var bottomViewController: HSPBottomViewController? {
         if _bottomViewController == nil {
-            _bottomViewController = ASPDemoBottomViewController.loadFromStoryboard() as? ASPBottomViewController
+            _bottomViewController = HSPDemoBottomViewController.loadFromStoryboard() as? HSPBottomViewController
         }
         return _bottomViewController
     }

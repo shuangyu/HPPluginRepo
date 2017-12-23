@@ -1,5 +1,5 @@
 //
-//  ADKFloatingButton.swift
+//  HDKFloatingButton.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 23/10/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-public let ADKFloatingButtonShrinkNotifName = Notification.Name("ADKFloatingButtonShrinkNotifName")
-public let ADKFloatingButtonExpandNotifName = Notification.Name("ADKFloatingButtonExpandNotifName")
+public let HDKFloatingButtonShrinkNotifName = Notification.Name("HDKFloatingButtonShrinkNotifName")
+public let HDKFloatingButtonExpandNotifName = Notification.Name("HDKFloatingButtonExpandNotifName")
 
 
 
-public class ADKFloatingButton: UIWindow {
+public class HDKFloatingButton: UIWindow {
     
     class ADKPlaceHolderViewController : UIViewController {
         override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -23,14 +23,14 @@ public class ADKFloatingButton: UIWindow {
     
     public var isShow = false
     
-    static let sharedInstance = ADKFloatingButton(frame: UIScreen.main.bounds)
+    static let sharedInstance = HDKFloatingButton(frame: UIScreen.main.bounds)
     static let holdOnDuration: TimeInterval = 10.0
     private var activeTime: NSDate?
     private var panCenter: CGPoint?
     private var isExpand = false
     private let control: UILabel = UILabel()
-    private let theme = ADKContext.shared.theme
-    private let config = ADKContext.shared.config
+    private let theme = HDKContext.shared.theme
+    private let config = HDKContext.shared.config
     
     private let placeHolder = ADKPlaceHolderViewController()
 
@@ -39,7 +39,7 @@ public class ADKFloatingButton: UIWindow {
         super.init(frame: frame)
         let insets = self.safeAreaInsets
         // init floating button
-        control.frame = CGRect(origin: CGPoint(x: insets.left, y: insets.top), size: ADKContext.shared.theme.floatingButtonSize)
+        control.frame = CGRect(origin: CGPoint(x: insets.left, y: insets.top), size: HDKContext.shared.theme.floatingButtonSize)
         control.backgroundColor = theme.floationButtonColor
         control.text = theme.floatingButtonText
         control.textAlignment = NSTextAlignment.center
@@ -111,7 +111,7 @@ public class ADKFloatingButton: UIWindow {
                 }
                 
             }, completion: { [unowned self](finished) in
-                self.perform(#selector(ADKFloatingButton.resignActive), with: nil, afterDelay: ADKFloatingButton.holdOnDuration)
+                self.perform(#selector(HDKFloatingButton.resignActive), with: nil, afterDelay: HDKFloatingButton.holdOnDuration)
             })
         }
     }
@@ -136,7 +136,7 @@ public class ADKFloatingButton: UIWindow {
             self.rootViewController = rootVC
             
             self.isExpand = !self.isExpand
-            NotificationCenter.default.post(name: ADKFloatingButtonExpandNotifName, object: nil)
+            NotificationCenter.default.post(name: HDKFloatingButtonExpandNotifName, object: nil)
         }
     }
     func shrink() {
@@ -148,7 +148,7 @@ public class ADKFloatingButton: UIWindow {
         }) { [unowned self](finised) in
             self.isExpand = !self.isExpand
             
-            NotificationCenter.default.post(name: ADKFloatingButtonShrinkNotifName, object: nil)
+            NotificationCenter.default.post(name: HDKFloatingButtonShrinkNotifName, object: nil)
         }
     }
     
@@ -156,7 +156,7 @@ public class ADKFloatingButton: UIWindow {
         isShow = !isShow
         if isShow {
             self.makeKeyAndVisible()
-            self.perform(#selector(ADKFloatingButton.resignActive), with: nil, afterDelay: ADKFloatingButton.holdOnDuration)
+            self.perform(#selector(HDKFloatingButton.resignActive), with: nil, afterDelay: HDKFloatingButton.holdOnDuration)
         } else {
             UIApplication.shared.delegate?.window??.makeKeyAndVisible()
         }
@@ -171,12 +171,12 @@ public class ADKFloatingButton: UIWindow {
     
     // public APIS
     public static func shift() {
-        ADKFloatingButton.sharedInstance.shift()
+        HDKFloatingButton.sharedInstance.shift()
     }
     public static func expand() {
-        ADKFloatingButton.sharedInstance.expand()
+        HDKFloatingButton.sharedInstance.expand()
     }
     public static func shrink() {
-        ADKFloatingButton.sharedInstance.shrink()
+        HDKFloatingButton.sharedInstance.shrink()
     }
 }

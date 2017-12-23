@@ -1,5 +1,5 @@
 //
-//  ASPDemoTopViewController.swift
+//  HSPDemoTopViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 01/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ASPDemoTopViewController: ASPTopViewController {
+class HSPDemoTopViewController: HSPTopViewController {
 
     @IBOutlet weak var menuBtn: UIButton!    
     @IBOutlet weak var label: UILabel!

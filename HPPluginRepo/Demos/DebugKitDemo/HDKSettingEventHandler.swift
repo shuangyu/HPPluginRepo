@@ -1,5 +1,5 @@
 //
-//  ADKSettingEventHandler.swift
+//  HDKSettingEventHandler.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 01/11/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 @objcMembers
-class ADKSettingEventHandler: NSObject {
+class HDKSettingEventHandler: NSObject {
     
     let cache = UserDefaults.standard
     var ADK_Demo_CachedText: String?
@@ -27,7 +27,7 @@ class ADKSettingEventHandler: NSObject {
         ADK_NotDefaultTheme = cache.bool(forKey: "ADKNotDefaultThemeKey")
         ASP_ScaleRatio = cache.float(forKey: "ASPScaleRatioKey")
         APP_PasswordViewType = cache.integer(forKey: "APPPasswordViewTypeKey")
-        NotificationCenter.default.addObserver(forName: ADKFloatingButtonShrinkNotifName, object: nil, queue: nil) { [unowned self](notif) in
+        NotificationCenter.default.addObserver(forName: HDKFloatingButtonShrinkNotifName, object: nil, queue: nil) { [unowned self](notif) in
             self.save()
         }
     }
@@ -131,7 +131,7 @@ class ADKSettingEventHandler: NSObject {
     }
     
     public func openPasswodViewSettingPage() {
-        let passwordVC = ADKPasswordSettingViewController.loadFromStoryboard("ADKStoryboard_phone")
+        let passwordVC = HDKPasswordSettingViewController.loadFromStoryboard("HDKStoryboard_phone")
         
         let navigationVC = UIApplication.shared.keyWindow!.rootViewController as! UINavigationController
         

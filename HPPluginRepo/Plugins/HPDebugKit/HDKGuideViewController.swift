@@ -1,5 +1,5 @@
 //
-//  ADKGuideViewController.swift
+//  HDKGuideViewController.swift
 //  AnwDebugKitDemo
 //
 //  Created by Hu, Peng on 02/11/2017.
@@ -9,12 +9,12 @@
 import UIKit
 import WebKit
 
-class ADKGuideViewController: UIViewController {
+class HDKGuideViewController: UIViewController {
 
     @IBOutlet weak var webview: WKWebView!
     
     @IBAction func dismissBtnClicked(_ sender: Any) {
-        ADKFloatingButton.shrink()
+        HDKFloatingButton.shrink()
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {

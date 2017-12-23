@@ -1,5 +1,5 @@
 //
-//  ASPDemoBottomViewController.swift
+//  HSPDemoBottomViewController.swift
 //  HPPluginRepo
 //
 //  Created by Hu, Peng on 01/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ASPDemoBottomViewController: ASPBottomViewController, UITableViewDelegate, UITableViewDataSource {
+class HSPDemoBottomViewController: HSPBottomViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,12 +29,12 @@
 	<p class="content">
 		<li>1.This plugin only support storyboard</li>
 		<li>2.This plugin's initial viewcontroller must be a navigation controller</li>
-		<li>3.This plugin's root viewcontroller must be ADKRootViewController</li>
+		<li>3.This plugin's root viewcontroller must be HDKRootViewController</li>
 	</p>
 
 	<p class="title">How to apply self-defined theme or config to this plugin</p>
 	<hr/>
-	<p class="content">First implement the ADKTheme or ADKConfig protocol, then set it to ADKContext singleton before using this plugin</p>
+	<p class="content">First implement the ADKTheme or ADKConfig protocol, then set it to HDKContext singleton before using this plugin</p>
 
 	<p class="title">Descriptions of ADKTheme's parameters</p>
 	<hr/>
@@ -101,7 +101,7 @@
 
 	<p class="title">Description of root config file </p>
 	<hr/>
-	<p>Demo file : ADKRootConfig.plist</p>
+	<p>Demo file : HDKRootConfig.plist</p>
 
 	<p></p>
 	<table>
@@ -115,7 +115,7 @@
 			<td>segueID</td><td>false</td><td>String</td><td>segue identifier of cell click action in the plugin storyboard</td>
 		</tr>
 		<tr>
-			<td>controllerName</td><td>false</td><td>String</td><td>full classname of the viewcontroller you want to push without storyboard, like <i>AnwDebugKitDemo.ADKTest2ViewController</i></td>
+			<td>controllerName</td><td>false</td><td>String</td><td>full classname of the viewcontroller you want to push without storyboard, like <i>AnwDebugKitDemo.HDKTest2ViewController</i></td>
 		</tr>
 		<tr>
 			<td>controllerID</td><td>false</td><td>String</td><td>controller id in the external storyboard</td>
@@ -127,7 +127,7 @@
 
 	<p class="title">Description of setting config file </p>
 	<hr/>
-	<p>Demo file : ADKSettingConfig.plist</p>
+	<p>Demo file : HDKSettingConfig.plist</p>
 	<p></p>
 	<table>
 		<tr>
@@ -155,7 +155,7 @@
 	</table>
 	<p class="title">How to register a event handler of setting viewcontroller</p>
 	<hr/>
-	<p>First implement a class which contains all the selectors defined in setting config file, refer to demo class <i>ADKSettingEventHandler</i> , then register it using <i>ADKSettingCellEventCenter.register(eventHandler: ADKSettingEventHandler.init())</i></p>
+	<p>First implement a class which contains all the selectors defined in setting config file, refer to demo class <i>HDKSettingEventHandler</i> , then register it using <i>ADKSettingCellEventCenter.register(eventHandler: HDKSettingEventHandler.init())</i></p>
 
 	<p class="title">Selector name of a selector</p>
 	<hr/>
