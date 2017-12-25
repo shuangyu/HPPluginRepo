@@ -8,59 +8,12 @@
 
 import UIKit
 
-private func HPTaskManager_DateFormatter() -> DateFormatter {
+private func __HPTaskManagerDateFormatter() -> DateFormatter {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     formatter.calendar = Calendar.init(identifier: .gregorian)
     return formatter
 }
-
-//extension HPTaskManager.TaskTime: Archivable {
-//    public func archive() -> NSDictionary {
-//        let count = self.duration!.count
-//        var from = ""
-//        var to = ""
-//        if count == 2 {
-//            let formatter = HPTaskManager_DateFormatter()
-//            let fDate = self.duration![0]
-//            let tDate = self.duration![1]
-//            from = formatter.string(from: fDate)
-//            to = formatter.string(from: tDate)
-//        }
-//        return ["weekdays" : self.weekdays,
-//                "from" : from,
-//                "to" : to]
-//    }
-//
-//    public init?(unarchive: NSDictionary?) {
-//        let formatter = HPTaskManager_DateFormatter()
-//        let from = unarchive!["from"] as! String
-//        let to = unarchive!["to"] as! String
-//        self.weekdays = unarchive!.object(forKey: "weekdays") as! HPTaskManager.Weekdays
-//
-//        let fDate = formatter.date(from: from)
-//        let tDate = formatter.date(from: to)
-//        self.duration = [fDate!, tDate!]
-//    }
-//}
-//
-//extension HPTaskManager.Task: Archivable {
-//    public func archive() -> NSDictionary {
-//        return ["type" : self.type,
-//                "key" : self.key,
-//                "user" : self.user,
-//                "times" : self.times,
-//                "taskTime" : self.taskTime.archive()]
-//    }
-//
-//    public init?(unarchive: NSDictionary?) {
-//        self.type = unarchive?.object(forKey: "type") as! HPTaskManager.TaskType
-//        self.key = unarchive?.object(forKey: "key") as! String
-//        self.user = unarchive?.object(forKey: "type") as! String
-//        self.times = unarchive?.object(forKey: "type") as! Int
-//        self.taskTime = HPTaskManager.TaskTime(unarchive: unarchive?.object(forKey: "taskTime") as? NSDictionary)!
-//    }
-//}
 
 public class HPTaskManager: NSObject {
     
@@ -73,6 +26,7 @@ public class HPTaskManager: NSObject {
     static let Friday: Int = 1 << 4
     static let Saturday: Int = 1 << 5
     static let Sunday: Int = 1 << 6
+    static let OneWeek: Int = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
     
     public enum TaskType: Int {
         /*
@@ -100,54 +54,93 @@ public class HPTaskManager: NSObject {
     
     public struct TaskTime {
         let duration: Duration?
-        var weekdays: Weekdays = 0
+        var weekdays: Weekdays = OneWeek
     }
     
-    public struct Task {
+    public struct Task: Equatable {
         let type: TaskType
         let key : String
         var user: String = "com.hp.task.default.key"
         let taskTime: TaskTime
-        let times: Int
+        var times: Int
+        var wrappedKey: String
         
-        static func == (lhs: Task, rhs: Task) -> Bool {
-            return lhs.key == rhs.key
+        func getWrappedKey() -> String {
+            let formatter = __HPTaskManagerDateFormatter()
+            let dailyPrefix = formatter.string(from: Date())
+            
+            switch type {
+            case .daily:
+                return "\(dailyPrefix)*(\(key)"
+            case .weekly:
+                return key
+            default:
+                return key
+            }
+            
+            
         }
-        static func != (lhs: Task, rhs: Task) -> Bool {
-            return lhs.key != rhs.key
+        
+        public static func == (lhs: Task, rhs: Task) -> Bool {
+            return lhs.key == rhs.key && lhs.user == rhs.user
         }
+        public static func != (lhs: Task, rhs: Task) -> Bool {
+            return lhs.key != rhs.key || lhs.user != rhs.user
+        }
+    }
+    
+    enum HPTaskManagerError: Error {
+        case duplicatedTask(key: String, user: String)
+        case taskNotFound(key: String, user: String)
     }
 
     
     static let `default` = HPTaskManager()
-    private var tasks: Array<Task>?
+    private var tasks: Array<Task> = []
     private let cache = UserDefaults.standard
-    private let cacheKey = "com.hpDemo.tasks.cacheKey"
+    private let cacheKey = "com.HPTaskManager.tasks.cacheKey"
+    private let threadSafeQueue = DispatchQueue(label: "com.HPTaskManager.threadSafeQ", attributes: .concurrent)
+    
     private override init() {
         super.init()
         loadTasks()
     }
     
     private func loadTasks() {
-        tasks = cache.object(forKey: cacheKey) as? Array<Task>
+        let caches = cache.object(forKey: cacheKey) as? Array<Task>
+        tasks = (caches ?? tasks)
     }
     
     private func saveTasks() {
-        if tasks != nil {
-            cache.set(tasks, forKey: cacheKey)
-        } else {
-            cache.removeObject(forKey: cacheKey)
-        }
+        cache.set(tasks, forKey: cacheKey)
     }
     
-    public func register(task: Task) -> Bool {
-        return true
+    private func validateTasks() {
+        // remove expired tasks
     }
-    public func revoke(task: Task) -> Bool {
-        return true
+    
+    public func register(task: Task) throws {
+        let index = tasks.index(of: task)
+        guard index == nil else {
+            throw HPTaskManagerError.duplicatedTask(key: task.key, user: task.user)
+        }
+        tasks.append(task)
     }
-    public func complete(task: Task) -> Bool {
-        return true
+    
+    public func revoke(task: Task) throws {
+        let index = tasks.index(of: task)
+        guard index != nil else {
+            throw HPTaskManagerError.taskNotFound(key: task.key, user: task.user)
+        }
+        tasks.remove(at: index!)
+    }
+    
+    public func complete( task: inout Task) throws {
+        let index = tasks.index(of: task)
+        guard index != nil else {
+            throw HPTaskManagerError.taskNotFound(key: task.key, user: task.user)
+        }
+        task.times -= 1
     }
     
 }

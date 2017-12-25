@@ -9,12 +9,24 @@
 import Foundation
 import UIKit
 
-public extension Float {
-    static func == (lhs: Float, rhs: Float) -> Bool {
+extension Float {
+    public static func == (lhs: Float, rhs: Float) -> Bool {
         return fabsf(rhs - lhs) < Float.ulpOfOne
     }
-    static func != (lhs: Float, rhs: Float) -> Bool {
+    public static func != (lhs: Float, rhs: Float) -> Bool {
         return fabsf(rhs - lhs) >= Float.ulpOfOne
+    }
+}
+
+extension Date {
+    func beginDateOfThisWeek() -> Date {
+        let calendar = Calendar(identifier:.gregorian)
+        let d = calendar.component(.weekday, from: self)
+        return self
+//        return self.addingTimeInterval(<#T##timeInterval: TimeInterval##TimeInterval#>)
+    }
+    func endDateOfThisWeek() -> Date {
+        return self
     }
 }
 
@@ -97,7 +109,6 @@ public extension UIStoryboard {
 }
 
 public extension UIDevice {
-    
     public static func isPhone() -> Bool {
         return UIDevice.current.model == "iPhone"
     }
