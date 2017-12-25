@@ -117,19 +117,27 @@ public class HPTaskManager: NSObject {
             return lhs.key != rhs.key
         }
     }
-    private let taskFilePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
+
+    
     static let `default` = HPTaskManager()
-    private var tasks: Array<Task> = []
+    private var tasks: Array<Task>?
+    private let cache = UserDefaults.standard
+    private let cacheKey = "com.hpDemo.tasks.cacheKey"
     private override init() {
         super.init()
+        loadTasks()
     }
     
     private func loadTasks() {
-        
+        tasks = cache.object(forKey: cacheKey) as? Array<Task>
     }
     
     private func saveTasks() {
-    
+        if tasks != nil {
+            cache.set(tasks, forKey: cacheKey)
+        } else {
+            cache.removeObject(forKey: cacheKey)
+        }
     }
     
     public func register(task: Task) -> Bool {

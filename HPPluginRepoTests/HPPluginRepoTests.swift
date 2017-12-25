@@ -33,4 +33,8 @@ class HPPluginRepoTests: XCTestCase {
         }
     }
     
+    func  testTaskRegister() {
+        
+    }
+    
 }

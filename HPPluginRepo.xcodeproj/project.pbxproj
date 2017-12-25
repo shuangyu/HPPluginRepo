@@ -7,54 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67B4324D1FEA9C6A003F0A1F /* HDKPasswordSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4324C1FEA9C6A003F0A1F /* HDKPasswordSettingViewController.swift */; };
-		67B4326E1FEE3004003F0A1F /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432511FEE3003003F0A1F /* HPCalendarDate.swift */; };
-		67B4326F1FEE3004003F0A1F /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432531FEE3003003F0A1F /* HPCalendarViewCell.swift */; };
-		67B432701FEE3004003F0A1F /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432541FEE3003003F0A1F /* HPCalendarView.swift */; };
-		67B432711FEE3004003F0A1F /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B432551FEE3003003F0A1F /* HPCalendarViewCell.xib */; };
-		67B432721FEE3004003F0A1F /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432561FEE3003003F0A1F /* HPCalendarHorizontalLayout.swift */; };
-		67B432731FEE3004003F0A1F /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B432571FEE3003003F0A1F /* HPCalendarView.xib */; };
-		67B432741FEE3004003F0A1F /* HSPBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432591FEE3003003F0A1F /* HSPBottomViewController.swift */; };
-		67B432751FEE3004003F0A1F /* HSPParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4325A1FEE3003003F0A1F /* HSPParentViewController.swift */; };
-		67B432761FEE3004003F0A1F /* HSPTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4325B1FEE3003003F0A1F /* HSPTopViewController.swift */; };
-		67B432771FEE3004003F0A1F /* HSPMessageBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4325C1FEE3003003F0A1F /* HSPMessageBridge.swift */; };
-		67B432781FEE3004003F0A1F /* HDKSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4325E1FEE3003003F0A1F /* HDKSettingViewController.swift */; };
-		67B432791FEE3004003F0A1F /* guide.html in Resources */ = {isa = PBXBuildFile; fileRef = 67B432601FEE3003003F0A1F /* guide.html */; };
-		67B4327A1FEE3004003F0A1F /* ADKStoryboard_container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67B432611FEE3003003F0A1F /* ADKStoryboard_container.storyboard */; };
-		67B4327B1FEE3004003F0A1F /* HDKGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432621FEE3003003F0A1F /* HDKGuideViewController.swift */; };
-		67B4327C1FEE3004003F0A1F /* HDKRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432631FEE3003003F0A1F /* HDKRootViewController.swift */; };
-		67B4327D1FEE3004003F0A1F /* HDKFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432641FEE3003003F0A1F /* HDKFloatingButton.swift */; };
-		67B4327E1FEE3004003F0A1F /* HDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432651FEE3003003F0A1F /* HDKExtension.swift */; };
-		67B4327F1FEE3004003F0A1F /* HDKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432661FEE3003003F0A1F /* HDKContext.swift */; };
-		67B432801FEE3004003F0A1F /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432681FEE3003003F0A1F /* HPPasswordView.swift */; };
-		67B432811FEE3004003F0A1F /* HPSimplePasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B4326A1FEE3003003F0A1F /* HPSimplePasscodeView.xib */; };
-		67B432821FEE3004003F0A1F /* HPNineDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4326B1FEE3003003F0A1F /* HPNineDotView.swift */; };
-		67B432831FEE3004003F0A1F /* HPSimplePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4326C1FEE3003003F0A1F /* HPSimplePasscodeView.swift */; };
-		67B432841FEE3004003F0A1F /* HPNineDotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B4326D1FEE3003003F0A1F /* HPNineDotView.xib */; };
-		67B432861FEE3277003F0A1F /* HPTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432851FEE3277003F0A1F /* HPTaskManager.swift */; };
-		67B432891FEE5A3E003F0A1F /* HPSerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B432881FEE5A3E003F0A1F /* HPSerialize.swift */; };
+		67EC0F6C1FF0D7CC002262A1 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726831FE7A5F9009F093A /* MyNavigationController.swift */; };
+		67EC0F6D1FF0D7DD002262A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726821FE7A5F9009F093A /* AppDelegate.swift */; };
+		67EC0F6E1FF0D7E0002262A1 /* HPPluginRepo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFF726801FE7A5F9009F093A /* HPPluginRepo.xcdatamodeld */; };
+		67EC0F6F1FF0D7FA002262A1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726771FE7A5F9009F093A /* RootViewController.swift */; };
+		67EC0F701FF0D800002262A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF7267B1FE7A5F9009F093A /* Main.storyboard */; };
+		67EC0F711FF0D803002262A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF7267B1FE7A5F9009F093A /* Main.storyboard */; };
+		67EC0F971FF0D838002262A1 /* HSPMessageBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F761FF0D838002262A1 /* HSPMessageBridge.swift */; };
+		67EC0F981FF0D838002262A1 /* HSPMessageBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F761FF0D838002262A1 /* HSPMessageBridge.swift */; };
+		67EC0F991FF0D838002262A1 /* HSPBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F771FF0D838002262A1 /* HSPBottomViewController.swift */; };
+		67EC0F9A1FF0D838002262A1 /* HSPBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F771FF0D838002262A1 /* HSPBottomViewController.swift */; };
+		67EC0F9B1FF0D838002262A1 /* HSPParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F781FF0D838002262A1 /* HSPParentViewController.swift */; };
+		67EC0F9C1FF0D838002262A1 /* HSPParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F781FF0D838002262A1 /* HSPParentViewController.swift */; };
+		67EC0F9D1FF0D838002262A1 /* HSPTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F791FF0D838002262A1 /* HSPTopViewController.swift */; };
+		67EC0F9E1FF0D838002262A1 /* HSPTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F791FF0D838002262A1 /* HSPTopViewController.swift */; };
+		67EC0F9F1FF0D838002262A1 /* HPSerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7B1FF0D838002262A1 /* HPSerialize.swift */; };
+		67EC0FA01FF0D838002262A1 /* HPSerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7B1FF0D838002262A1 /* HPSerialize.swift */; };
+		67EC0FA11FF0D838002262A1 /* HPTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7D1FF0D838002262A1 /* HPTaskManager.swift */; };
+		67EC0FA21FF0D838002262A1 /* HPTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7D1FF0D838002262A1 /* HPTaskManager.swift */; };
+		67EC0FA31FF0D838002262A1 /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7F1FF0D838002262A1 /* HPPasswordView.swift */; };
+		67EC0FA41FF0D838002262A1 /* HPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F7F1FF0D838002262A1 /* HPPasswordView.swift */; };
+		67EC0FA51FF0D838002262A1 /* HPSimplePasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F811FF0D838002262A1 /* HPSimplePasscodeView.xib */; };
+		67EC0FA61FF0D838002262A1 /* HPSimplePasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F811FF0D838002262A1 /* HPSimplePasscodeView.xib */; };
+		67EC0FA71FF0D838002262A1 /* HPNineDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F821FF0D838002262A1 /* HPNineDotView.swift */; };
+		67EC0FA81FF0D838002262A1 /* HPNineDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F821FF0D838002262A1 /* HPNineDotView.swift */; };
+		67EC0FA91FF0D838002262A1 /* HPSimplePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F831FF0D838002262A1 /* HPSimplePasscodeView.swift */; };
+		67EC0FAA1FF0D838002262A1 /* HPSimplePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F831FF0D838002262A1 /* HPSimplePasscodeView.swift */; };
+		67EC0FAB1FF0D838002262A1 /* HPNineDotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F841FF0D838002262A1 /* HPNineDotView.xib */; };
+		67EC0FAC1FF0D838002262A1 /* HPNineDotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F841FF0D838002262A1 /* HPNineDotView.xib */; };
+		67EC0FAD1FF0D838002262A1 /* HDKFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F861FF0D838002262A1 /* HDKFloatingButton.swift */; };
+		67EC0FAE1FF0D838002262A1 /* HDKFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F861FF0D838002262A1 /* HDKFloatingButton.swift */; };
+		67EC0FAF1FF0D838002262A1 /* HDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F871FF0D838002262A1 /* HDKExtension.swift */; };
+		67EC0FB01FF0D838002262A1 /* HDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F871FF0D838002262A1 /* HDKExtension.swift */; };
+		67EC0FB11FF0D838002262A1 /* guide.html in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F891FF0D838002262A1 /* guide.html */; };
+		67EC0FB21FF0D838002262A1 /* guide.html in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F891FF0D838002262A1 /* guide.html */; };
+		67EC0FB31FF0D838002262A1 /* ADKStoryboard_container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F8A1FF0D838002262A1 /* ADKStoryboard_container.storyboard */; };
+		67EC0FB41FF0D838002262A1 /* ADKStoryboard_container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F8A1FF0D838002262A1 /* ADKStoryboard_container.storyboard */; };
+		67EC0FB51FF0D838002262A1 /* HDKRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8B1FF0D838002262A1 /* HDKRootViewController.swift */; };
+		67EC0FB61FF0D838002262A1 /* HDKRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8B1FF0D838002262A1 /* HDKRootViewController.swift */; };
+		67EC0FB71FF0D838002262A1 /* HDKSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8C1FF0D838002262A1 /* HDKSettingViewController.swift */; };
+		67EC0FB81FF0D838002262A1 /* HDKSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8C1FF0D838002262A1 /* HDKSettingViewController.swift */; };
+		67EC0FB91FF0D838002262A1 /* HDKGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8D1FF0D838002262A1 /* HDKGuideViewController.swift */; };
+		67EC0FBA1FF0D838002262A1 /* HDKGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8D1FF0D838002262A1 /* HDKGuideViewController.swift */; };
+		67EC0FBB1FF0D838002262A1 /* HDKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8E1FF0D838002262A1 /* HDKContext.swift */; };
+		67EC0FBC1FF0D838002262A1 /* HDKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F8E1FF0D838002262A1 /* HDKContext.swift */; };
+		67EC0FBD1FF0D838002262A1 /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F901FF0D838002262A1 /* HPCalendarDate.swift */; };
+		67EC0FBE1FF0D838002262A1 /* HPCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F901FF0D838002262A1 /* HPCalendarDate.swift */; };
+		67EC0FBF1FF0D838002262A1 /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F921FF0D838002262A1 /* HPCalendarViewCell.swift */; };
+		67EC0FC01FF0D838002262A1 /* HPCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F921FF0D838002262A1 /* HPCalendarViewCell.swift */; };
+		67EC0FC11FF0D838002262A1 /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F931FF0D838002262A1 /* HPCalendarView.swift */; };
+		67EC0FC21FF0D838002262A1 /* HPCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F931FF0D838002262A1 /* HPCalendarView.swift */; };
+		67EC0FC31FF0D838002262A1 /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F941FF0D838002262A1 /* HPCalendarViewCell.xib */; };
+		67EC0FC41FF0D838002262A1 /* HPCalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F941FF0D838002262A1 /* HPCalendarViewCell.xib */; };
+		67EC0FC51FF0D838002262A1 /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F951FF0D838002262A1 /* HPCalendarHorizontalLayout.swift */; };
+		67EC0FC61FF0D838002262A1 /* HPCalendarHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0F951FF0D838002262A1 /* HPCalendarHorizontalLayout.swift */; };
+		67EC0FC71FF0D838002262A1 /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F961FF0D838002262A1 /* HPCalendarView.xib */; };
+		67EC0FC81FF0D838002262A1 /* HPCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0F961FF0D838002262A1 /* HPCalendarView.xib */; };
+		67EC0FDF1FF0D850002262A1 /* HPExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCA1FF0D850002262A1 /* HPExts.swift */; };
+		67EC0FE01FF0D850002262A1 /* HPExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCA1FF0D850002262A1 /* HPExts.swift */; };
+		67EC0FE11FF0D850002262A1 /* HPGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCB1FF0D850002262A1 /* HPGlobal.swift */; };
+		67EC0FE21FF0D850002262A1 /* HPGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCB1FF0D850002262A1 /* HPGlobal.swift */; };
+		67EC0FE31FF0D850002262A1 /* HSPDemoParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCE1FF0D850002262A1 /* HSPDemoParentViewController.swift */; };
+		67EC0FE41FF0D850002262A1 /* HSPDemoParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCE1FF0D850002262A1 /* HSPDemoParentViewController.swift */; };
+		67EC0FE51FF0D850002262A1 /* HSPDemoBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCF1FF0D850002262A1 /* HSPDemoBottomViewController.swift */; };
+		67EC0FE61FF0D850002262A1 /* HSPDemoBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FCF1FF0D850002262A1 /* HSPDemoBottomViewController.swift */; };
+		67EC0FE71FF0D850002262A1 /* HSPDemoTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD01FF0D850002262A1 /* HSPDemoTopViewController.swift */; };
+		67EC0FE81FF0D850002262A1 /* HSPDemoTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD01FF0D850002262A1 /* HSPDemoTopViewController.swift */; };
+		67EC0FE91FF0D850002262A1 /* HPNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD11FF0D850002262A1 /* HPNavView.swift */; };
+		67EC0FEA1FF0D850002262A1 /* HPNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD11FF0D850002262A1 /* HPNavView.swift */; };
+		67EC0FEB1FF0D850002262A1 /* HPPasswordDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD31FF0D850002262A1 /* HPPasswordDemoViewController.swift */; };
+		67EC0FEC1FF0D850002262A1 /* HPPasswordDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD31FF0D850002262A1 /* HPPasswordDemoViewController.swift */; };
+		67EC0FED1FF0D850002262A1 /* DemoAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD41FF0D850002262A1 /* DemoAppSettings.swift */; };
+		67EC0FEE1FF0D850002262A1 /* DemoAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD41FF0D850002262A1 /* DemoAppSettings.swift */; };
+		67EC0FEF1FF0D850002262A1 /* HPCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD61FF0D850002262A1 /* HPCalendarViewController.swift */; };
+		67EC0FF01FF0D850002262A1 /* HPCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD61FF0D850002262A1 /* HPCalendarViewController.swift */; };
+		67EC0FF11FF0D850002262A1 /* HDKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FD81FF0D850002262A1 /* HDKRootConfig.plist */; };
+		67EC0FF21FF0D850002262A1 /* HDKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FD81FF0D850002262A1 /* HDKRootConfig.plist */; };
+		67EC0FF31FF0D850002262A1 /* HDKPasswordSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD91FF0D850002262A1 /* HDKPasswordSettingViewController.swift */; };
+		67EC0FF41FF0D850002262A1 /* HDKPasswordSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FD91FF0D850002262A1 /* HDKPasswordSettingViewController.swift */; };
+		67EC0FF51FF0D850002262A1 /* HDKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDA1FF0D850002262A1 /* HDKTestViewController.swift */; };
+		67EC0FF61FF0D850002262A1 /* HDKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDA1FF0D850002262A1 /* HDKTestViewController.swift */; };
+		67EC0FF71FF0D850002262A1 /* HDKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDB1FF0D850002262A1 /* HDKSettingEventHandler.swift */; };
+		67EC0FF81FF0D850002262A1 /* HDKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDB1FF0D850002262A1 /* HDKSettingEventHandler.swift */; };
+		67EC0FF91FF0D850002262A1 /* HDKSettingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FDC1FF0D850002262A1 /* HDKSettingConfig.plist */; };
+		67EC0FFA1FF0D850002262A1 /* HDKSettingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FDC1FF0D850002262A1 /* HDKSettingConfig.plist */; };
+		67EC0FFB1FF0D850002262A1 /* HDKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */; };
+		67EC0FFC1FF0D850002262A1 /* HDKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */; };
+		67EC0FFD1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */; };
+		67EC0FFE1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */; };
 		FFF726AD1FE7A5FA009F093A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726771FE7A5F9009F093A /* RootViewController.swift */; };
 		FFF726AE1FE7A5FA009F093A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF726781FE7A5F9009F093A /* Assets.xcassets */; };
 		FFF726AF1FE7A5FA009F093A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF726791FE7A5F9009F093A /* LaunchScreen.storyboard */; };
 		FFF726B01FE7A5FA009F093A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF7267B1FE7A5F9009F093A /* Main.storyboard */; };
-		FFF726B11FE7A5FA009F093A /* HPExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7267E1FE7A5F9009F093A /* HPExts.swift */; };
-		FFF726B21FE7A5FA009F093A /* HPGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7267F1FE7A5F9009F093A /* HPGlobal.swift */; };
 		FFF726B31FE7A5FA009F093A /* HPPluginRepo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFF726801FE7A5F9009F093A /* HPPluginRepo.xcdatamodeld */; };
 		FFF726B41FE7A5FA009F093A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726821FE7A5F9009F093A /* AppDelegate.swift */; };
 		FFF726B51FE7A5FA009F093A /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726831FE7A5F9009F093A /* MyNavigationController.swift */; };
-		FFF726B61FE7A5FA009F093A /* HSPDemoTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726861FE7A5F9009F093A /* HSPDemoTopViewController.swift */; };
-		FFF726B71FE7A5FA009F093A /* HSPDemoBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726871FE7A5F9009F093A /* HSPDemoBottomViewController.swift */; };
-		FFF726B81FE7A5FA009F093A /* HSPDemoParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726881FE7A5F9009F093A /* HSPDemoParentViewController.swift */; };
-		FFF726B91FE7A5FA009F093A /* HPNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726891FE7A5F9009F093A /* HPNavView.swift */; };
-		FFF726BA1FE7A5FA009F093A /* HPPasswordDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7268B1FE7A5F9009F093A /* HPPasswordDemoViewController.swift */; };
-		FFF726BB1FE7A5FA009F093A /* DemoAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7268C1FE7A5F9009F093A /* DemoAppSettings.swift */; };
-		FFF726BC1FE7A5FA009F093A /* HPCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF7268E1FE7A5F9009F093A /* HPCalendarViewController.swift */; };
-		FFF726BD1FE7A5FA009F093A /* HDKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726901FE7A5F9009F093A /* HDKTest2ViewController.swift */; };
-		FFF726BE1FE7A5FA009F093A /* HDKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF726911FE7A5F9009F093A /* HDKStoryboard_phone.storyboard */; };
-		FFF726BF1FE7A5FA009F093A /* HDKSettingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726921FE7A5F9009F093A /* HDKSettingConfig.plist */; };
-		FFF726C11FE7A5FA009F093A /* HDKSettingEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726941FE7A5F9009F093A /* HDKSettingEventHandler.swift */; };
-		FFF726C21FE7A5FA009F093A /* HDKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726951FE7A5F9009F093A /* HDKTestViewController.swift */; };
-		FFF726C31FE7A5FA009F093A /* HDKRootConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF726961FE7A5F9009F093A /* HDKRootConfig.plist */; };
 		FFF726C51FE7A8C1009F093A /* HPPluginRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726541FE7A5F4009F093A /* HPPluginRepoTests.swift */; };
 		FFF726C71FE7A8CB009F093A /* HPPluginRepoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726511FE7A5F3009F093A /* HPPluginRepoUITests.swift */; };
 /* End PBXBuildFile section */
@@ -77,32 +124,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		67B4324C1FEA9C6A003F0A1F /* HDKPasswordSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDKPasswordSettingViewController.swift; sourceTree = "<group>"; };
-		67B432511FEE3003003F0A1F /* HPCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
-		67B432531FEE3003003F0A1F /* HPCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewCell.swift; sourceTree = "<group>"; };
-		67B432541FEE3003003F0A1F /* HPCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarView.swift; sourceTree = "<group>"; };
-		67B432551FEE3003003F0A1F /* HPCalendarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarViewCell.xib; sourceTree = "<group>"; };
-		67B432561FEE3003003F0A1F /* HPCalendarHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarHorizontalLayout.swift; sourceTree = "<group>"; };
-		67B432571FEE3003003F0A1F /* HPCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarView.xib; sourceTree = "<group>"; };
-		67B432591FEE3003003F0A1F /* HSPBottomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPBottomViewController.swift; sourceTree = "<group>"; };
-		67B4325A1FEE3003003F0A1F /* HSPParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPParentViewController.swift; sourceTree = "<group>"; };
-		67B4325B1FEE3003003F0A1F /* HSPTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPTopViewController.swift; sourceTree = "<group>"; };
-		67B4325C1FEE3003003F0A1F /* HSPMessageBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPMessageBridge.swift; sourceTree = "<group>"; };
-		67B4325E1FEE3003003F0A1F /* HDKSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKSettingViewController.swift; sourceTree = "<group>"; };
-		67B432601FEE3003003F0A1F /* guide.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = guide.html; sourceTree = "<group>"; };
-		67B432611FEE3003003F0A1F /* ADKStoryboard_container.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ADKStoryboard_container.storyboard; sourceTree = "<group>"; };
-		67B432621FEE3003003F0A1F /* HDKGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKGuideViewController.swift; sourceTree = "<group>"; };
-		67B432631FEE3003003F0A1F /* HDKRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKRootViewController.swift; sourceTree = "<group>"; };
-		67B432641FEE3003003F0A1F /* HDKFloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKFloatingButton.swift; sourceTree = "<group>"; };
-		67B432651FEE3003003F0A1F /* HDKExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKExtension.swift; sourceTree = "<group>"; };
-		67B432661FEE3003003F0A1F /* HDKContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKContext.swift; sourceTree = "<group>"; };
-		67B432681FEE3003003F0A1F /* HPPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPasswordView.swift; sourceTree = "<group>"; };
-		67B4326A1FEE3003003F0A1F /* HPSimplePasscodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSimplePasscodeView.xib; sourceTree = "<group>"; };
-		67B4326B1FEE3003003F0A1F /* HPNineDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNineDotView.swift; sourceTree = "<group>"; };
-		67B4326C1FEE3003003F0A1F /* HPSimplePasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPSimplePasscodeView.swift; sourceTree = "<group>"; };
-		67B4326D1FEE3003003F0A1F /* HPNineDotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPNineDotView.xib; sourceTree = "<group>"; };
-		67B432851FEE3277003F0A1F /* HPTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPTaskManager.swift; sourceTree = "<group>"; };
-		67B432881FEE5A3E003F0A1F /* HPSerialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSerialize.swift; sourceTree = "<group>"; };
+		67EC0F761FF0D838002262A1 /* HSPMessageBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPMessageBridge.swift; sourceTree = "<group>"; };
+		67EC0F771FF0D838002262A1 /* HSPBottomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPBottomViewController.swift; sourceTree = "<group>"; };
+		67EC0F781FF0D838002262A1 /* HSPParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPParentViewController.swift; sourceTree = "<group>"; };
+		67EC0F791FF0D838002262A1 /* HSPTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPTopViewController.swift; sourceTree = "<group>"; };
+		67EC0F7B1FF0D838002262A1 /* HPSerialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPSerialize.swift; sourceTree = "<group>"; };
+		67EC0F7D1FF0D838002262A1 /* HPTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPTaskManager.swift; sourceTree = "<group>"; };
+		67EC0F7F1FF0D838002262A1 /* HPPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPasswordView.swift; sourceTree = "<group>"; };
+		67EC0F811FF0D838002262A1 /* HPSimplePasscodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSimplePasscodeView.xib; sourceTree = "<group>"; };
+		67EC0F821FF0D838002262A1 /* HPNineDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNineDotView.swift; sourceTree = "<group>"; };
+		67EC0F831FF0D838002262A1 /* HPSimplePasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPSimplePasscodeView.swift; sourceTree = "<group>"; };
+		67EC0F841FF0D838002262A1 /* HPNineDotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPNineDotView.xib; sourceTree = "<group>"; };
+		67EC0F861FF0D838002262A1 /* HDKFloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKFloatingButton.swift; sourceTree = "<group>"; };
+		67EC0F871FF0D838002262A1 /* HDKExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKExtension.swift; sourceTree = "<group>"; };
+		67EC0F891FF0D838002262A1 /* guide.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = guide.html; sourceTree = "<group>"; };
+		67EC0F8A1FF0D838002262A1 /* ADKStoryboard_container.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ADKStoryboard_container.storyboard; sourceTree = "<group>"; };
+		67EC0F8B1FF0D838002262A1 /* HDKRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKRootViewController.swift; sourceTree = "<group>"; };
+		67EC0F8C1FF0D838002262A1 /* HDKSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKSettingViewController.swift; sourceTree = "<group>"; };
+		67EC0F8D1FF0D838002262A1 /* HDKGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKGuideViewController.swift; sourceTree = "<group>"; };
+		67EC0F8E1FF0D838002262A1 /* HDKContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKContext.swift; sourceTree = "<group>"; };
+		67EC0F901FF0D838002262A1 /* HPCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarDate.swift; sourceTree = "<group>"; };
+		67EC0F921FF0D838002262A1 /* HPCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewCell.swift; sourceTree = "<group>"; };
+		67EC0F931FF0D838002262A1 /* HPCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarView.swift; sourceTree = "<group>"; };
+		67EC0F941FF0D838002262A1 /* HPCalendarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarViewCell.xib; sourceTree = "<group>"; };
+		67EC0F951FF0D838002262A1 /* HPCalendarHorizontalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarHorizontalLayout.swift; sourceTree = "<group>"; };
+		67EC0F961FF0D838002262A1 /* HPCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPCalendarView.xib; sourceTree = "<group>"; };
+		67EC0FCA1FF0D850002262A1 /* HPExts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPExts.swift; sourceTree = "<group>"; };
+		67EC0FCB1FF0D850002262A1 /* HPGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPGlobal.swift; sourceTree = "<group>"; };
+		67EC0FCE1FF0D850002262A1 /* HSPDemoParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoParentViewController.swift; sourceTree = "<group>"; };
+		67EC0FCF1FF0D850002262A1 /* HSPDemoBottomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoBottomViewController.swift; sourceTree = "<group>"; };
+		67EC0FD01FF0D850002262A1 /* HSPDemoTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoTopViewController.swift; sourceTree = "<group>"; };
+		67EC0FD11FF0D850002262A1 /* HPNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNavView.swift; sourceTree = "<group>"; };
+		67EC0FD31FF0D850002262A1 /* HPPasswordDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPasswordDemoViewController.swift; sourceTree = "<group>"; };
+		67EC0FD41FF0D850002262A1 /* DemoAppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAppSettings.swift; sourceTree = "<group>"; };
+		67EC0FD61FF0D850002262A1 /* HPCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewController.swift; sourceTree = "<group>"; };
+		67EC0FD81FF0D850002262A1 /* HDKRootConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HDKRootConfig.plist; sourceTree = "<group>"; };
+		67EC0FD91FF0D850002262A1 /* HDKPasswordSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKPasswordSettingViewController.swift; sourceTree = "<group>"; };
+		67EC0FDA1FF0D850002262A1 /* HDKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKTestViewController.swift; sourceTree = "<group>"; };
+		67EC0FDB1FF0D850002262A1 /* HDKSettingEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKSettingEventHandler.swift; sourceTree = "<group>"; };
+		67EC0FDC1FF0D850002262A1 /* HDKSettingConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HDKSettingConfig.plist; sourceTree = "<group>"; };
+		67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HDKStoryboard_phone.storyboard; sourceTree = "<group>"; };
+		67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKTest2ViewController.swift; sourceTree = "<group>"; };
 		FFF6627B1FCFDB96007D30DD /* HPPluginRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPluginRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF662921FCFDB97007D30DD /* HPPluginRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF6629D1FCFDB97007D30DD /* HPPluginRepoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,24 +176,9 @@
 		FFF726781FE7A5F9009F093A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFF7267A1FE7A5F9009F093A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFF7267C1FE7A5F9009F093A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFF7267E1FE7A5F9009F093A /* HPExts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPExts.swift; sourceTree = "<group>"; };
-		FFF7267F1FE7A5F9009F093A /* HPGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPGlobal.swift; sourceTree = "<group>"; };
 		FFF726811FE7A5F9009F093A /* HPToolKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HPToolKit.xcdatamodel; sourceTree = "<group>"; };
 		FFF726821FE7A5F9009F093A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFF726831FE7A5F9009F093A /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
-		FFF726861FE7A5F9009F093A /* HSPDemoTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoTopViewController.swift; sourceTree = "<group>"; };
-		FFF726871FE7A5F9009F093A /* HSPDemoBottomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoBottomViewController.swift; sourceTree = "<group>"; };
-		FFF726881FE7A5F9009F093A /* HSPDemoParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPDemoParentViewController.swift; sourceTree = "<group>"; };
-		FFF726891FE7A5F9009F093A /* HPNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNavView.swift; sourceTree = "<group>"; };
-		FFF7268B1FE7A5F9009F093A /* HPPasswordDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPasswordDemoViewController.swift; sourceTree = "<group>"; };
-		FFF7268C1FE7A5F9009F093A /* DemoAppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAppSettings.swift; sourceTree = "<group>"; };
-		FFF7268E1FE7A5F9009F093A /* HPCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCalendarViewController.swift; sourceTree = "<group>"; };
-		FFF726901FE7A5F9009F093A /* HDKTest2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKTest2ViewController.swift; sourceTree = "<group>"; };
-		FFF726911FE7A5F9009F093A /* HDKStoryboard_phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HDKStoryboard_phone.storyboard; sourceTree = "<group>"; };
-		FFF726921FE7A5F9009F093A /* HDKSettingConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HDKSettingConfig.plist; sourceTree = "<group>"; };
-		FFF726941FE7A5F9009F093A /* HDKSettingEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKSettingEventHandler.swift; sourceTree = "<group>"; };
-		FFF726951FE7A5F9009F093A /* HDKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKTestViewController.swift; sourceTree = "<group>"; };
-		FFF726961FE7A5F9009F093A /* HDKRootConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HDKRootConfig.plist; sourceTree = "<group>"; };
 		FFF726971FE7A5F9009F093A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,95 +207,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67B4324F1FEE3003003F0A1F /* HPTaskManager */ = {
+		67EC0F741FF0D838002262A1 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				67B432851FEE3277003F0A1F /* HPTaskManager.swift */,
+				67EC0F751FF0D838002262A1 /* HPSlidePlugin */,
+				67EC0F7A1FF0D838002262A1 /* HPSerialize */,
+				67EC0F7C1FF0D838002262A1 /* HPTaskManager */,
+				67EC0F7E1FF0D838002262A1 /* HPPasswordPlugin */,
+				67EC0F851FF0D838002262A1 /* HPDebugKit */,
+				67EC0F8F1FF0D838002262A1 /* HPCalendarExt */,
 			);
-			path = HPTaskManager;
+			path = Plugins;
 			sourceTree = "<group>";
 		};
-		67B432501FEE3003003F0A1F /* HPCalendarExt */ = {
+		67EC0F751FF0D838002262A1 /* HPSlidePlugin */ = {
 			isa = PBXGroup;
 			children = (
-				67B432511FEE3003003F0A1F /* HPCalendarDate.swift */,
-				67B432521FEE3003003F0A1F /* BuildInView */,
-			);
-			path = HPCalendarExt;
-			sourceTree = "<group>";
-		};
-		67B432521FEE3003003F0A1F /* BuildInView */ = {
-			isa = PBXGroup;
-			children = (
-				67B432531FEE3003003F0A1F /* HPCalendarViewCell.swift */,
-				67B432541FEE3003003F0A1F /* HPCalendarView.swift */,
-				67B432551FEE3003003F0A1F /* HPCalendarViewCell.xib */,
-				67B432561FEE3003003F0A1F /* HPCalendarHorizontalLayout.swift */,
-				67B432571FEE3003003F0A1F /* HPCalendarView.xib */,
-			);
-			path = BuildInView;
-			sourceTree = "<group>";
-		};
-		67B432581FEE3003003F0A1F /* HPSlidePlugin */ = {
-			isa = PBXGroup;
-			children = (
-				67B432591FEE3003003F0A1F /* HSPBottomViewController.swift */,
-				67B4325A1FEE3003003F0A1F /* HSPParentViewController.swift */,
-				67B4325B1FEE3003003F0A1F /* HSPTopViewController.swift */,
-				67B4325C1FEE3003003F0A1F /* HSPMessageBridge.swift */,
+				67EC0F761FF0D838002262A1 /* HSPMessageBridge.swift */,
+				67EC0F771FF0D838002262A1 /* HSPBottomViewController.swift */,
+				67EC0F781FF0D838002262A1 /* HSPParentViewController.swift */,
+				67EC0F791FF0D838002262A1 /* HSPTopViewController.swift */,
 			);
 			path = HPSlidePlugin;
 			sourceTree = "<group>";
 		};
-		67B4325D1FEE3003003F0A1F /* HPDebugKit */ = {
+		67EC0F7A1FF0D838002262A1 /* HPSerialize */ = {
 			isa = PBXGroup;
 			children = (
-				67B4325E1FEE3003003F0A1F /* HDKSettingViewController.swift */,
-				67B4325F1FEE3003003F0A1F /* resources */,
-				67B432621FEE3003003F0A1F /* HDKGuideViewController.swift */,
-				67B432631FEE3003003F0A1F /* HDKRootViewController.swift */,
-				67B432641FEE3003003F0A1F /* HDKFloatingButton.swift */,
-				67B432651FEE3003003F0A1F /* HDKExtension.swift */,
-				67B432661FEE3003003F0A1F /* HDKContext.swift */,
+				67EC0F7B1FF0D838002262A1 /* HPSerialize.swift */,
 			);
-			path = HPDebugKit;
+			path = HPSerialize;
 			sourceTree = "<group>";
 		};
-		67B4325F1FEE3003003F0A1F /* resources */ = {
+		67EC0F7C1FF0D838002262A1 /* HPTaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				67B432601FEE3003003F0A1F /* guide.html */,
-				67B432611FEE3003003F0A1F /* ADKStoryboard_container.storyboard */,
+				67EC0F7D1FF0D838002262A1 /* HPTaskManager.swift */,
 			);
-			path = resources;
+			path = HPTaskManager;
 			sourceTree = "<group>";
 		};
-		67B432671FEE3003003F0A1F /* HPPasswordPlugin */ = {
+		67EC0F7E1FF0D838002262A1 /* HPPasswordPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				67B432681FEE3003003F0A1F /* HPPasswordView.swift */,
-				67B432691FEE3003003F0A1F /* BuildInViews */,
+				67EC0F7F1FF0D838002262A1 /* HPPasswordView.swift */,
+				67EC0F801FF0D838002262A1 /* BuildInViews */,
 			);
 			path = HPPasswordPlugin;
 			sourceTree = "<group>";
 		};
-		67B432691FEE3003003F0A1F /* BuildInViews */ = {
+		67EC0F801FF0D838002262A1 /* BuildInViews */ = {
 			isa = PBXGroup;
 			children = (
-				67B4326A1FEE3003003F0A1F /* HPSimplePasscodeView.xib */,
-				67B4326B1FEE3003003F0A1F /* HPNineDotView.swift */,
-				67B4326C1FEE3003003F0A1F /* HPSimplePasscodeView.swift */,
-				67B4326D1FEE3003003F0A1F /* HPNineDotView.xib */,
+				67EC0F811FF0D838002262A1 /* HPSimplePasscodeView.xib */,
+				67EC0F821FF0D838002262A1 /* HPNineDotView.swift */,
+				67EC0F831FF0D838002262A1 /* HPSimplePasscodeView.swift */,
+				67EC0F841FF0D838002262A1 /* HPNineDotView.xib */,
 			);
 			path = BuildInViews;
 			sourceTree = "<group>";
 		};
-		67B432871FEE59F9003F0A1F /* HPSerialize */ = {
+		67EC0F851FF0D838002262A1 /* HPDebugKit */ = {
 			isa = PBXGroup;
 			children = (
-				67B432881FEE5A3E003F0A1F /* HPSerialize.swift */,
+				67EC0F861FF0D838002262A1 /* HDKFloatingButton.swift */,
+				67EC0F871FF0D838002262A1 /* HDKExtension.swift */,
+				67EC0F881FF0D838002262A1 /* resources */,
+				67EC0F8B1FF0D838002262A1 /* HDKRootViewController.swift */,
+				67EC0F8C1FF0D838002262A1 /* HDKSettingViewController.swift */,
+				67EC0F8D1FF0D838002262A1 /* HDKGuideViewController.swift */,
+				67EC0F8E1FF0D838002262A1 /* HDKContext.swift */,
 			);
-			path = HPSerialize;
+			path = HPDebugKit;
+			sourceTree = "<group>";
+		};
+		67EC0F881FF0D838002262A1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0F891FF0D838002262A1 /* guide.html */,
+				67EC0F8A1FF0D838002262A1 /* ADKStoryboard_container.storyboard */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		67EC0F8F1FF0D838002262A1 /* HPCalendarExt */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0F901FF0D838002262A1 /* HPCalendarDate.swift */,
+				67EC0F911FF0D838002262A1 /* BuildInView */,
+			);
+			path = HPCalendarExt;
+			sourceTree = "<group>";
+		};
+		67EC0F911FF0D838002262A1 /* BuildInView */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0F921FF0D838002262A1 /* HPCalendarViewCell.swift */,
+				67EC0F931FF0D838002262A1 /* HPCalendarView.swift */,
+				67EC0F941FF0D838002262A1 /* HPCalendarViewCell.xib */,
+				67EC0F951FF0D838002262A1 /* HPCalendarHorizontalLayout.swift */,
+				67EC0F961FF0D838002262A1 /* HPCalendarView.xib */,
+			);
+			path = BuildInView;
+			sourceTree = "<group>";
+		};
+		67EC0FC91FF0D850002262A1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FCA1FF0D850002262A1 /* HPExts.swift */,
+				67EC0FCB1FF0D850002262A1 /* HPGlobal.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		67EC0FCC1FF0D850002262A1 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FCD1FF0D850002262A1 /* SlidePluginDemo */,
+				67EC0FD11FF0D850002262A1 /* HPNavView.swift */,
+				67EC0FD21FF0D850002262A1 /* PasswordPluginDemo */,
+				67EC0FD41FF0D850002262A1 /* DemoAppSettings.swift */,
+				67EC0FD51FF0D850002262A1 /* CalendarDemo */,
+				67EC0FD71FF0D850002262A1 /* DebugKitDemo */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		67EC0FCD1FF0D850002262A1 /* SlidePluginDemo */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FCE1FF0D850002262A1 /* HSPDemoParentViewController.swift */,
+				67EC0FCF1FF0D850002262A1 /* HSPDemoBottomViewController.swift */,
+				67EC0FD01FF0D850002262A1 /* HSPDemoTopViewController.swift */,
+			);
+			path = SlidePluginDemo;
+			sourceTree = "<group>";
+		};
+		67EC0FD21FF0D850002262A1 /* PasswordPluginDemo */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FD31FF0D850002262A1 /* HPPasswordDemoViewController.swift */,
+			);
+			path = PasswordPluginDemo;
+			sourceTree = "<group>";
+		};
+		67EC0FD51FF0D850002262A1 /* CalendarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FD61FF0D850002262A1 /* HPCalendarViewController.swift */,
+			);
+			path = CalendarDemo;
+			sourceTree = "<group>";
+		};
+		67EC0FD71FF0D850002262A1 /* DebugKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				67EC0FD81FF0D850002262A1 /* HDKRootConfig.plist */,
+				67EC0FD91FF0D850002262A1 /* HDKPasswordSettingViewController.swift */,
+				67EC0FDA1FF0D850002262A1 /* HDKTestViewController.swift */,
+				67EC0FDB1FF0D850002262A1 /* HDKSettingEventHandler.swift */,
+				67EC0FDC1FF0D850002262A1 /* HDKSettingConfig.plist */,
+				67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */,
+				67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */,
+			);
+			path = DebugKitDemo;
 			sourceTree = "<group>";
 		};
 		FFF662721FCFDB96007D30DD = {
@@ -292,9 +414,9 @@
 		FFF7265A1FE7A5F9009F093A /* HPPluginRepo */ = {
 			isa = PBXGroup;
 			children = (
-				FFF726841FE7A5F9009F093A /* Demos */,
-				FFF7267D1FE7A5F9009F093A /* Common */,
-				FFF7265B1FE7A5F9009F093A /* Plugins */,
+				67EC0FC91FF0D850002262A1 /* Common */,
+				67EC0FCC1FF0D850002262A1 /* Demos */,
+				67EC0F741FF0D838002262A1 /* Plugins */,
 				FFF726771FE7A5F9009F093A /* RootViewController.swift */,
 				FFF726781FE7A5F9009F093A /* Assets.xcassets */,
 				FFF726791FE7A5F9009F093A /* LaunchScreen.storyboard */,
@@ -305,81 +427,6 @@
 				FFF726971FE7A5F9009F093A /* Info.plist */,
 			);
 			path = HPPluginRepo;
-			sourceTree = "<group>";
-		};
-		FFF7265B1FE7A5F9009F093A /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				67B432871FEE59F9003F0A1F /* HPSerialize */,
-				67B432501FEE3003003F0A1F /* HPCalendarExt */,
-				67B4325D1FEE3003003F0A1F /* HPDebugKit */,
-				67B432671FEE3003003F0A1F /* HPPasswordPlugin */,
-				67B432581FEE3003003F0A1F /* HPSlidePlugin */,
-				67B4324F1FEE3003003F0A1F /* HPTaskManager */,
-			);
-			path = Plugins;
-			sourceTree = "<group>";
-		};
-		FFF7267D1FE7A5F9009F093A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FFF7267E1FE7A5F9009F093A /* HPExts.swift */,
-				FFF7267F1FE7A5F9009F093A /* HPGlobal.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		FFF726841FE7A5F9009F093A /* Demos */ = {
-			isa = PBXGroup;
-			children = (
-				FFF726891FE7A5F9009F093A /* HPNavView.swift */,
-				FFF7268C1FE7A5F9009F093A /* DemoAppSettings.swift */,
-				FFF726851FE7A5F9009F093A /* SlidePluginDemo */,
-				FFF7268A1FE7A5F9009F093A /* PasswordPluginDemo */,
-				FFF7268D1FE7A5F9009F093A /* CalendarDemo */,
-				FFF7268F1FE7A5F9009F093A /* DebugKitDemo */,
-			);
-			path = Demos;
-			sourceTree = "<group>";
-		};
-		FFF726851FE7A5F9009F093A /* SlidePluginDemo */ = {
-			isa = PBXGroup;
-			children = (
-				FFF726861FE7A5F9009F093A /* HSPDemoTopViewController.swift */,
-				FFF726871FE7A5F9009F093A /* HSPDemoBottomViewController.swift */,
-				FFF726881FE7A5F9009F093A /* HSPDemoParentViewController.swift */,
-			);
-			path = SlidePluginDemo;
-			sourceTree = "<group>";
-		};
-		FFF7268A1FE7A5F9009F093A /* PasswordPluginDemo */ = {
-			isa = PBXGroup;
-			children = (
-				FFF7268B1FE7A5F9009F093A /* HPPasswordDemoViewController.swift */,
-			);
-			path = PasswordPluginDemo;
-			sourceTree = "<group>";
-		};
-		FFF7268D1FE7A5F9009F093A /* CalendarDemo */ = {
-			isa = PBXGroup;
-			children = (
-				FFF7268E1FE7A5F9009F093A /* HPCalendarViewController.swift */,
-			);
-			path = CalendarDemo;
-			sourceTree = "<group>";
-		};
-		FFF7268F1FE7A5F9009F093A /* DebugKitDemo */ = {
-			isa = PBXGroup;
-			children = (
-				FFF726901FE7A5F9009F093A /* HDKTest2ViewController.swift */,
-				FFF726911FE7A5F9009F093A /* HDKStoryboard_phone.storyboard */,
-				FFF726921FE7A5F9009F093A /* HDKSettingConfig.plist */,
-				FFF726941FE7A5F9009F093A /* HDKSettingEventHandler.swift */,
-				FFF726951FE7A5F9009F093A /* HDKTestViewController.swift */,
-				FFF726961FE7A5F9009F093A /* HDKRootConfig.plist */,
-				67B4324C1FEA9C6A003F0A1F /* HDKPasswordSettingViewController.swift */,
-			);
-			path = DebugKitDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,17 +536,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B432731FEE3004003F0A1F /* HPCalendarView.xib in Resources */,
+				67EC0FF91FF0D850002262A1 /* HDKSettingConfig.plist in Resources */,
 				FFF726AF1FE7A5FA009F093A /* LaunchScreen.storyboard in Resources */,
-				67B432791FEE3004003F0A1F /* guide.html in Resources */,
+				67EC0FA51FF0D838002262A1 /* HPSimplePasscodeView.xib in Resources */,
+				67EC0FF11FF0D850002262A1 /* HDKRootConfig.plist in Resources */,
+				67EC0FB11FF0D838002262A1 /* guide.html in Resources */,
 				FFF726B01FE7A5FA009F093A /* Main.storyboard in Resources */,
-				67B432711FEE3004003F0A1F /* HPCalendarViewCell.xib in Resources */,
-				FFF726BE1FE7A5FA009F093A /* HDKStoryboard_phone.storyboard in Resources */,
-				FFF726C31FE7A5FA009F093A /* HDKRootConfig.plist in Resources */,
-				67B432811FEE3004003F0A1F /* HPSimplePasscodeView.xib in Resources */,
-				FFF726BF1FE7A5FA009F093A /* HDKSettingConfig.plist in Resources */,
-				67B4327A1FEE3004003F0A1F /* ADKStoryboard_container.storyboard in Resources */,
-				67B432841FEE3004003F0A1F /* HPNineDotView.xib in Resources */,
+				67EC0FC31FF0D838002262A1 /* HPCalendarViewCell.xib in Resources */,
+				67EC0FC71FF0D838002262A1 /* HPCalendarView.xib in Resources */,
+				67EC0FAB1FF0D838002262A1 /* HPNineDotView.xib in Resources */,
+				67EC0FB31FF0D838002262A1 /* ADKStoryboard_container.storyboard in Resources */,
+				67EC0FFB1FF0D850002262A1 /* HDKStoryboard_phone.storyboard in Resources */,
 				FFF726AE1FE7A5FA009F093A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +555,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EC0FA61FF0D838002262A1 /* HPSimplePasscodeView.xib in Resources */,
+				67EC0FAC1FF0D838002262A1 /* HPNineDotView.xib in Resources */,
+				67EC0F701FF0D800002262A1 /* Main.storyboard in Resources */,
+				67EC0FC81FF0D838002262A1 /* HPCalendarView.xib in Resources */,
+				67EC0FB41FF0D838002262A1 /* ADKStoryboard_container.storyboard in Resources */,
+				67EC0FC41FF0D838002262A1 /* HPCalendarViewCell.xib in Resources */,
+				67EC0FFC1FF0D850002262A1 /* HDKStoryboard_phone.storyboard in Resources */,
+				67EC0FF21FF0D850002262A1 /* HDKRootConfig.plist in Resources */,
+				67EC0FB21FF0D838002262A1 /* guide.html in Resources */,
+				67EC0FFA1FF0D850002262A1 /* HDKSettingConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +572,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EC0F711FF0D803002262A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,42 +583,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B432771FEE3004003F0A1F /* HSPMessageBridge.swift in Sources */,
 				FFF726AD1FE7A5FA009F093A /* RootViewController.swift in Sources */,
-				FFF726B71FE7A5FA009F093A /* HSPDemoBottomViewController.swift in Sources */,
-				FFF726B91FE7A5FA009F093A /* HPNavView.swift in Sources */,
-				FFF726BC1FE7A5FA009F093A /* HPCalendarViewController.swift in Sources */,
-				67B432821FEE3004003F0A1F /* HPNineDotView.swift in Sources */,
-				67B4327D1FEE3004003F0A1F /* HDKFloatingButton.swift in Sources */,
-				67B4327C1FEE3004003F0A1F /* HDKRootViewController.swift in Sources */,
+				67EC0FB91FF0D838002262A1 /* HDKGuideViewController.swift in Sources */,
+				67EC0FAD1FF0D838002262A1 /* HDKFloatingButton.swift in Sources */,
+				67EC0FB71FF0D838002262A1 /* HDKSettingViewController.swift in Sources */,
+				67EC0FBB1FF0D838002262A1 /* HDKContext.swift in Sources */,
+				67EC0FB51FF0D838002262A1 /* HDKRootViewController.swift in Sources */,
+				67EC0FBD1FF0D838002262A1 /* HPCalendarDate.swift in Sources */,
+				67EC0FAF1FF0D838002262A1 /* HDKExtension.swift in Sources */,
+				67EC0FF71FF0D850002262A1 /* HDKSettingEventHandler.swift in Sources */,
 				FFF726B51FE7A5FA009F093A /* MyNavigationController.swift in Sources */,
-				67B4327F1FEE3004003F0A1F /* HDKContext.swift in Sources */,
+				67EC0FE31FF0D850002262A1 /* HSPDemoParentViewController.swift in Sources */,
+				67EC0FEF1FF0D850002262A1 /* HPCalendarViewController.swift in Sources */,
+				67EC0FA11FF0D838002262A1 /* HPTaskManager.swift in Sources */,
+				67EC0FE71FF0D850002262A1 /* HSPDemoTopViewController.swift in Sources */,
 				FFF726B31FE7A5FA009F093A /* HPPluginRepo.xcdatamodeld in Sources */,
-				67B432741FEE3004003F0A1F /* HSPBottomViewController.swift in Sources */,
-				FFF726C21FE7A5FA009F093A /* HDKTestViewController.swift in Sources */,
-				FFF726C11FE7A5FA009F093A /* HDKSettingEventHandler.swift in Sources */,
-				FFF726BB1FE7A5FA009F093A /* DemoAppSettings.swift in Sources */,
-				FFF726B21FE7A5FA009F093A /* HPGlobal.swift in Sources */,
-				67B432761FEE3004003F0A1F /* HSPTopViewController.swift in Sources */,
-				67B432721FEE3004003F0A1F /* HPCalendarHorizontalLayout.swift in Sources */,
-				67B432831FEE3004003F0A1F /* HPSimplePasscodeView.swift in Sources */,
-				FFF726BA1FE7A5FA009F093A /* HPPasswordDemoViewController.swift in Sources */,
-				FFF726B11FE7A5FA009F093A /* HPExts.swift in Sources */,
-				67B432701FEE3004003F0A1F /* HPCalendarView.swift in Sources */,
-				67B4327B1FEE3004003F0A1F /* HDKGuideViewController.swift in Sources */,
-				67B432801FEE3004003F0A1F /* HPPasswordView.swift in Sources */,
-				67B432891FEE5A3E003F0A1F /* HPSerialize.swift in Sources */,
-				FFF726BD1FE7A5FA009F093A /* HDKTest2ViewController.swift in Sources */,
-				67B4326F1FEE3004003F0A1F /* HPCalendarViewCell.swift in Sources */,
-				FFF726B61FE7A5FA009F093A /* HSPDemoTopViewController.swift in Sources */,
+				67EC0F9F1FF0D838002262A1 /* HPSerialize.swift in Sources */,
+				67EC0FE91FF0D850002262A1 /* HPNavView.swift in Sources */,
+				67EC0F9B1FF0D838002262A1 /* HSPParentViewController.swift in Sources */,
+				67EC0FA91FF0D838002262A1 /* HPSimplePasscodeView.swift in Sources */,
+				67EC0FFD1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */,
+				67EC0F9D1FF0D838002262A1 /* HSPTopViewController.swift in Sources */,
+				67EC0FE11FF0D850002262A1 /* HPGlobal.swift in Sources */,
+				67EC0FBF1FF0D838002262A1 /* HPCalendarViewCell.swift in Sources */,
 				FFF726B41FE7A5FA009F093A /* AppDelegate.swift in Sources */,
-				67B432751FEE3004003F0A1F /* HSPParentViewController.swift in Sources */,
-				67B4326E1FEE3004003F0A1F /* HPCalendarDate.swift in Sources */,
-				67B4327E1FEE3004003F0A1F /* HDKExtension.swift in Sources */,
-				67B4324D1FEA9C6A003F0A1F /* HDKPasswordSettingViewController.swift in Sources */,
-				67B432781FEE3004003F0A1F /* HDKSettingViewController.swift in Sources */,
-				67B432861FEE3277003F0A1F /* HPTaskManager.swift in Sources */,
-				FFF726B81FE7A5FA009F093A /* HSPDemoParentViewController.swift in Sources */,
+				67EC0F991FF0D838002262A1 /* HSPBottomViewController.swift in Sources */,
+				67EC0FE51FF0D850002262A1 /* HSPDemoBottomViewController.swift in Sources */,
+				67EC0FF51FF0D850002262A1 /* HDKTestViewController.swift in Sources */,
+				67EC0FA71FF0D838002262A1 /* HPNineDotView.swift in Sources */,
+				67EC0FDF1FF0D850002262A1 /* HPExts.swift in Sources */,
+				67EC0FF31FF0D850002262A1 /* HDKPasswordSettingViewController.swift in Sources */,
+				67EC0FED1FF0D850002262A1 /* DemoAppSettings.swift in Sources */,
+				67EC0FA31FF0D838002262A1 /* HPPasswordView.swift in Sources */,
+				67EC0FEB1FF0D850002262A1 /* HPPasswordDemoViewController.swift in Sources */,
+				67EC0FC11FF0D838002262A1 /* HPCalendarView.swift in Sources */,
+				67EC0F971FF0D838002262A1 /* HSPMessageBridge.swift in Sources */,
+				67EC0FC51FF0D838002262A1 /* HPCalendarHorizontalLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +626,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EC0FE41FF0D850002262A1 /* HSPDemoParentViewController.swift in Sources */,
+				67EC0F9A1FF0D838002262A1 /* HSPBottomViewController.swift in Sources */,
+				67EC0FF41FF0D850002262A1 /* HDKPasswordSettingViewController.swift in Sources */,
+				67EC0FB01FF0D838002262A1 /* HDKExtension.swift in Sources */,
+				67EC0F6F1FF0D7FA002262A1 /* RootViewController.swift in Sources */,
+				67EC0FF61FF0D850002262A1 /* HDKTestViewController.swift in Sources */,
+				67EC0FBE1FF0D838002262A1 /* HPCalendarDate.swift in Sources */,
+				67EC0F6D1FF0D7DD002262A1 /* AppDelegate.swift in Sources */,
+				67EC0FE01FF0D850002262A1 /* HPExts.swift in Sources */,
+				67EC0FEE1FF0D850002262A1 /* DemoAppSettings.swift in Sources */,
+				67EC0FE21FF0D850002262A1 /* HPGlobal.swift in Sources */,
+				67EC0FC21FF0D838002262A1 /* HPCalendarView.swift in Sources */,
+				67EC0FFE1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */,
 				FFF726C51FE7A8C1009F093A /* HPPluginRepoTests.swift in Sources */,
+				67EC0FEA1FF0D850002262A1 /* HPNavView.swift in Sources */,
+				67EC0FB61FF0D838002262A1 /* HDKRootViewController.swift in Sources */,
+				67EC0FAA1FF0D838002262A1 /* HPSimplePasscodeView.swift in Sources */,
+				67EC0FE61FF0D850002262A1 /* HSPDemoBottomViewController.swift in Sources */,
+				67EC0F9C1FF0D838002262A1 /* HSPParentViewController.swift in Sources */,
+				67EC0FC61FF0D838002262A1 /* HPCalendarHorizontalLayout.swift in Sources */,
+				67EC0FBA1FF0D838002262A1 /* HDKGuideViewController.swift in Sources */,
+				67EC0F6E1FF0D7E0002262A1 /* HPPluginRepo.xcdatamodeld in Sources */,
+				67EC0FA01FF0D838002262A1 /* HPSerialize.swift in Sources */,
+				67EC0FA81FF0D838002262A1 /* HPNineDotView.swift in Sources */,
+				67EC0FEC1FF0D850002262A1 /* HPPasswordDemoViewController.swift in Sources */,
+				67EC0F9E1FF0D838002262A1 /* HSPTopViewController.swift in Sources */,
+				67EC0F981FF0D838002262A1 /* HSPMessageBridge.swift in Sources */,
+				67EC0FA41FF0D838002262A1 /* HPPasswordView.swift in Sources */,
+				67EC0F6C1FF0D7CC002262A1 /* MyNavigationController.swift in Sources */,
+				67EC0FF01FF0D850002262A1 /* HPCalendarViewController.swift in Sources */,
+				67EC0FB81FF0D838002262A1 /* HDKSettingViewController.swift in Sources */,
+				67EC0FE81FF0D850002262A1 /* HSPDemoTopViewController.swift in Sources */,
+				67EC0FA21FF0D838002262A1 /* HPTaskManager.swift in Sources */,
+				67EC0FF81FF0D850002262A1 /* HDKSettingEventHandler.swift in Sources */,
+				67EC0FAE1FF0D838002262A1 /* HDKFloatingButton.swift in Sources */,
+				67EC0FC01FF0D838002262A1 /* HPCalendarViewCell.swift in Sources */,
+				67EC0FBC1FF0D838002262A1 /* HDKContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
