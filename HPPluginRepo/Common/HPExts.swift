@@ -18,17 +18,17 @@ extension Float {
     }
 }
 
-extension Date {
-    func beginDateOfThisWeek() -> Date {
-        let calendar = Calendar(identifier:.gregorian)
-        let d = calendar.component(.weekday, from: self)
-        return self
-//        return self.addingTimeInterval(<#T##timeInterval: TimeInterval##TimeInterval#>)
-    }
-    func endDateOfThisWeek() -> Date {
-        return self
-    }
-}
+//extension Date {
+//    func beginDateOfThisWeek() -> Date {
+//        let calendar = Calendar(identifier:.gregorian)
+//        let d = calendar.component(.weekday, from: self)
+//        return self
+////        return self.addingTimeInterval(<#T##timeInterval: TimeInterval##TimeInterval#>)
+//    }
+//    func endDateOfThisWeek() -> Date {
+//        return self
+//    }
+//}
 
 public extension CGPoint {
     public func add(_ point: CGPoint) -> CGPoint {
