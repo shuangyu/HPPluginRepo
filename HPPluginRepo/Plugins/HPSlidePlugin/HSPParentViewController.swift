@@ -22,7 +22,7 @@ public struct ASPAnimationConfig {
 
 public protocol ASPSlideProtocol {
     func sliding(with ratio: Float)
-    func finishSliding(with ratio: Float, completion block: @escaping ((Bool) -> Swift.Void) )
+    func finishSliding(with ratio: Float, completion block: ((Bool) -> Swift.Void))
 }
 
 class ASPEmptySegue: UIStoryboardSegue {
