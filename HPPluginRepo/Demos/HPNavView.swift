@@ -9,9 +9,15 @@
 import UIKit
 
 class HPNavView: UIView {
-    
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint?
     override func awakeFromNib() {
         super.awakeFromNib()
-        // 
+        let screentH = UIScreen.main.bounds.height
+        if (screentH == 812 || screentH == 896) {
+            heightConstraint?.constant = 84
+        } else {
+            heightConstraint?.constant = 64
+        }
+        updateConstraintsIfNeeded()
     }
 }

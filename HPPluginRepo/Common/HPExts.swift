@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 extension Float {
-    public static func == (lhs: Float, rhs: Float) -> Bool {
+     static func == (lhs: Float, rhs: Float) -> Bool {
         return fabsf(rhs - lhs) < Float.ulpOfOne
     }
-    public static func != (lhs: Float, rhs: Float) -> Bool {
+     static func != (lhs: Float, rhs: Float) -> Bool {
         return fabsf(rhs - lhs) >= Float.ulpOfOne
     }
 }
@@ -30,16 +30,16 @@ extension Float {
 //    }
 //}
 
-public extension CGPoint {
-    public func add(_ point: CGPoint) -> CGPoint {
+ extension CGPoint {
+     func add(_ point: CGPoint) -> CGPoint {
         return CGPoint(x: self.x + point.x, y: self.y + point.y)
     }
     
-    public func divide(by point: CGPoint) -> CGPoint {
+     func divide(by point: CGPoint) -> CGPoint {
         return CGPoint(x: self.x / point.x, y: self.y / point.y)
     }
     
-    public func restricted(to bound: CGRect) -> CGPoint {
+     func restricted(to bound: CGRect) -> CGPoint {
         var x = self.x
         var y = self.y
         x = max(x, bound.minX)
@@ -49,36 +49,36 @@ public extension CGPoint {
         return CGPoint(x: x, y: y)
     }
     
-    public func slope(with point: CGPoint) -> Float {
+     func slope(with point: CGPoint) -> Float {
         return Float((self.y - point.y) / (self.x - point.x))
     }
 }
 
-public extension CGRect {
-    public static func rectOfCircle(center:CGPoint, radius: CGFloat) -> CGRect {
+ extension CGRect {
+     static func rectOfCircle(center:CGPoint, radius: CGFloat) -> CGRect {
         return CGRect(x: center.x - radius, y: center.y - radius, width: 2 * radius, height: 2 * radius)
     }
     
-    public var center: CGPoint {
+     var center: CGPoint {
         return CGPoint(x: self.width/2.0 + self.origin.x, y: self.height/2.0 + self.origin.y)
     }
     
-    public static func rect(with center: CGPoint, size: CGSize) -> CGRect {
+     static func rect(with center: CGPoint, size: CGSize) -> CGRect {
         let origin = CGPoint(x: center.x - size.width * 0.5, y: center.y - size.height * 0.5)
         return CGRect(origin: origin, size: size)
     }
 }
 
-public extension UIViewController {
+ extension UIViewController {
     
-    public func quickAdd(childViewController: UIViewController) {
+     func quickAdd(childViewController: UIViewController) {
         childViewController.willMove(toParentViewController: self)
         self.view.addSubview(childViewController.view)
         self.addChildViewController(childViewController)
         childViewController.didMove(toParentViewController: self)
     }
     
-    public func quickRemove(childViewController: UIViewController) {
+     func quickRemove(childViewController: UIViewController) {
         childViewController.willMove(toParentViewController: nil)
         childViewController.view.removeFromSuperview()
         childViewController.removeFromParentViewController()
@@ -86,7 +86,7 @@ public extension UIViewController {
         
     }
     
-    public static func loadFromStoryboard(_ storyboardName: String? = nil ,with identifier: String?=nil) -> UIViewController {
+     static func loadFromStoryboard(_ storyboardName: String? = nil ,with identifier: String?=nil) -> UIViewController {
         
         let _identifier = identifier == nil ? self.nameOfClass : identifier
         var sb = UIStoryboard.default()
@@ -98,9 +98,9 @@ public extension UIViewController {
     }
 }
 
-public extension UIStoryboard {
+ extension UIStoryboard {
     
-    public static func `default`() -> UIStoryboard {
+     static func `default`() -> UIStoryboard {
         let infoKey = UIDevice.isPhone() ? "UIMainStoryboardFile~iphone" : "UIMainStoryboardFile~ipad"
         var value: String? = Bundle.main.object(forInfoDictionaryKey: infoKey) as? String
         value = value ?? "Main"
@@ -108,40 +108,40 @@ public extension UIStoryboard {
     }
 }
 
-public extension UIDevice {
-    public static func isPhone() -> Bool {
+ extension UIDevice {
+     static func isPhone() -> Bool {
         return UIDevice.current.model == "iPhone"
     }
 }
 
-public extension NSObject {
-    public class var nameOfClass: String{
+ extension NSObject {
+     class var nameOfClass: String{
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
-    public var nameOfClass: String {
+     var nameOfClass: String {
         return NSStringFromClass(self as! AnyClass).components(separatedBy: ".").last!
     }
 }
 
-public extension Float {
-    public static var random099: Float {
+ extension Float {
+     static var random099: Float {
         return Float(arc4random()%100)/100.0
     }
 }
 
-public extension UIColor {
-    public static var randomColor: UIColor {
+ extension UIColor {
+     static var randomColor: UIColor {
         return UIColor(red: CGFloat(Float.random099), green: CGFloat(Float.random099), blue: CGFloat(Float.random099), alpha: 1.0)
     }
-    public static func color01(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
+     static func color01(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
         return UIColor(red: tuple.r, green: tuple.g, blue: tuple.b, alpha: tuple.a)
     }
-    public static func color255(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
+     static func color255(from tuple: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) -> UIColor {
         return UIColor(red: tuple.r/255.0, green: tuple.g/255.0, blue: tuple.b/255.0, alpha: tuple.a)
     }
     
-    public static func colorFrom(hex: String, with alpha: CGFloat = 1.0) -> UIColor {
+     static func colorFrom(hex: String, with alpha: CGFloat = 1.0) -> UIColor {
         
         /*
          * legnth of hex string should be 6 or 8

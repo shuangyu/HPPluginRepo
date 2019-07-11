@@ -95,6 +95,7 @@
 		67EC0FFC1FF0D850002262A1 /* HDKStoryboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */; };
 		67EC0FFD1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */; };
 		67EC0FFE1FF0D850002262A1 /* HDKTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */; };
+		CD12B61F22D6E38900F7FAF1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD12B61E22D6E38900F7FAF1 /* WebKit.framework */; };
 		FFF726AD1FE7A5FA009F093A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF726771FE7A5F9009F093A /* RootViewController.swift */; };
 		FFF726AE1FE7A5FA009F093A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFF726781FE7A5F9009F093A /* Assets.xcassets */; };
 		FFF726AF1FE7A5FA009F093A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF726791FE7A5F9009F093A /* LaunchScreen.storyboard */; };
@@ -165,6 +166,7 @@
 		67EC0FDC1FF0D850002262A1 /* HDKSettingConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HDKSettingConfig.plist; sourceTree = "<group>"; };
 		67EC0FDD1FF0D850002262A1 /* HDKStoryboard_phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HDKStoryboard_phone.storyboard; sourceTree = "<group>"; };
 		67EC0FDE1FF0D850002262A1 /* HDKTest2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKTest2ViewController.swift; sourceTree = "<group>"; };
+		CD12B61E22D6E38900F7FAF1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FFF6627B1FCFDB96007D30DD /* HPPluginRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPluginRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF662921FCFDB97007D30DD /* HPPluginRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF6629D1FCFDB97007D30DD /* HPPluginRepoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPPluginRepoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD12B61F22D6E38900F7FAF1 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +376,14 @@
 			path = DebugKitDemo;
 			sourceTree = "<group>";
 		};
+		CD12B61D22D6E38900F7FAF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD12B61E22D6E38900F7FAF1 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FFF662721FCFDB96007D30DD = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +391,7 @@
 				FFF726531FE7A5F4009F093A /* HPPluginRepoTests */,
 				FFF726501FE7A5F3009F093A /* HPPluginRepoUITests */,
 				FFF6627C1FCFDB96007D30DD /* Products */,
+				CD12B61D22D6E38900F7FAF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
